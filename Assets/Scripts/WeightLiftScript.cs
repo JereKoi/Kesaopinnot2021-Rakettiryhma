@@ -26,11 +26,6 @@ public class WeightLiftScript : MonoBehaviour
     {
         CheckInput();
         UpdateAnimations();
-
-        if (clickCounter == 16)
-        {
-
-        }
     }
 
     private void UpdateAnimations()
@@ -40,6 +35,7 @@ public class WeightLiftScript : MonoBehaviour
         anim.SetBool("nosto3", nosto3);
         anim.SetBool("nosto_aloitus", nosto_aloitus);
         anim.SetBool("nosto_aloitus2", nosto_aloitus2);
+        anim.SetBool("idle", idle);
     }
 
     private void CheckInput()
@@ -48,6 +44,15 @@ public class WeightLiftScript : MonoBehaviour
         {
             NostoFunction();
             clickCounter++;
+            if (clickCounter >= 15)
+            {
+                clickCounter = 0;
+                idle = true;
+            }
+            else if (clickCounter <= 0)
+            {
+                idle = false;
+            }
             Debug.Log("aikoo nostaa painoja");
             //kato miten require certain amount of clicks to perform action unity
             //Miten animaatioon saa startin ja endin
@@ -69,21 +74,21 @@ public class WeightLiftScript : MonoBehaviour
             nosto_aloitus2 = true;
             Debug.Log("on function sisällä1");
         }
-        else if(clickCounter <= 3)
+        else if(clickCounter <= 6)
         {
             idle = false;
             nosto_aloitus2 = false;
             nosto = true;
             Debug.Log("on function sisällä2");
         }
-        else if(clickCounter <= 4)
+        else if(clickCounter <= 8)
         {
             idle = false;
             nosto = false;
             nosto2 = true;
             Debug.Log("on function sisällä3");
         }
-        else if(clickCounter <= 5)
+        else if(clickCounter <= 12)
         {
             nosto = false;
             idle = false;
@@ -91,15 +96,9 @@ public class WeightLiftScript : MonoBehaviour
             nosto3 = true;
             Debug.Log("on function sisällä4");
         }
-    }
-
-    private void Nosto_aloitusFunction()
-    {
-
-    }
-
-    private void Nosto_aloitus2Function()
-    {
-
+        //else if (clickCounter <= 6)
+        //{
+        //    idle = true;
+        //}
     }
 }
