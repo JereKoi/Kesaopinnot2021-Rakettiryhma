@@ -17,6 +17,7 @@ public class WeightLiftScript : MonoBehaviour
 
     private Animator anim;
 
+    //XPScript.instance.AddXP(250);
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -53,7 +54,6 @@ public class WeightLiftScript : MonoBehaviour
             {
                 idle = false;
             }
-            Debug.Log("aikoo nostaa painoja");
             //kato miten require certain amount of clicks to perform action unity
             //Miten animaatioon saa startin ja endin
         }
@@ -88,7 +88,7 @@ public class WeightLiftScript : MonoBehaviour
             nosto2 = true;
             Debug.Log("on function sisällä3");
         }
-        else if(clickCounter <= 12)
+        else if(clickCounter <= 10)
         {
             nosto = false;
             idle = false;
@@ -96,9 +96,5 @@ public class WeightLiftScript : MonoBehaviour
             nosto3 = true;
             Debug.Log("on function sisällä4");
         }
-        //else if (clickCounter <= 6)
-        //{
-        //    idle = true;
-        //}
     }
 }
