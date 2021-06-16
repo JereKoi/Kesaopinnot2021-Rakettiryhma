@@ -14,13 +14,18 @@ public class WeightLiftScript : MonoBehaviour
     private bool nosto_aloitus2;
 
     private int clickCounter = 0;
+    private int maxStamina = 2;
+    private int currentStamina;
 
     private Animator anim;
+
+    public staminaBar staminabar;
 
     //XPScript.instance.AddXP(250);
     private void Start()
     {
         anim = GetComponent<Animator>();
+        staminabar.SetMaxStamina(maxStamina);
     }
 
     private void Update()
@@ -45,10 +50,11 @@ public class WeightLiftScript : MonoBehaviour
         {
             NostoFunction();
             clickCounter++;
-            if (clickCounter >= 15)
+            if (clickCounter >= 12)
             {
                 clickCounter = 0;
                 idle = true;
+                StaminaMinus(1);
             }
             else if (clickCounter <= 0)
             {
@@ -65,28 +71,24 @@ public class WeightLiftScript : MonoBehaviour
         {
             idle = false;
             nosto_aloitus = true;
-            Debug.Log("on function sisällä");
         }
         else if(clickCounter <= 2)
         {
             idle = false;
             nosto_aloitus = false;
             nosto_aloitus2 = true;
-            Debug.Log("on function sisällä1");
         }
         else if(clickCounter <= 6)
         {
             idle = false;
             nosto_aloitus2 = false;
             nosto = true;
-            Debug.Log("on function sisällä2");
         }
         else if(clickCounter <= 8)
         {
             idle = false;
             nosto = false;
             nosto2 = true;
-            Debug.Log("on function sisällä3");
         }
         else if(clickCounter <= 10)
         {
@@ -94,7 +96,13 @@ public class WeightLiftScript : MonoBehaviour
             idle = false;
             nosto2 = false;
             nosto3 = true;
-            Debug.Log("on function sisällä4");
         }
+    }
+
+    public void StaminaMinus(int regression)
+    {
+        currentStamina -= regression;
+
+        staminabar.SetStamina(currentStamina);
     }
 }
