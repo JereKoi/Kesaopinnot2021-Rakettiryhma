@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WeightLiftScript : MonoBehaviour
 {
+    [SerializeField]
+    Progressbox progressBox;
+
     public GameObject Hahmo;
 
     private bool idle = true;
@@ -14,18 +17,13 @@ public class WeightLiftScript : MonoBehaviour
     private bool nosto_aloitus2;
 
     private int clickCounter = 0;
-    private int maxStamina = 2;
-    private int currentStamina;
 
     private Animator anim;
-
-    public staminaBar staminabar;
 
     //XPScript.instance.AddXP(250);
     private void Start()
     {
         anim = GetComponent<Animator>();
-        staminabar.SetMaxStamina(maxStamina);
     }
 
     private void Update()
@@ -54,7 +52,6 @@ public class WeightLiftScript : MonoBehaviour
             {
                 clickCounter = 0;
                 idle = true;
-                StaminaMinus(1);
             }
             else if (clickCounter <= 0)
             {
@@ -96,13 +93,7 @@ public class WeightLiftScript : MonoBehaviour
             idle = false;
             nosto2 = false;
             nosto3 = true;
+            progressBox.UpdateProgress(0.1f);
         }
-    }
-
-    public void StaminaMinus(int regression)
-    {
-        currentStamina -= regression;
-
-        staminabar.SetStamina(currentStamina);
     }
 }
