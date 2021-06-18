@@ -17,4 +17,14 @@ public class staminaBar : MonoBehaviour
     {
         slider.value = stamina;
     }
+
+    public void AddStamina()
+    {
+        slider.value += 30;
+    }
+
+    public void RemoveStamina()
+    {
+        slider.value -= 30;
+    }
 }
