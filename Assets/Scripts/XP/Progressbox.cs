@@ -11,11 +11,26 @@ public class Progressbox : MonoBehaviour
 
     [SerializeField] private Color color;
 
-    private int level = 0;
+    [SerializeField] private GameObject effectPrefab;
+
+    private int level;
 
     private float currentAmount = 0;
 
     private Coroutine routine;
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey ("level"))
+        {
+            level = PlayerPrefs.GetInt("level");
+            textLevel.text = this.level.ToString();
+        }
+        else
+        {
+            level = 0;
+        }
+    }
 
     private void OnEnable()
     {
@@ -59,8 +74,15 @@ public class Progressbox : MonoBehaviour
 
     private void LevelUp()
     {
+        if (effectPrefab != null)
+        {
+            GameObject obj = Instantiate(effectPrefab, gameObject.transform);
+            Destroy(obj, 1f);
+        }
+
         UpdateLevel(level + 1);
         UpdateProgress(-1f, 0.2f);
+        PlayerPrefs.SetInt("level", level);
     }
 
     private void UpdateLevel(int level)

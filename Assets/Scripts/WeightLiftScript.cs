@@ -48,7 +48,7 @@ public class WeightLiftScript : MonoBehaviour
         {
             NostoFunction();
             clickCounter++;
-            if (clickCounter >= 12)
+            if (clickCounter >= 11)
             {
                 clickCounter = 0;
                 idle = true;
@@ -57,8 +57,6 @@ public class WeightLiftScript : MonoBehaviour
             {
                 idle = false;
             }
-            //kato miten require certain amount of clicks to perform action unity
-            //Miten animaatioon saa startin ja endin
         }
     }
 
@@ -89,7 +87,6 @@ public class WeightLiftScript : MonoBehaviour
         }
         else if(clickCounter <= 10)
         {
-            nosto = false;
             idle = false;
             nosto2 = false;
             nosto3 = true;
