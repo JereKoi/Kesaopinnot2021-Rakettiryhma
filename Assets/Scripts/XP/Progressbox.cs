@@ -77,7 +77,7 @@ public class Progressbox : MonoBehaviour
         if (effectPrefab != null)
         {
             GameObject obj = Instantiate(effectPrefab, gameObject.transform);
-            Destroy(obj, 1f);
+            Destroy(obj, 3f);
         }
 
         UpdateLevel(level + 1);

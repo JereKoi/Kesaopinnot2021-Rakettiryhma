@@ -13,6 +13,16 @@ public class WeightLiftScript : MonoBehaviour
     private bool nosto;
     private bool nosto2;
     private bool nosto3;
+    private bool nosto4;
+    private bool nosto5;
+    private bool nosto6;
+    private bool nosto7;
+    private bool nosto8;
+    private bool nosto9;
+    private bool nosto10;
+    private bool nosto11;
+    private bool nosto12;
+    private bool nosto13;
     private bool nosto_aloitus;
     private bool nosto_aloitus2;
 
@@ -37,8 +47,16 @@ public class WeightLiftScript : MonoBehaviour
         anim.SetBool("nosto", nosto);
         anim.SetBool("nosto2", nosto2);
         anim.SetBool("nosto3", nosto3);
-        anim.SetBool("nosto_aloitus", nosto_aloitus);
-        anim.SetBool("nosto_aloitus2", nosto_aloitus2);
+        anim.SetBool("nosto4", nosto4);
+        anim.SetBool("nosto5", nosto5);
+        anim.SetBool("nosto6", nosto6);
+        anim.SetBool("nosto7", nosto7);
+        anim.SetBool("nosto8", nosto8);
+        anim.SetBool("nosto9", nosto9);
+        anim.SetBool("nosto10", nosto10);
+        anim.SetBool("nosto11", nosto11);
+        anim.SetBool("nosto12", nosto12);
+        anim.SetBool("nosto13", nosto13);
         anim.SetBool("idle", idle);
     }
 
