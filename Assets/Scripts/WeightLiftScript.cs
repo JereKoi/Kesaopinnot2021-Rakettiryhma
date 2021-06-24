@@ -10,7 +10,8 @@ public class WeightLiftScript : MonoBehaviour
     public GameObject Hahmo;
 
     private bool idle = true;
-    private bool nosto;
+    private bool nosto0;
+    private bool nosto1;
     private bool nosto2;
     private bool nosto3;
     private bool nosto4;
@@ -44,7 +45,8 @@ public class WeightLiftScript : MonoBehaviour
 
     private void UpdateAnimations()
     {
-        anim.SetBool("nosto", nosto);
+        anim.SetBool("nosto0", nosto0);
+        anim.SetBool("nosto1", nosto1);
         anim.SetBool("nosto2", nosto2);
         anim.SetBool("nosto3", nosto3);
         anim.SetBool("nosto4", nosto4);
@@ -66,9 +68,10 @@ public class WeightLiftScript : MonoBehaviour
         {
             NostoFunction();
             clickCounter++;
-            if (clickCounter >= 11)
+            if (clickCounter >= 28)
             {
                 clickCounter = 0;
+                nosto13 = false;
                 idle = true;
             }
             else if (clickCounter <= 0)
@@ -83,31 +86,85 @@ public class WeightLiftScript : MonoBehaviour
         if (clickCounter <= 1)
         {
             idle = false;
-            nosto_aloitus = true;
+            nosto0 = true;
         }
         else if(clickCounter <= 2)
         {
             idle = false;
-            nosto_aloitus = false;
-            nosto_aloitus2 = true;
+            nosto0 = false;
+            nosto1 = true;
+        }
+        else if(clickCounter <= 4)
+        {
+            idle = false;
+            nosto1 = false;
+            nosto2 = true;
         }
         else if(clickCounter <= 6)
         {
             idle = false;
-            nosto_aloitus2 = false;
-            nosto = true;
+            nosto2 = false;
+            nosto3 = true;
         }
         else if(clickCounter <= 8)
         {
             idle = false;
-            nosto = false;
-            nosto2 = true;
+            nosto3 = false;
+            nosto4 = true;
         }
-        else if(clickCounter <= 10)
+        else if (clickCounter <= 10)
         {
             idle = false;
-            nosto2 = false;
-            nosto3 = true;
+            nosto4 = false;
+            nosto5 = true;
+        }
+        else if (clickCounter <= 12)
+        {
+            idle = false;
+            nosto5 = false;
+            nosto6 = true;
+        }
+        else if (clickCounter <= 14)
+        {
+            idle = false;
+            nosto6 = false;
+            nosto7 = true;
+        }
+        else if (clickCounter <= 16)
+        {
+            idle = false;
+            nosto7 = false;
+            nosto8 = true;
+        }
+        else if (clickCounter <= 18)
+        {
+            idle = false;
+            nosto8 = false;
+            nosto9 = true;
+        }
+        else if (clickCounter <= 20)
+        {
+            idle = false;
+            nosto9 = false;
+            nosto10 = true;
+        }
+        else if (clickCounter <= 22)
+        {
+            idle = false;
+            nosto10 = false;
+            nosto11 = true;
+        }
+        else if (clickCounter <= 24)
+        {
+            idle = false;
+            nosto11 = false;
+            nosto12 = true;
+        }
+        else if (clickCounter <= 26)
+        {
+            idle = false;
+            nosto12 = false;
+            nosto13 = true;
             progressBox.UpdateProgress(0.1f);
         }
     }
