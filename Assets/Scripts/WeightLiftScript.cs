@@ -28,6 +28,8 @@ public class WeightLiftScript : MonoBehaviour
     private bool nosto_aloitus2;
 
     private int clickCounter = 0;
+    private int clickCounterMinus = 3;
+    private float inputTimer;
 
     private Animator anim;
 
@@ -35,10 +37,12 @@ public class WeightLiftScript : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+        inputTimer = 0;
     }
 
     private void Update()
     {
+        inputTimer += Time.deltaTime;
         CheckInput();
         UpdateAnimations();
     }
@@ -66,17 +70,132 @@ public class WeightLiftScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Nosto"))
         {
+            inputTimer = 0;
             NostoFunction();
             clickCounter++;
-            if (clickCounter >= 28)
+            if (clickCounter >= 18)
             {
                 clickCounter = 0;
+                progressBox.UpdateProgress(0.1f);
                 nosto13 = false;
                 idle = true;
             }
             else if (clickCounter <= 0)
             {
                 idle = false;
+            }
+        }
+        if (inputTimer >= 0.2f)
+        {
+            inputTimer = 0;
+            if (clickCounter <= 1)
+            {
+                idle = true;
+                nosto0 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 2)
+            {
+                idle = false;
+                nosto0 = true;
+                nosto1 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 3)
+            {
+                idle = false;
+                nosto0 = false;
+                nosto1 = true;
+                nosto2 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 4)
+            {
+                idle = false;
+                nosto1 = false;
+                nosto2 = true;
+                nosto3 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 5)
+            {
+                idle = false;
+                nosto2 = false;
+                nosto3 = true;
+                nosto4 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 6)
+            {
+                idle = false;
+                nosto3 = false;
+                nosto4 = true;
+                nosto5 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 7)
+            {
+                idle = false;
+                nosto4 = false;
+                nosto5 = true;
+                nosto6 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 8)
+            {
+                idle = false;
+                nosto5 = false;
+                nosto6 = true;
+                nosto7 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 9)
+            {
+                idle = false;
+                nosto6 = false;
+                nosto7 = true;
+                nosto8 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 10)
+            {
+                idle = false;
+                nosto7 = false;
+                nosto8 = true;
+                nosto9 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 11)
+            {
+                idle = false;
+                nosto8 = false;
+                nosto9 = true;
+                nosto10 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 12)
+            {
+                idle = false;
+                nosto9 = false;
+                nosto10 = true;
+                nosto11 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 13)
+            {
+                idle = false;
+                nosto10 = false;
+                nosto11 = true;
+                nosto12 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 14)
+            {
+                idle = false;
+                nosto11 = false;
+                nosto12 = true;
+                nosto13 = false;
+                clickCounter--;
             }
         }
     }
@@ -94,78 +213,89 @@ public class WeightLiftScript : MonoBehaviour
             nosto0 = false;
             nosto1 = true;
         }
+        else if(clickCounter <= 3)
+        {
+            idle = false;
+            nosto0 = false;
+            nosto1 = false;
+            nosto2 = true;
+        }
         else if(clickCounter <= 4)
         {
             idle = false;
             nosto1 = false;
-            nosto2 = true;
-        }
-        else if(clickCounter <= 6)
-        {
-            idle = false;
             nosto2 = false;
             nosto3 = true;
         }
-        else if(clickCounter <= 8)
+        else if(clickCounter <= 5)
+        {
+            idle = false;
+            nosto2 = false;
+            nosto3 = false;
+            nosto4 = true;
+        }
+        else if (clickCounter <= 6)
         {
             idle = false;
             nosto3 = false;
-            nosto4 = true;
+            nosto4 = false;
+            nosto5 = true;
+        }
+        else if (clickCounter <= 7)
+        {
+            idle = false;
+            nosto4 = false;
+            nosto5 = false;
+            nosto6 = true;
+        }
+        else if (clickCounter <= 8)
+        {
+            idle = false;
+            nosto5 = false;
+            nosto6 = false;
+            nosto7 = true;
+        }
+        else if (clickCounter <= 9)
+        {
+            idle = false;
+            nosto6 = false;
+            nosto7 = false;
+            nosto8 = true;
         }
         else if (clickCounter <= 10)
         {
             idle = false;
-            nosto4 = false;
-            nosto5 = true;
+            nosto7 = false;
+            nosto8 = false;
+            nosto9 = true;
+        }
+        else if (clickCounter <= 11)
+        {
+            idle = false;
+            nosto8 = false;
+            nosto9 = false;
+            nosto10 = true;
         }
         else if (clickCounter <= 12)
         {
             idle = false;
-            nosto5 = false;
-            nosto6 = true;
+            nosto9 = false;
+            nosto10 = false;
+            nosto11 = true;
+        }
+        else if (clickCounter <= 13)
+        {
+            idle = false;
+            nosto10 = false;
+            nosto11 = false;
+            nosto12 = true;
         }
         else if (clickCounter <= 14)
         {
             idle = false;
-            nosto6 = false;
-            nosto7 = true;
-        }
-        else if (clickCounter <= 16)
-        {
-            idle = false;
-            nosto7 = false;
-            nosto8 = true;
-        }
-        else if (clickCounter <= 18)
-        {
-            idle = false;
-            nosto8 = false;
-            nosto9 = true;
-        }
-        else if (clickCounter <= 20)
-        {
-            idle = false;
-            nosto9 = false;
-            nosto10 = true;
-        }
-        else if (clickCounter <= 22)
-        {
-            idle = false;
-            nosto10 = false;
-            nosto11 = true;
-        }
-        else if (clickCounter <= 24)
-        {
-            idle = false;
             nosto11 = false;
-            nosto12 = true;
-        }
-        else if (clickCounter <= 26)
-        {
-            idle = false;
             nosto12 = false;
             nosto13 = true;
-            progressBox.UpdateProgress(0.1f);
         }
     }
 }
