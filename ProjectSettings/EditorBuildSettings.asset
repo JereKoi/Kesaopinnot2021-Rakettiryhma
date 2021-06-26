@@ -4,5 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/RyhmaScenet/Jere/JerenScene.unity
+    guid: beed5c47ef28863469f8ebaa1b5519ce
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: a20bdf66efdf0324cbf0e169d512f86a,
+      type: 2}

@@ -77,6 +77,7 @@ public class WeightLiftScript : MonoBehaviour
             {
                 clickCounter = 0;
                 progressBox.UpdateProgress(0.1f);
+                StaminaIndicator.instance.UseStamina(10);
                 nosto13 = false;
                 idle = true;
             }
