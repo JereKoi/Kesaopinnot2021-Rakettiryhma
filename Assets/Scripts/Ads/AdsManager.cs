@@ -10,6 +10,8 @@ string gameId = "4191193";
 #else
     string gameId = "4191192";
 #endif
+    private bool cooldown = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +56,20 @@ string gameId = "4191193";
         {
             StartCoroutine(RepeatShowBanner());
         }
+    }
+
+    public void WhenPressedStaminaButton()
+    {
+        if (cooldown == false)
+        {
+            PlayInterstitialAd();
+            Invoke("ResetCooldown", 30f);
+        }
+    }
+
+    private void ResetCooldown()
+    {
+        cooldown = false;
     }
 
     public void HideBanner()
