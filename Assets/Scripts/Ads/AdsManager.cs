@@ -33,13 +33,13 @@ string gameId = "4191193";
 
     public void PlayInterstitialAd()
     {
-        if (StaminaIndicator.instance.currentStamina < 50 && Advertisement.IsReady("Interstitial_ad"))
+        if (StaminaIndicator.instance.currentStamina <= 50 && Advertisement.IsReady("Interstitial_ad"))
         {
             Advertisement.Show("Interstitial_ad");
         }
         else
         {
-            
+            return;
         }
     }
 
