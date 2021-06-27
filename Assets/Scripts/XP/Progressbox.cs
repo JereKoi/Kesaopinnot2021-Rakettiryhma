@@ -13,6 +13,8 @@ public class Progressbox : MonoBehaviour
 
     [SerializeField] private GameObject effectPrefab;
 
+    public AdsManager ads;
+
     private int level;
 
     private float currentAmount = 0;
@@ -82,6 +84,7 @@ public class Progressbox : MonoBehaviour
 
         UpdateLevel(level + 1);
         UpdateProgress(-1f, 0.2f);
+        ads.PlayInterstitialAd();
         PlayerPrefs.SetInt("level", level);
     }
 

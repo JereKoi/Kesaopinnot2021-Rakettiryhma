@@ -685,6 +685,7 @@ MonoBehaviour:
   color: {r: 0.6, g: 1, b: 0.87843144, a: 1}
   effectPrefab: {fileID: 2754351159369421373, guid: 558f564397c2b3346a66ceb90da8354c,
     type: 3}
+  ads: {fileID: 266576910}
 --- !u!114 &825790277
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,9 +31,12 @@ string gameId = "4191193";
         }
     }
 
-    public void Testi()
+    public void PlayInterstitialAd()
     {
-        Debug.Log("Button toimii");
+        if (Advertisement.IsReady("Interstitial_ad"))
+        {
+            Advertisement.Show("Interstitial_ad");
+        }
     }
 
     public void ShowBanner()
