@@ -9,7 +9,7 @@ public class StaminaIndicator: MonoBehaviour
     public Image Loading;
     public TMPro.TextMeshProUGUI TextIndicator;
     public TMPro.TextMeshProUGUI TextStamina;
-    [SerializeField] private float currentStamina;
+    /*[SerializeField]*/ public float currentStamina;
 
     private float stamina;
     private float maxStamina;

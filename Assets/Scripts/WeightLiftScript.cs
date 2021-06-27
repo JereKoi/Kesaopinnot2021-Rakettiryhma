@@ -8,6 +8,7 @@ public class WeightLiftScript : MonoBehaviour
     Progressbox progressBox;
 
     public GameObject Hahmo;
+    public AdsManager ads;
 
     private bool idle = true;
     private bool nosto0;
@@ -28,16 +29,16 @@ public class WeightLiftScript : MonoBehaviour
     private bool nosto_aloitus2;
 
     private int clickCounter = 0;
-    private int clickCounterMinus = 3;
     private float inputTimer;
 
     private Animator anim;
 
-    //XPScript.instance.AddXP(250);
     private void Start()
     {
         anim = GetComponent<Animator>();
         inputTimer = 0;
+        
+        ads.ShowBanner();
     }
 
     private void Update()
@@ -84,6 +85,11 @@ public class WeightLiftScript : MonoBehaviour
             else if (clickCounter <= 0)
             {
                 idle = false;
+            }
+            else if (StaminaIndicator.instance.currentStamina <= 0)
+            {
+                idle = true;
+                Debug.Log("Et voi nostaa painoja ei staminaa");
             }
         }
         if (inputTimer >= 0.2f)
