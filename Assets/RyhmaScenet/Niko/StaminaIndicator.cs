@@ -11,8 +11,8 @@ public class StaminaIndicator: MonoBehaviour
     public TMPro.TextMeshProUGUI TextStamina;
     /*[SerializeField]*/ public float currentStamina;
 
-    private float stamina;
-    private float maxStamina;
+    public float stamina;
+    public float maxStamina;
 
     public static StaminaIndicator instance;
 
@@ -61,6 +61,20 @@ public class StaminaIndicator: MonoBehaviour
         {
             currentStamina -= amount;
             Loading.fillAmount = currentStamina;
+        }
+        else
+        {
+            Debug.Log("Not enough stamina");
+        }
+    }
+
+    public void AddStamina(float amount)
+    {
+        if (currentStamina + amount < 100)
+        {
+            currentStamina += amount;
+            Loading.fillAmount = currentStamina;
+            TextIndicator.text = ((int)currentStamina).ToString() + "%";
         }
         else
         {

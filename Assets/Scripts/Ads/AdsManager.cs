@@ -33,9 +33,13 @@ string gameId = "4191193";
 
     public void PlayInterstitialAd()
     {
-        if (Advertisement.IsReady("Interstitial_ad"))
+        if (StaminaIndicator.instance.currentStamina < 50 && Advertisement.IsReady("Interstitial_ad"))
         {
             Advertisement.Show("Interstitial_ad");
+        }
+        else
+        {
+            
         }
     }
 
@@ -82,7 +86,9 @@ string gameId = "4191193";
     {
         if (placementId == "Rewarded_Android" && showResult == ShowResult.Finished)
         {
-            Debug.Log("Player should be rewarded");
+            StaminaIndicator.instance.AddStamina(50f);
+            //PlayerNiko player = new PlayerNiko(); //PlayerNiko voi korvata jollakin toisella
+            //StaminaIndicator.instance.stamina = player.GetStamina();
         }
     }
 }
