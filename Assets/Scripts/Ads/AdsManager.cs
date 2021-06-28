@@ -35,13 +35,9 @@ string gameId = "4191193";
 
     public void PlayInterstitialAd()
     {
-        if (StaminaIndicator.instance.currentStamina <= 50 && Advertisement.IsReady("Interstitial_ad"))
+        if (Advertisement.IsReady("Interstitial_ad"))
         {
             Advertisement.Show("Interstitial_ad");
-        }
-        else
-        {
-            return;
         }
     }
 
@@ -63,7 +59,6 @@ string gameId = "4191193";
         if (cooldown == false)
         {
             PlayInterstitialAd();
-            Invoke("ResetCooldown", 30f);
         }
     }
 
@@ -102,9 +97,9 @@ string gameId = "4191193";
     {
         if (placementId == "Rewarded_Android" && showResult == ShowResult.Finished)
         {
-            StaminaIndicator.instance.AddStamina(50f);
-            //PlayerNiko player = new PlayerNiko(); //PlayerNiko voi korvata jollakin toisella
-            //StaminaIndicator.instance.stamina = player.GetStamina();
+            StaminaIndicator.instance.maxStamina = StaminaIndicator.instance.stamina;
+            StaminaIndicator.instance.currentStamina = StaminaIndicator.instance.maxStamina;
+            StaminaIndicator.instance.TextIndicator.text = ((int)StaminaIndicator.instance.currentStamina).ToString() + "%";
         }
     }
 }
