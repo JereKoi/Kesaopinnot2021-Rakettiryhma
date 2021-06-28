@@ -50,6 +50,7 @@ public class WeightLiftScript : MonoBehaviour
 
     private void UpdateAnimations()
     {
+        anim.SetBool("idle", idle);
         anim.SetBool("nosto0", nosto0);
         anim.SetBool("nosto1", nosto1);
         anim.SetBool("nosto2", nosto2);
@@ -64,7 +65,6 @@ public class WeightLiftScript : MonoBehaviour
         anim.SetBool("nosto11", nosto11);
         anim.SetBool("nosto12", nosto12);
         anim.SetBool("nosto13", nosto13);
-        anim.SetBool("idle", idle);
     }
 
     private void CheckInput()
@@ -95,11 +95,10 @@ public class WeightLiftScript : MonoBehaviour
         if (inputTimer >= 0.2f)
         {
             inputTimer = 0;
-            if (clickCounter <= 1)
+            if (clickCounter <= 0)
             {
                 idle = true;
                 nosto0 = false;
-                clickCounter--;
             }
             else if (clickCounter <= 2)
             {
