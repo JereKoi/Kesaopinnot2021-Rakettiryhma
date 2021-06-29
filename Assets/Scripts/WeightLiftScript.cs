@@ -9,6 +9,7 @@ public class WeightLiftScript : MonoBehaviour
 
     public GameObject Hahmo;
     public AdsManager ads;
+    public GameObject text;
 
     private bool idle = true;
     private bool nosto0;
@@ -82,16 +83,18 @@ public class WeightLiftScript : MonoBehaviour
                 nosto13 = false;
                 idle = true;
             }
-            if (StaminaIndicator.instance.currentStamina < 10)
-            {
-                idle = true;
-                Debug.Log("Et voi nostaa painoja ei staminaa");
-            }
-            //else if (StaminaIndicator.instance.currentStamina > 10)
-            //{
-                
-            //}
+            
         }
+        if (StaminaIndicator.instance.currentStamina < 10)
+        {
+            idle = true;
+            text.SetActive(true);
+        }
+        if (StaminaIndicator.instance.currentStamina > 10)
+        {
+            text.SetActive(false);
+        }
+
         if (inputTimer >= 0.2f)
         {
             inputTimer = 0;
@@ -205,7 +208,6 @@ public class WeightLiftScript : MonoBehaviour
             }
         }
     }
-
     private void NostoFunction()
     {
         if (clickCounter <= 1)
