@@ -82,15 +82,15 @@ public class WeightLiftScript : MonoBehaviour
                 nosto13 = false;
                 idle = true;
             }
-            else if (clickCounter <= 0)
-            {
-                idle = false;
-            }
-            else if (StaminaIndicator.instance.currentStamina <= 0)
+            if (StaminaIndicator.instance.currentStamina < 10)
             {
                 idle = true;
                 Debug.Log("Et voi nostaa painoja ei staminaa");
             }
+            //else if (StaminaIndicator.instance.currentStamina > 10)
+            //{
+                
+            //}
         }
         if (inputTimer >= 0.2f)
         {
