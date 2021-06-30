@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class StaminaIndicator: MonoBehaviour
 {
     public Image Loading;
     public TMPro.TextMeshProUGUI TextIndicator;
     public TMPro.TextMeshProUGUI TextStamina;
-    /*[SerializeField]*/ public float currentStamina;
+    public float currentStamina;
 
     public float stamina;
     public float maxStamina;
@@ -19,15 +20,29 @@ public class StaminaIndicator: MonoBehaviour
     private void Awake()
     {
         instance = this;
-
-        PlayerNiko player = new PlayerNiko(); //PlayerNiko voi korvata jollakin toisella
-        stamina = player.GetStamina();
         maxStamina = stamina;
     }
 
     void Start()
     {
-        currentStamina = maxStamina;
+        //currentStamina = maxStamina;
+        currentStamina = PlayerPrefs.GetFloat("S", 0);
+        string dateQuitString = PlayerPrefs.GetString("dateQuit", "");
+        if (!dateQuitString.Equals(""))
+        {
+            DateTime dateQuit = DateTime.Parse(dateQuitString);
+            DateTime dateNow = DateTime.Now;
+
+            if (dateNow > dateQuit)
+            {
+                TimeSpan timespan = dateNow - dateQuit;
+                int seconds = (int)timespan.TotalSeconds;
+                Debug.Log("quit for " + seconds + " seconds");
+                currentStamina += seconds;
+            }
+            PlayerPrefs.SetString("dateQuit", "");
+        }
+        StartCoroutine("StaminaCounter");
     }
 
     void Update()
@@ -55,26 +70,30 @@ public class StaminaIndicator: MonoBehaviour
         }
     }
 
+    IEnumerator StaminaCounter()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(3f);
+            currentStamina++;
+            TextIndicator.text = ((int)currentStamina).ToString() + "%";
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        DateTime dateQuit = DateTime.Now;
+        PlayerPrefs.SetString("dateQuit", dateQuit.ToString());
+        PlayerPrefs.SetFloat("S", currentStamina);
+        Debug.Log("quit at" + dateQuit.ToString());
+    }
+
     public void UseStamina(float amount)
     {
         if (currentStamina - amount >= 0)
         {
             currentStamina -= amount;
             Loading.fillAmount = currentStamina;
-        }
-        else
-        {
-            Debug.Log("Not enough stamina");
-        }
-    }
-
-    public void AddStamina(float amount)
-    {
-        if (currentStamina + amount < 100)
-        {
-            currentStamina += amount;
-            Loading.fillAmount = currentStamina;
-            TextIndicator.text = ((int)currentStamina).ToString() + "%";
         }
         else
         {

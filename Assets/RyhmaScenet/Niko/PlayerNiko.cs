@@ -10,8 +10,8 @@ public class PlayerNiko : MonoBehaviour
     //        StaminaIndicator.instance.UseStamina(10); //luku 10 kertoo määrän, jolla se kuluttaa staminaa
     //}
 
-    public float GetStamina()
-    {
-        return 100;
-    }
+    //public float GetStamina()
+    //{
+    //    return 100;
+    //}
 }
