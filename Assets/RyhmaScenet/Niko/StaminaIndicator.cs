@@ -25,8 +25,17 @@ public class StaminaIndicator: MonoBehaviour
 
     void Start()
     {
-        //currentStamina = maxStamina;
-        currentStamina = PlayerPrefs.GetFloat("S", 0);
+        if (PlayerPrefs.HasKey("S"))
+        {
+            currentStamina = PlayerPrefs.GetFloat("S");
+            TextIndicator.text = ((int)currentStamina).ToString() + "%";
+        }
+        else
+        {
+            currentStamina = maxStamina;
+            currentStamina = 100;
+            TextIndicator.text = ((int)currentStamina).ToString() + "%";
+        }
         string dateQuitString = PlayerPrefs.GetString("dateQuit", "");
         if (!dateQuitString.Equals(""))
         {
@@ -36,9 +45,14 @@ public class StaminaIndicator: MonoBehaviour
             if (dateNow > dateQuit)
             {
                 TimeSpan timespan = dateNow - dateQuit;
-                int seconds = (int)timespan.TotalSeconds;
-                Debug.Log("quit for " + seconds + " seconds");
-                currentStamina += seconds;
+                int minutes = (int)timespan.TotalMinutes;
+                Debug.Log("quit for " + minutes + " minutes");
+                currentStamina += minutes;
+                if (currentStamina >= 100)
+                {
+                    currentStamina = 100;
+                    TextIndicator.text = ((int)currentStamina).ToString() + "%";
+                }
             }
             PlayerPrefs.SetString("dateQuit", "");
         }
@@ -74,7 +88,7 @@ public class StaminaIndicator: MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(30f);
             currentStamina++;
             TextIndicator.text = ((int)currentStamina).ToString() + "%";
         }
