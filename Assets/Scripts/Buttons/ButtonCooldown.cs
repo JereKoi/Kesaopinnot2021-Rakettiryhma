@@ -16,7 +16,14 @@ public class ButtonCooldown : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(Cooldown());
+        if (StaminaIndicator.instance.currentStamina < 10)
+        {
+            myButton.interactable = true;
+        }
+        else
+        {
+            StartCoroutine(Cooldown());
+        }
     }
     void Awake()
     {

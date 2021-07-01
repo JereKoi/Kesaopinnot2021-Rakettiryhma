@@ -22,9 +22,9 @@ string gameId = "4191193";
 
     public void PlayRewardedAd()
     {
-        Debug.Log("Button toimii");
         if (Advertisement.IsReady("Rewarded_Android"))
         {
+            SoundManager.instance.muted = true;
             Advertisement.Show("Rewarded_Android");
         }
         else
@@ -37,6 +37,7 @@ string gameId = "4191193";
     {
         if (Advertisement.IsReady("Interstitial_ad"))
         {
+            SoundManager.instance.muted = true;
             Advertisement.Show("Interstitial_ad");
         }
     }
@@ -97,9 +98,12 @@ string gameId = "4191193";
     {
         if (placementId == "Rewarded_Android" && showResult == ShowResult.Finished)
         {
-            StaminaIndicator.instance.maxStamina = StaminaIndicator.instance.stamina;
             StaminaIndicator.instance.currentStamina = StaminaIndicator.instance.maxStamina;
+            StaminaIndicator.instance.currentStamina = 100;
+            //StaminaIndicator.instance.maxStamina = StaminaIndicator.instance.stamina;
+            //StaminaIndicator.instance.currentStamina = StaminaIndicator.instance.maxStamina;
             StaminaIndicator.instance.TextIndicator.text = ((int)StaminaIndicator.instance.currentStamina).ToString() + "%";
+            //SoundManager.instance.muted = false;
         }
     }
 }

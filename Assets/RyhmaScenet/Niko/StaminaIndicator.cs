@@ -89,8 +89,16 @@ public class StaminaIndicator: MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(30f);
-            currentStamina++;
-            TextIndicator.text = ((int)currentStamina).ToString() + "%";
+            if (currentStamina >= 100)
+            {
+                currentStamina = 100;
+                TextIndicator.text = ((int)currentStamina).ToString() + "%";
+            }
+            else
+            {
+                currentStamina++;
+                TextIndicator.text = ((int)currentStamina).ToString() + "%";
+            }
         }
     }
 

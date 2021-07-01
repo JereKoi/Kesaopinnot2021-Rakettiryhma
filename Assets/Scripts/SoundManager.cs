@@ -8,12 +8,13 @@ public class SoundManager : MonoBehaviour
     [SerializeField] Image soundOnIcon;
     [SerializeField] Image soundOffIcon;
 
-    private bool muted = false;
+    public bool muted = false;
 
-
+    public static SoundManager instance;
 
     void Start()
     {
+        instance = this;
         if (!PlayerPrefs.HasKey("muted"))
         {
             PlayerPrefs.SetInt("muted", 0);
@@ -34,12 +35,14 @@ public class SoundManager : MonoBehaviour
         {
             muted = true;
             AudioListener.pause = true;
+            UpdateButtonIcon();
 
         }
         else
         {
             muted = false;
             AudioListener.pause = false;
+            UpdateButtonIcon();
         }
 
         Save();
