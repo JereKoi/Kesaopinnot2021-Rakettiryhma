@@ -26,8 +26,6 @@ public class WeightLiftScript : MonoBehaviour
     private bool nosto11;
     private bool nosto12;
     private bool nosto13;
-    private bool nosto_aloitus;
-    private bool nosto_aloitus2;
 
     private int clickCounter = 0;
     private float inputTimer;
@@ -79,7 +77,7 @@ public class WeightLiftScript : MonoBehaviour
             {
                 clickCounter = 0;
                 progressBox.UpdateProgress(0.1f);
-                StaminaIndicator.instance.UseStamina(10);
+                StaminaIndicator.instance.UseStamina(5);
                 nosto13 = false;
                 idle = true;
             }
