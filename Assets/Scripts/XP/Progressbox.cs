@@ -78,6 +78,7 @@ public class Progressbox : MonoBehaviour
     {
         if (effectPrefab != null)
         {
+            //korjaa rajahdys paikka
             GameObject obj = Instantiate(effectPrefab, gameObject.transform);
             Destroy(obj, 3f);
         }
