@@ -8,6 +8,12 @@ public class SoundManager : MonoBehaviour
     [SerializeField] Image soundOnIcon;
     [SerializeField] Image soundOffIcon;
 
+    [SerializeField]
+    Button myButton;
+
+    [SerializeField]
+    float cooldownDuration = 0.3f;
+
     public bool muted = false;
 
     public static SoundManager instance;
@@ -44,7 +50,7 @@ public class SoundManager : MonoBehaviour
             AudioListener.pause = false;
             UpdateButtonIcon();
         }
-
+        StartCoroutine(Cooldown());
         Save();
     }
 
@@ -70,6 +76,16 @@ public class SoundManager : MonoBehaviour
     private void Save()
     {
         PlayerPrefs.SetInt("muted", muted ?  1 : 0);
+    }
+
+    IEnumerator Cooldown()
+    {
+        // Deactivate myButton
+        myButton.interactable = false;
+        // Wait for cooldown duration
+        yield return new WaitForSeconds(cooldownDuration);
+        // Reactivate myButton
+        myButton.interactable = true;
     }
 
 }

@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeightLiftScript : MonoBehaviour
 {
     [SerializeField]
     Progressbox progressBox;
+    [SerializeField]
+    Button closeButton;
 
     public GameObject Hahmo;
     public AdsManager ads;
@@ -36,7 +39,6 @@ public class WeightLiftScript : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         inputTimer = 0;
-        
         ads.ShowBanner();
     }
 
@@ -83,12 +85,13 @@ public class WeightLiftScript : MonoBehaviour
             }
             
         }
-        if (StaminaIndicator.instance.currentStamina < 10)
+        if (StaminaIndicator.instance.currentStamina < 5)
         {
             idle = true;
             text.SetActive(true);
         }
-        if (StaminaIndicator.instance.currentStamina > 10)
+
+        if (StaminaIndicator.instance.currentStamina > 5)
         {
             text.SetActive(false);
         }

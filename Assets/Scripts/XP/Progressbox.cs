@@ -85,7 +85,7 @@ public class Progressbox : MonoBehaviour
 
         UpdateLevel(level + 1);
         UpdateProgress(-1f, 0.2f);
-        ads.PlayInterstitialAd();
+        //ads.PlayInterstitialAd();
         PlayerPrefs.SetInt("level", level);
     }
 
