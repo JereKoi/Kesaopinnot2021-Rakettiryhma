@@ -78,13 +78,14 @@ public class Progressbox : MonoBehaviour
     {
         if (effectPrefab != null)
         {
+            //korjaa rajahdys paikka
             GameObject obj = Instantiate(effectPrefab, gameObject.transform);
             Destroy(obj, 3f);
         }
 
         UpdateLevel(level + 1);
         UpdateProgress(-1f, 0.2f);
-        ads.PlayInterstitialAd();
+        //ads.PlayInterstitialAd();
         PlayerPrefs.SetInt("level", level);
     }
 

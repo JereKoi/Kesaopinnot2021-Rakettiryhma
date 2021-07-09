@@ -1,15 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeightLiftScript : MonoBehaviour
 {
     [SerializeField]
     Progressbox progressBox;
+    [SerializeField]
+    Button closeButton;
+    [SerializeField]
+    GameObject floatingMoneyText;
 
     public GameObject Hahmo;
     public AdsManager ads;
     public GameObject text;
+    public Canvas canvas;
 
     private bool idle = true;
     private bool nosto0;
@@ -29,14 +35,16 @@ public class WeightLiftScript : MonoBehaviour
 
     private int clickCounter = 0;
     private float inputTimer;
+    private Color color;
 
     private Animator anim;
+    private SpriteRenderer rend;
 
     private void Start()
     {
+        rend = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         inputTimer = 0;
-        
         ads.ShowBanner();
     }
 
@@ -45,6 +53,32 @@ public class WeightLiftScript : MonoBehaviour
         inputTimer += Time.deltaTime;
         CheckInput();
         UpdateAnimations();
+    }
+
+    //tassa vaihdetaan blobejen vareja kaupassa.
+    public void ColorChangeToYellow()
+    {
+        rend.color = new Color32(255, 245, 71, 255);
+    }
+    public void ColorChangeToBlue()
+    {
+        rend.color = new Color32(124, 252, 255, 255);
+    }
+    public void ColorChangeToPink()
+    {
+        rend.color = new Color32(250, 172, 255, 255);
+    }
+    public void ColorChangeToWhite()
+    {
+        rend.color = new Color32(255, 255, 255, 255);
+    }
+    public void ColorChangeToGreen()
+    {
+        rend.color = new Color32(138, 255, 152, 255);
+    }
+    public void ColorChangeToRed()
+    {
+        rend.color = new Color32(255, 161, 129, 255);
     }
 
     private void UpdateAnimations()
@@ -78,17 +112,23 @@ public class WeightLiftScript : MonoBehaviour
                 clickCounter = 0;
                 progressBox.UpdateProgress(0.1f);
                 StaminaIndicator.instance.UseStamina(5);
+                GameObject prefab = Instantiate(floatingMoneyText, transform.position, Quaternion.identity) as GameObject;
+                prefab.transform.SetParent(canvas.transform, false);
+                Destroy(prefab, 1f);
+                PlayerMoney.Instance.addMoney(1);
+                RateManager.Instance.ClickPlay();
                 nosto13 = false;
                 idle = true;
             }
             
         }
-        if (StaminaIndicator.instance.currentStamina < 10)
+        if (StaminaIndicator.instance.currentStamina < 5)
         {
             idle = true;
             text.SetActive(true);
         }
-        if (StaminaIndicator.instance.currentStamina > 10)
+
+        if (StaminaIndicator.instance.currentStamina > 5)
         {
             text.SetActive(false);
         }

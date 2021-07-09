@@ -73,7 +73,7 @@ public class StaminaIndicator: MonoBehaviour
         }
         Loading.GetComponent<Image>().fillAmount = currentStamina / 100;
 
-        if(currentStamina < 10)
+        if(currentStamina < 5)
         {
             TextStamina.color = new Color32(255, 0, 0, 255);
             TextStamina.text = "NO STAMINA!";

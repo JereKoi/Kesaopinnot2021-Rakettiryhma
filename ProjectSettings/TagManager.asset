@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Blobfish
-  - 
+  - Kuplat
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Tausta
     uniqueID: 3056475273
+    locked: 0
+  - name: Kuplat
+    uniqueID: 723332827
     locked: 0
   - name: Blobfish
     uniqueID: 3801462695
