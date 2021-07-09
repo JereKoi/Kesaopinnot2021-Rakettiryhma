@@ -9,10 +9,13 @@ public class WeightLiftScript : MonoBehaviour
     Progressbox progressBox;
     [SerializeField]
     Button closeButton;
+    [SerializeField]
+    GameObject floatingMoneyText;
 
     public GameObject Hahmo;
     public AdsManager ads;
     public GameObject text;
+    public Canvas canvas;
 
     private bool idle = true;
     private bool nosto0;
@@ -109,6 +112,10 @@ public class WeightLiftScript : MonoBehaviour
                 clickCounter = 0;
                 progressBox.UpdateProgress(0.1f);
                 StaminaIndicator.instance.UseStamina(5);
+                GameObject prefab = Instantiate(floatingMoneyText, transform.position, Quaternion.identity) as GameObject;
+                prefab.transform.SetParent(canvas.transform, false);
+                Destroy(prefab, 1f);
+                PlayerMoney.Instance.addMoney(1);
                 nosto13 = false;
                 idle = true;
             }
