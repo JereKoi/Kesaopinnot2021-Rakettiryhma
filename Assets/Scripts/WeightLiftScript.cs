@@ -116,6 +116,7 @@ public class WeightLiftScript : MonoBehaviour
                 prefab.transform.SetParent(canvas.transform, false);
                 Destroy(prefab, 1f);
                 PlayerMoney.Instance.addMoney(1);
+                RateManager.Instance.ClickPlay();
                 nosto13 = false;
                 idle = true;
             }
