@@ -38,11 +38,20 @@ public class WeightLiftScript : MonoBehaviour
     private Color color;
 
     private Animator anim;
-    private SpriteRenderer rend;
+    public SpriteRenderer rend;
 
     private void Start()
     {
-        rend = GetComponent<SpriteRenderer>();
+        //tää kohta on testi
+        if (progressBox.hahmoLVL1 == true)
+        {
+            progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL2 == true)
+        {
+            progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        //rend = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         inputTimer = 0;
         ads.ShowBanner();
@@ -53,31 +62,88 @@ public class WeightLiftScript : MonoBehaviour
         inputTimer += Time.deltaTime;
         CheckInput();
         UpdateAnimations();
+        //tää kohta on testi
+        //if (progressBox.hahmoLVL1.activeSelf == true)
+        //{
+        //    rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        //}
+        //else if (progressBox.hahmoLVL2.activeSelf == true)
+        //{
+        //    rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        //}
     }
 
     //tassa vaihdetaan blobejen vareja kaupassa.
     public void ColorChangeToYellow()
     {
+        if (progressBox.hahmoLVL1.activeSelf == true && progressBox.hahmoLVL2.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
         rend.color = new Color32(255, 245, 71, 255);
     }
     public void ColorChangeToBlue()
     {
+        if (progressBox.hahmoLVL1.activeSelf == true && progressBox.hahmoLVL2.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
         rend.color = new Color32(124, 252, 255, 255);
     }
     public void ColorChangeToPink()
     {
+        if (progressBox.hahmoLVL1.activeSelf == true && progressBox.hahmoLVL2.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
         rend.color = new Color32(250, 172, 255, 255);
     }
     public void ColorChangeToWhite()
     {
+        if (progressBox.hahmoLVL1.activeSelf == true && progressBox.hahmoLVL2.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
         rend.color = new Color32(255, 255, 255, 255);
     }
     public void ColorChangeToGreen()
     {
+        if (progressBox.hahmoLVL1.activeSelf == true && progressBox.hahmoLVL2.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
         rend.color = new Color32(138, 255, 152, 255);
     }
     public void ColorChangeToRed()
     {
+        if (progressBox.hahmoLVL1.activeSelf == true && progressBox.hahmoLVL2.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
         rend.color = new Color32(255, 161, 129, 255);
     }
 

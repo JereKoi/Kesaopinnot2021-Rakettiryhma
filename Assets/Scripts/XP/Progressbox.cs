@@ -13,6 +13,9 @@ public class Progressbox : MonoBehaviour
 
     [SerializeField] private GameObject effectPrefab;
 
+    public GameObject hahmoLVL1;
+    public GameObject hahmoLVL2;
+
     public AdsManager ads;
 
     private int level;
@@ -27,10 +30,16 @@ public class Progressbox : MonoBehaviour
         {
             level = PlayerPrefs.GetInt("level");
             textLevel.text = this.level.ToString();
+            if (level >= 3)
+            {
+                hahmoLVL2.SetActive(true);
+            }
         }
         else
         {
             level = 0;
+            hahmoLVL1.SetActive(true);
+            hahmoLVL2.SetActive(false);
         }
     }
 
@@ -78,7 +87,6 @@ public class Progressbox : MonoBehaviour
     {
         if (effectPrefab != null)
         {
-            //korjaa rajahdys paikka
             GameObject obj = Instantiate(effectPrefab, gameObject.transform);
             Destroy(obj, 3f);
         }
@@ -87,6 +95,16 @@ public class Progressbox : MonoBehaviour
         UpdateProgress(-1f, 0.2f);
         //ads.PlayInterstitialAd();
         PlayerPrefs.SetInt("level", level);
+
+        if (level >= 3)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(true);
+        }
+        else if (level == 4)
+        {
+            ads.PlayInterstitialAd();
+        }
     }
 
     private void UpdateLevel(int level)
