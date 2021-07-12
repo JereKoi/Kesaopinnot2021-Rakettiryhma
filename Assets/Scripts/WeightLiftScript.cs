@@ -14,8 +14,9 @@ public class WeightLiftScript : MonoBehaviour
 
     public GameObject Hahmo;
     public AdsManager ads;
-    public GameObject text;
+    public GameObject stamina0banner;
     public Canvas canvas;
+    public GameObject staminaArrow;
 
     private bool idle = true;
     private bool nosto0;
@@ -35,15 +36,14 @@ public class WeightLiftScript : MonoBehaviour
 
     private int clickCounter = 0;
     private float inputTimer;
-    private Color color;
 
     private Animator anim;
-    public SpriteRenderer rend;
+    private SpriteRenderer rend;
 
     private void Start()
     {
         //tää kohta on testi
-        if (progressBox.hahmoLVL1 == true)
+        if (progressBox.hahmoLVL1 == true && progressBox)
         {
             progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
@@ -51,26 +51,17 @@ public class WeightLiftScript : MonoBehaviour
         {
             progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
-        //rend = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         inputTimer = 0;
         ads.ShowBanner();
     }
+
 
     private void Update()
     {
         inputTimer += Time.deltaTime;
         CheckInput();
         UpdateAnimations();
-        //tää kohta on testi
-        //if (progressBox.hahmoLVL1.activeSelf == true)
-        //{
-        //    rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
-        //}
-        //else if (progressBox.hahmoLVL2.activeSelf == true)
-        //{
-        //    rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
-        //}
     }
 
     //tassa vaihdetaan blobejen vareja kaupassa.
@@ -191,12 +182,14 @@ public class WeightLiftScript : MonoBehaviour
         if (StaminaIndicator.instance.currentStamina < 5)
         {
             idle = true;
-            text.SetActive(true);
+            stamina0banner.SetActive(true);
+            staminaArrow.SetActive(true);
         }
 
         if (StaminaIndicator.instance.currentStamina > 5)
         {
-            text.SetActive(false);
+            stamina0banner.SetActive(false);
+            staminaArrow.SetActive(false);
         }
 
         if (inputTimer >= 0.2f)

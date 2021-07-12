@@ -34,6 +34,10 @@ public class Progressbox : MonoBehaviour
             {
                 hahmoLVL2.SetActive(true);
             }
+            else if (level <= 3)
+            {
+                hahmoLVL1.SetActive(true);
+            }
         }
         else
         {
