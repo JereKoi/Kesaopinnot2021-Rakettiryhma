@@ -12,6 +12,9 @@ public class StaminaIndicator: MonoBehaviour
     public TMPro.TextMeshProUGUI TextStamina;
     public float currentStamina;
 
+    public GameObject banner;
+    public GameObject arrow;
+
     public float stamina;
     public float maxStamina;
 
@@ -81,6 +84,15 @@ public class StaminaIndicator: MonoBehaviour
         else
         {
             TextStamina.color = new Color32(0, 0, 0, 255);
+        }
+    }
+
+    public void CheckStaminaAfterOpenShop()
+    {
+        if (currentStamina < 5)
+        {
+            arrow.SetActive(true);
+            banner.SetActive(true);
         }
     }
 

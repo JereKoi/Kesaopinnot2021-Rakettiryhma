@@ -47,6 +47,21 @@ public class Progressbox : MonoBehaviour
         }
     }
 
+    public void CheckSpriteProgress()
+    {
+        if (level < 3)
+        {
+            hahmoLVL2.SetActive(false);
+            hahmoLVL1.SetActive(true);
+        }
+        else if (level >= 3)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(true);
+        }
+    }
+
+
     private void OnEnable()
     {
         uiFillImage.color = color;

@@ -7,8 +7,14 @@ public class PlayerMoney : MonoBehaviour
 {
     private int money = 0;
     public Text moneyText;
+    public Text moneyShopText;
 
     public static PlayerMoney Instance;
+
+
+    //Savettaa cosmetics mitä pelaaja pitää tällähetkellä päällä. Tee bool joka savetetaan playerprefssillä, ja kun pelaaja käynnistää seuraavan kerran pelin,
+    //Start methodiin checkataan booleanit läpi ja jos joku niistä matchaa savetettuun booleaniin, laitetaan se GameObject.SetActive(true); ksi :)
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +24,7 @@ public class PlayerMoney : MonoBehaviour
         {
             money = PlayerPrefs.GetInt("money");
             moneyText.text = this.money.ToString() + "$";
+            moneyShopText.text = this.money.ToString() + "$";
         }
         else
         {
@@ -30,6 +37,7 @@ public class PlayerMoney : MonoBehaviour
         money += moneyToAdd;
         Debug.Log("added money");
         moneyText.text = money.ToString() + "$";
+        moneyShopText.text = this.money.ToString() + "$";
         PlayerPrefs.SetInt("money", money);
     }
 
