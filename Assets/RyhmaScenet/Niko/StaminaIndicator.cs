@@ -114,7 +114,7 @@ public class StaminaIndicator: MonoBehaviour
         }
     }
 
-    private void OnApplicationQuit()
+    public void OnApplicationQuit()
     {
         DateTime dateQuit = DateTime.Now;
         PlayerPrefs.SetString("dateQuit", dateQuit.ToString());

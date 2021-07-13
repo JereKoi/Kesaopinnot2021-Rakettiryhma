@@ -15,10 +15,13 @@ public class Progressbox : MonoBehaviour
 
     public GameObject hahmoLVL1;
     public GameObject hahmoLVL2;
+    public GameObject reachEndBanner;
 
     public AdsManager ads;
 
-    private int level;
+    public int level;
+
+    public static Progressbox Instance;
 
     private float currentAmount = 0;
 
@@ -26,6 +29,7 @@ public class Progressbox : MonoBehaviour
 
     private void Start()
     {
+        Instance = this;
         if (PlayerPrefs.HasKey ("level"))
         {
             level = PlayerPrefs.GetInt("level");
@@ -66,6 +70,15 @@ public class Progressbox : MonoBehaviour
     {
         uiFillImage.color = color;
         level = 0;
+        currentAmount = 0;
+        uiFillImage.fillAmount = currentAmount;
+    }
+
+    public void StartNewGameReset()
+    {
+        uiFillImage.color = color;
+        level = 0;
+        textLevel.text = this.level.ToString();
         currentAmount = 0;
         uiFillImage.fillAmount = currentAmount;
     }
@@ -120,9 +133,14 @@ public class Progressbox : MonoBehaviour
             hahmoLVL1.SetActive(false);
             hahmoLVL2.SetActive(true);
         }
-        else if (level == 4)
+        if (level == 4)
         {
             ads.PlayInterstitialAd();
+        }
+        //TÄSSÄ KOHDASSA MÄÄRITELLÄÄN PELIN LOPPU, MUISTA START METHODIIN TEHDÄ IF LAUSE JOSSA CHECKATAAN ONKO >= 5 LEVU NIIN CHANGEMINDBUTTON.SETACTIVE(TRUE);
+        else if (level == 5)
+        {
+            reachEndBanner.SetActive(true);
         }
     }
 
