@@ -51,7 +51,7 @@ public class WeightLiftScript : MonoBehaviour
         {
             progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2 == true && progressBox.hahmoLVL1 == false)
+        if (progressBox.hahmoLVL2 == true && progressBox.hahmoLVL1 == false)
         {
             progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
@@ -108,7 +108,7 @@ public class WeightLiftScript : MonoBehaviour
     // yks vaihtoehto tehdä set color functio eli normi activeself == true ja toinen functio kaupasta ostamiselle activeself == false
     public void ColorChangeToOrange()
     {
-        if (progressBox.hahmoLVL1.activeSelf == true && progressBox.hahmoLVL2.activeSelf == false)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.hahmoLVL2.activeSelf == false)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
@@ -116,25 +116,33 @@ public class WeightLiftScript : MonoBehaviour
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
-        //else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.hahmoLVL1.activeSelf == false)
-        //{
-        //    rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
-        //}
-        //else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
-        //{
-        //    rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
-        //}
+        if (progressBox.hahmoLVL2.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        if (progressBox.hahmoLVL1.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
         rend.color = new Color32(255, 245, 71, 255);
         currentSkin = 1;
         PlayerPrefs.SetInt("CSkin", 1);
     }
     public void ColorChangeToBlue()
     {
-        if (progressBox.hahmoLVL1.activeSelf == true && progressBox.hahmoLVL2.activeSelf == false)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.hahmoLVL2.activeSelf == false)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
         else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.hahmoLVL1.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        if (progressBox.hahmoLVL2.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        if (progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
@@ -144,11 +152,19 @@ public class WeightLiftScript : MonoBehaviour
     }
     public void ColorChangeToPink()
     {
-        if (progressBox.hahmoLVL1.activeSelf == true && progressBox.hahmoLVL2.activeSelf == false)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.hahmoLVL2.activeSelf == false)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.hahmoLVL1.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        if (progressBox.hahmoLVL2.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        if (progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
@@ -158,11 +174,19 @@ public class WeightLiftScript : MonoBehaviour
     }
     public void ColorChangeToWhite()
     {
-        if (progressBox.hahmoLVL1.activeSelf == true && progressBox.hahmoLVL2.activeSelf == false)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.hahmoLVL2.activeSelf == false)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.hahmoLVL1.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        if (progressBox.hahmoLVL2.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        if (progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
@@ -172,11 +196,19 @@ public class WeightLiftScript : MonoBehaviour
     }
     public void ColorChangeToGreen()
     {
-        if (progressBox.hahmoLVL1.activeSelf == true && progressBox.hahmoLVL2.activeSelf == false)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.hahmoLVL2.activeSelf == false)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.hahmoLVL1.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        if (progressBox.hahmoLVL2.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        if (progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
@@ -186,11 +218,19 @@ public class WeightLiftScript : MonoBehaviour
     }
     public void ColorChangeToRed()
     {
-        if (progressBox.hahmoLVL1.activeSelf == true && progressBox.hahmoLVL2.activeSelf == false)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.hahmoLVL2.activeSelf == false)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.hahmoLVL1.activeSelf == false)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        if (progressBox.hahmoLVL2.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        if (progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
