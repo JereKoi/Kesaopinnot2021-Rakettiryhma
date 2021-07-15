@@ -567,17 +567,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 266576912}
-        m_MethodName: minusMoney
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &30791260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1550,6 +1539,7 @@ MonoBehaviour:
   money: 0
   moneyText: {fileID: 305928512}
   moneyShopText: {fileID: 19624428}
+  currentSkin: 0
 --- !u!114 &266576913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1865,7 +1855,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1154946459}
-        m_MethodName: ColorChangeToYellow
+        m_MethodName: ColorChangeToOrange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -35,19 +35,23 @@ public class WeightLiftScript : MonoBehaviour
     private bool nosto13;
 
     private int clickCounter = 0;
+    private int currentSkin;
     private float inputTimer;
 
     private Animator anim;
     private SpriteRenderer rend;
 
+    public static WeightLiftScript instance;
+
     private void Start()
     {
-        //tää kohta on testi
-        if (progressBox.hahmoLVL1 == true && progressBox)
+        instance = this;
+
+        if (progressBox.hahmoLVL1 == true && progressBox.hahmoLVL2 == false)
         {
             progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2 == true)
+        else if (progressBox.hahmoLVL2 == true && progressBox.hahmoLVL1 == false)
         {
             progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
@@ -56,6 +60,42 @@ public class WeightLiftScript : MonoBehaviour
         ads.ShowBanner();
     }
 
+    private void Awake()
+    {
+        //rend = GetComponent<SpriteRenderer>();
+        if (PlayerPrefs.HasKey("CSkin") && progressBox.hahmoLVL1 == true || progressBox.hahmoLVL2 == true)
+        {
+            currentSkin = PlayerPrefs.GetInt("CSkin");
+            if (currentSkin == 1)
+            {
+                ColorChangeToOrange();
+            }
+            else if (currentSkin == 2)
+            {
+                ColorChangeToBlue();
+            }
+            else if (currentSkin == 3)
+            {
+                ColorChangeToPink();
+            }
+            else if (currentSkin == 4)
+            {
+                ColorChangeToWhite();
+            }
+            else if (currentSkin == 5)
+            {
+                ColorChangeToGreen();
+            }
+            else if (currentSkin == 6)
+            {
+                ColorChangeToRed();
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
 
     private void Update()
     {
@@ -65,17 +105,28 @@ public class WeightLiftScript : MonoBehaviour
     }
 
     //tassa vaihdetaan blobejen vareja kaupassa.
-    public void ColorChangeToYellow()
+    // yks vaihtoehto tehdä set color functio eli normi activeself == true ja toinen functio kaupasta ostamiselle activeself == false
+    public void ColorChangeToOrange()
     {
         if (progressBox.hahmoLVL1.activeSelf == true && progressBox.hahmoLVL2.activeSelf == false)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.hahmoLVL2.activeSelf == false)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
+        //else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.hahmoLVL1.activeSelf == false)
+        //{
+        //    rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        //}
+        //else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
+        //{
+        //    rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        //}
         rend.color = new Color32(255, 245, 71, 255);
+        currentSkin = 1;
+        PlayerPrefs.SetInt("CSkin", 1);
     }
     public void ColorChangeToBlue()
     {
@@ -83,11 +134,13 @@ public class WeightLiftScript : MonoBehaviour
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == true && progressBox.hahmoLVL1.activeSelf == false)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.hahmoLVL1.activeSelf == false)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
         rend.color = new Color32(124, 252, 255, 255);
+        currentSkin = 2;
+        PlayerPrefs.SetInt("CSkin", 2);
     }
     public void ColorChangeToPink()
     {
@@ -100,6 +153,8 @@ public class WeightLiftScript : MonoBehaviour
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
         rend.color = new Color32(250, 172, 255, 255);
+        currentSkin = 3;
+        PlayerPrefs.SetInt("CSkin", 3);
     }
     public void ColorChangeToWhite()
     {
@@ -112,6 +167,8 @@ public class WeightLiftScript : MonoBehaviour
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
         rend.color = new Color32(255, 255, 255, 255);
+        currentSkin = 4;
+        PlayerPrefs.SetInt("CSkin", 4);
     }
     public void ColorChangeToGreen()
     {
@@ -124,6 +181,8 @@ public class WeightLiftScript : MonoBehaviour
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
         rend.color = new Color32(138, 255, 152, 255);
+        currentSkin = 5;
+        PlayerPrefs.SetInt("CSkin", 5);
     }
     public void ColorChangeToRed()
     {
@@ -136,6 +195,8 @@ public class WeightLiftScript : MonoBehaviour
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
         rend.color = new Color32(255, 161, 129, 255);
+        currentSkin = 6;
+        PlayerPrefs.SetInt("CSkin", 6);
     }
 
     private void UpdateAnimations()
