@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerMoney : MonoBehaviour
 {
     public int money = 0;
-    public Text moneyText;
-    public Text moneyShopText;
+    //public Text moneyText;
+    //public Text moneyShopText;
+    public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI moneyShopText;
 
     public static PlayerMoney Instance;
 
@@ -29,6 +32,8 @@ public class PlayerMoney : MonoBehaviour
     void Start()
     {
         Instance = this;
+        //moneyText = GetComponent<TextMeshProUGUI>();
+        //moneyShopText = GetComponent<TextMeshProUGUI>();
         if (PlayerPrefs.HasKey("money"))
         {
             money = PlayerPrefs.GetInt("money");

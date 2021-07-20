@@ -8,8 +8,6 @@ public class WeightLiftScript : MonoBehaviour
     [SerializeField]
     Progressbox progressBox;
     [SerializeField]
-    Button closeButton;
-    [SerializeField]
     GameObject floatingMoneyText;
 
     public GameObject Hahmo;

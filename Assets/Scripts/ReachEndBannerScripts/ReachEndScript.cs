@@ -21,6 +21,8 @@ public class ReachEndScript : MonoBehaviour
         Progressbox.Instance.hahmoLVL1.SetActive(true);
         Progressbox.Instance.hahmoLVL2.SetActive(false);
         PlayerPrefs.DeleteAll();
+        WeightLiftScript.instance.ColorChangeToWhite();
+        BackgroundSave.instance.SelectBackground1();
         Progressbox.Instance.StartNewGameReset();
         StaminaIndicator.instance.currentStamina = StaminaIndicator.instance.maxStamina;
         StaminaIndicator.instance.currentStamina = 100;

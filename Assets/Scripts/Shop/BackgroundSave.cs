@@ -10,9 +10,11 @@ public class BackgroundSave : MonoBehaviour
 
     public int currentBackground;
 
+    public static BackgroundSave instance;
+
     private void Start()
     {
-        //Background1.SetActive(true);
+        instance = this;
 
         if (PlayerPrefs.HasKey("Background"))
         {
