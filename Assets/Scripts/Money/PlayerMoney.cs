@@ -32,8 +32,6 @@ public class PlayerMoney : MonoBehaviour
     void Start()
     {
         Instance = this;
-        //moneyText = GetComponent<TextMeshProUGUI>();
-        //moneyShopText = GetComponent<TextMeshProUGUI>();
         if (PlayerPrefs.HasKey("money"))
         {
             money = PlayerPrefs.GetInt("money");
@@ -73,6 +71,9 @@ public class PlayerMoney : MonoBehaviour
         else
         {
             money -= moneyToMinus;
+            PlayerPrefs.SetInt("money", money);
+            moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
+            moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
         }
     }
 
