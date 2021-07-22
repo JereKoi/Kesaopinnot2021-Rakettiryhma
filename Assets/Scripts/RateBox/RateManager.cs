@@ -12,9 +12,6 @@ public class RateManager : Singleton<RateManager>
     [SerializeField]
     private Ratebox rateBox;
 
-    [SerializeField]
-    private Text playCountText;
-
     public int countToRate = 0;
 
     [HideInInspector]
@@ -26,7 +23,6 @@ public class RateManager : Singleton<RateManager>
     public void ClickPlay()
     {
         PlayCount++;
-        playCountText.text = PlayCount.ToString();
 
         if (PlayCount % countToRate == 0 && !rateOff)
         {

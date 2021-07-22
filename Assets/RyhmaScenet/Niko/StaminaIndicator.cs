@@ -12,6 +12,9 @@ public class StaminaIndicator: MonoBehaviour
     public TMPro.TextMeshProUGUI TextStamina;
     public float currentStamina;
 
+    public GameObject banner;
+    public GameObject arrow;
+
     public float stamina;
     public float maxStamina;
 
@@ -84,6 +87,15 @@ public class StaminaIndicator: MonoBehaviour
         }
     }
 
+    public void CheckStaminaAfterOpenShop()
+    {
+        if (currentStamina < 5)
+        {
+            arrow.SetActive(true);
+            banner.SetActive(true);
+        }
+    }
+
     IEnumerator StaminaCounter()
     {
         while (true)
@@ -102,7 +114,7 @@ public class StaminaIndicator: MonoBehaviour
         }
     }
 
-    private void OnApplicationQuit()
+    public void OnApplicationQuit()
     {
         DateTime dateQuit = DateTime.Now;
         PlayerPrefs.SetString("dateQuit", dateQuit.ToString());

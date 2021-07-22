@@ -8,14 +8,14 @@ public class WeightLiftScript : MonoBehaviour
     [SerializeField]
     Progressbox progressBox;
     [SerializeField]
-    Button closeButton;
-    [SerializeField]
     GameObject floatingMoneyText;
 
     public GameObject Hahmo;
     public AdsManager ads;
-    public GameObject text;
+    public GameObject stamina0banner;
     public Canvas canvas;
+    public GameObject staminaArrow;
+
 
     private bool idle = true;
     private bool nosto0;
@@ -34,18 +34,66 @@ public class WeightLiftScript : MonoBehaviour
     private bool nosto13;
 
     private int clickCounter = 0;
+    private int currentSkin;
     private float inputTimer;
-    private Color color;
 
     private Animator anim;
     private SpriteRenderer rend;
 
+    public static WeightLiftScript instance;
+
     private void Start()
     {
-        rend = GetComponent<SpriteRenderer>();
+        instance = this;
+
+        if (progressBox.hahmoLVL1 == true && progressBox.hahmoLVL2 == false)
+        {
+            progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        if (progressBox.hahmoLVL2 == true && progressBox.hahmoLVL1 == false)
+        {
+            progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
         anim = GetComponent<Animator>();
         inputTimer = 0;
-        ads.ShowBanner();
+        ads.ShowBanner();        
+    }
+
+    private void Awake()
+    {
+        //rend = GetComponent<SpriteRenderer>();
+        if (PlayerPrefs.HasKey("CSkin") && progressBox.hahmoLVL1 == true || progressBox.hahmoLVL2 == true)
+        {
+            currentSkin = PlayerPrefs.GetInt("CSkin");
+            if (currentSkin == 1)
+            {
+                ColorChangeToOrange();
+            }
+            else if (currentSkin == 2)
+            {
+                ColorChangeToBlue();
+            }
+            else if (currentSkin == 3)
+            {
+                ColorChangeToPink();
+            }
+            else if (currentSkin == 4)
+            {
+                ColorChangeToWhite();
+            }
+            else if (currentSkin == 5)
+            {
+                ColorChangeToGreen();
+            }
+            else if (currentSkin == 6)
+            {
+                ColorChangeToRed();
+            }
+        }
+        else
+        {
+            return;
+        }
     }
 
     private void Update()
@@ -56,29 +104,97 @@ public class WeightLiftScript : MonoBehaviour
     }
 
     //tassa vaihdetaan blobejen vareja kaupassa.
-    public void ColorChangeToYellow()
+    public void ColorChangeToOrange()
     {
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3  && PlayerMoney.Instance.money >= 5 || progressBox.hahmoLVL1.activeSelf == true && PlayerMoney.Instance.money >= 5)
+        {
+            rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 && PlayerMoney.Instance.money >= 5 || progressBox.hahmoLVL2.activeSelf == true && PlayerMoney.Instance.money >= 5)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        PlayerMoney.Instance.minusMoney(5);
+        PlayerMoney.Instance.money = PlayerPrefs.SetInt("money", money);
+        PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
+        PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
         rend.color = new Color32(255, 245, 71, 255);
+        currentSkin = 1;
+        PlayerPrefs.SetInt("CSkin", 1);
     }
     public void ColorChangeToBlue()
     {
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3 && PlayerMoney.Instance.money >= 5 || progressBox.hahmoLVL1.activeSelf == true && PlayerMoney.Instance.money >= 5)
+        {
+            rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 && PlayerMoney.Instance.money >= 5 || progressBox.hahmoLVL2.activeSelf == true && PlayerMoney.Instance.money >= 5)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        PlayerMoney.Instance.minusMoney(5);
         rend.color = new Color32(124, 252, 255, 255);
+        currentSkin = 2;
+        PlayerPrefs.SetInt("CSkin", 2);
     }
     public void ColorChangeToPink()
     {
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3 && PlayerMoney.Instance.money >= 5 || progressBox.hahmoLVL1.activeSelf == true && PlayerMoney.Instance.money >= 5)
+        {
+            rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 && PlayerMoney.Instance.money >= 5 || progressBox.hahmoLVL2.activeSelf == true && PlayerMoney.Instance.money >= 5)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        PlayerMoney.Instance.minusMoney(5);
         rend.color = new Color32(250, 172, 255, 255);
+        currentSkin = 3;
+        PlayerPrefs.SetInt("CSkin", 3);
     }
     public void ColorChangeToWhite()
     {
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3 || progressBox.hahmoLVL1.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 || progressBox.hahmoLVL2.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
         rend.color = new Color32(255, 255, 255, 255);
+        currentSkin = 4;
+        PlayerPrefs.SetInt("CSkin", 4);
     }
     public void ColorChangeToGreen()
     {
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3 && PlayerMoney.Instance.money >= 5 || progressBox.hahmoLVL1.activeSelf == true && PlayerMoney.Instance.money >= 5)
+        {
+            rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 && PlayerMoney.Instance.money >= 5 || progressBox.hahmoLVL2.activeSelf == true && PlayerMoney.Instance.money >= 5)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        PlayerMoney.Instance.minusMoney(5);
         rend.color = new Color32(138, 255, 152, 255);
+        currentSkin = 5;
+        PlayerPrefs.SetInt("CSkin", 5);
     }
     public void ColorChangeToRed()
     {
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3 && PlayerMoney.Instance.money >= 5 || progressBox.hahmoLVL1.activeSelf == true && PlayerMoney.Instance.money >= 5)
+        {
+            rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 && PlayerMoney.Instance.money >= 5 || progressBox.hahmoLVL2.activeSelf == true && PlayerMoney.Instance.money >= 5)
+        {
+            rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        PlayerMoney.Instance.minusMoney(5);
         rend.color = new Color32(255, 161, 129, 255);
+        currentSkin = 6;
+        PlayerPrefs.SetInt("CSkin", 6);
     }
 
     private void UpdateAnimations()
@@ -110,7 +226,15 @@ public class WeightLiftScript : MonoBehaviour
             if (clickCounter >= 18)
             {
                 clickCounter = 0;
-                progressBox.UpdateProgress(0.1f);
+                //progressBox.UpdateProgress(0.1f);
+                if (progressBox.level < 2)
+                {
+                    progressBox.UpdateProgress(0.2f);
+                }
+                else
+                {
+                    progressBox.UpdateProgress(0.1f);
+                }
                 StaminaIndicator.instance.UseStamina(5);
                 GameObject prefab = Instantiate(floatingMoneyText, transform.position, Quaternion.identity) as GameObject;
                 prefab.transform.SetParent(canvas.transform, false);
@@ -125,12 +249,14 @@ public class WeightLiftScript : MonoBehaviour
         if (StaminaIndicator.instance.currentStamina < 5)
         {
             idle = true;
-            text.SetActive(true);
+            stamina0banner.SetActive(true);
+            staminaArrow.SetActive(true);
         }
 
         if (StaminaIndicator.instance.currentStamina > 5)
         {
-            text.SetActive(false);
+            stamina0banner.SetActive(false);
+            staminaArrow.SetActive(false);
         }
 
         if (inputTimer >= 0.2f)
