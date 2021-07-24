@@ -51,6 +51,7 @@ public class StaminaIndicator: MonoBehaviour
                 int minutes = (int)timespan.TotalMinutes;
                 Debug.Log("quit for " + minutes + " minutes");
                 currentStamina += minutes;
+                TextIndicator.text = ((int)currentStamina).ToString() + "%";
                 if (currentStamina >= 100)
                 {
                     currentStamina = 100;

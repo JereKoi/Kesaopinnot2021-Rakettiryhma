@@ -17,6 +17,8 @@ public class Progressbox : MonoBehaviour
     public GameObject hahmoLVL2;
     public GameObject reachEndBanner;
 
+    public GameObject changeMindButton;
+
     public AdsManager ads;
 
     public int level;
@@ -82,6 +84,15 @@ public class Progressbox : MonoBehaviour
         currentAmount = 0;
         uiFillImage.fillAmount = currentAmount;
     }
+
+    public void CheckIfReachedEnd()
+    {
+        if (level >= 5)
+        {
+            changeMindButton.SetActive(true);
+        }
+    }
+
 
     public void UpdateProgress(float amount, float duration = 0.1f)
     {

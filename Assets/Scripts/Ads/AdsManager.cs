@@ -100,10 +100,7 @@ string gameId = "4191193";
         {
             StaminaIndicator.instance.currentStamina = StaminaIndicator.instance.maxStamina;
             StaminaIndicator.instance.currentStamina = 100;
-            //StaminaIndicator.instance.maxStamina = StaminaIndicator.instance.stamina;
-            //StaminaIndicator.instance.currentStamina = StaminaIndicator.instance.maxStamina;
             StaminaIndicator.instance.TextIndicator.text = ((int)StaminaIndicator.instance.currentStamina).ToString() + "%";
-            //SoundManager.instance.muted = false;
         }
     }
 }

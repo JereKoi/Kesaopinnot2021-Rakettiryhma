@@ -24,10 +24,6 @@ public class PlayerMoney : MonoBehaviour
 
     public int currentSkin;
 
-    //Savettaa cosmetics mitä pelaaja pitää tällähetkellä päällä. Tee bool joka savetetaan playerprefssillä, ja kun pelaaja käynnistää seuraavan kerran pelin,
-    //Start methodiin checkataan booleanit läpi ja jos joku niistä matchaa savetettuun booleaniin, laitetaan se GameObject.SetActive(true); ksi :)
-
-
     // Start is called before the first frame update
     void Start()
     {

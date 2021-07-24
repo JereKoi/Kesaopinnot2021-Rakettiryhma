@@ -25,6 +25,7 @@ public class ButtonCooldown : MonoBehaviour
             StartCoroutine(Cooldown());
         }
     }
+
     void Awake()
     {
         // Get a reference to your button
