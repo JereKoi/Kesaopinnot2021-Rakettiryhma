@@ -53,57 +53,53 @@ public class WeightLiftScript : MonoBehaviour
             {
                 SkinCooldown.Instance.SkinButton1.interactable = true;
                 SkinCooldown.Instance.SkinText1.SetActive(false);
+                //ColorChangeToOrange();
             }
-            //else
-            //{
-            //    ColorChangeToWhite();
-            //}
         }
-        else if (PlayerPrefs.HasKey("isPurchasedSkin2"))
+        if (PlayerPrefs.HasKey("isPurchasedSkin2"))
         {
             SkinCooldown.Instance.isPurchasedSkin2 = PlayerPrefs.GetInt("isPurchasedSkin2") != 0;
             if (SkinCooldown.Instance.isPurchasedSkin2 == true)
             {
                 SkinCooldown.Instance.SkinButton2.interactable = true;
                 SkinCooldown.Instance.SkinText2.SetActive(false);
+                //ColorChangeToBlue();
             }
-            //else
-            //{
-            //    ColorChangeToWhite();
-            //}
         }
-        else if (PlayerPrefs.HasKey("isPurchasedSkin3"))
+        if (PlayerPrefs.HasKey("isPurchasedSkin3"))
         {
             SkinCooldown.Instance.isPurchasedSkin3 = PlayerPrefs.GetInt("isPurchasedSkin3") != 0;
             if (SkinCooldown.Instance.isPurchasedSkin3 == true)
             {
                 SkinCooldown.Instance.SkinButton3.interactable = true;
                 SkinCooldown.Instance.SkinText3.SetActive(false);
+                //ColorChangeToPink();
             }
-            //else
-            //{
-            //    ColorChangeToWhite();
-            //}
         }
-        else if (PlayerPrefs.HasKey("isPurchasedSkin5"))
+        if (currentSkin == 4)
+        {
+            ColorChangeToWhite();
+        }
+        if (PlayerPrefs.HasKey("isPurchasedSkin5"))
         {
             SkinCooldown.Instance.isPurchasedSkin5 = PlayerPrefs.GetInt("isPurchasedSkin5") != 0;
             if (SkinCooldown.Instance.isPurchasedSkin5 == true)
             {
                 SkinCooldown.Instance.SkinButton5.interactable = true;
                 SkinCooldown.Instance.SkinText5.SetActive(false);
+                //ColorChangeToGreen();
             }
         }
-        else if (PlayerPrefs.HasKey("isPurchasedSkin6"))
+        if (PlayerPrefs.HasKey("isPurchasedSkin6"))
         {
             SkinCooldown.Instance.isPurchasedSkin6 = PlayerPrefs.GetInt("isPurchasedSkin6") != 0;
             if (SkinCooldown.Instance.isPurchasedSkin6 == true)
             {
                 SkinCooldown.Instance.SkinButton6.interactable = true;
                 SkinCooldown.Instance.SkinText6.SetActive(false);
+                //ColorChangeToRed();
             }
-        }
-        
+        }        
 
         if (progressBox.hahmoLVL1 == true && progressBox.hahmoLVL2 == false)
         {
@@ -177,6 +173,11 @@ public class WeightLiftScript : MonoBehaviour
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
+
+        rend.color = new Color32(255, 245, 71, 255);
+        currentSkin = 1;
+        PlayerPrefs.SetInt("CSkin", 1);
+
         if (SkinCooldown.Instance.isPurchasedSkin1 == false && PlayerMoney.Instance.money >= 5)
         {
             PlayerMoney.Instance.minusMoney(5);
@@ -188,14 +189,30 @@ public class WeightLiftScript : MonoBehaviour
             PlayerPrefs.SetInt("CSkin", 1);
             SkinCooldown.Instance.isPurchasedSkin1 = true;
             PlayerPrefs.SetInt("isPurchasedSkin1", SkinCooldown.Instance.isPurchasedSkin1 ? 1 : 0);
+            if (PlayerMoney.Instance.money < 5)
+            {
+                if (SkinCooldown.Instance.isPurchasedSkin2 == false)
+                {
+                    SkinCooldown.Instance.SkinButton2.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin3 == false)
+                {
+                    SkinCooldown.Instance.SkinButton3.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin5 == false)
+                {
+                    SkinCooldown.Instance.SkinButton5.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin6 == false)
+                {
+                    SkinCooldown.Instance.SkinButton6.interactable = false;
+                }
+            }
         }
         if (SkinCooldown.Instance.isPurchasedSkin1 == true)
         {
             SkinCooldown.Instance.SkinText1.SetActive(false);
-            rend.color = new Color32(255, 245, 71, 255);
             SkinCooldown.Instance.SkinButton1.interactable = true;
-            currentSkin = 1;
-            PlayerPrefs.SetInt("CSkin", 1);     
         }
     }
 
@@ -221,6 +238,11 @@ public class WeightLiftScript : MonoBehaviour
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
+
+        rend.color = new Color32(124, 252, 255, 255);
+        currentSkin = 2;
+        PlayerPrefs.SetInt("CSkin", 2);
+
         if (SkinCooldown.Instance.isPurchasedSkin2 == false && PlayerMoney.Instance.money >= 5)
         {
             PlayerMoney.Instance.minusMoney(5);
@@ -232,15 +254,30 @@ public class WeightLiftScript : MonoBehaviour
             PlayerPrefs.SetInt("CSkin", 2);
             SkinCooldown.Instance.isPurchasedSkin2 = true;
             PlayerPrefs.SetInt("isPurchasedSkin2", SkinCooldown.Instance.isPurchasedSkin2 ? 1 : 0);
+            if (PlayerMoney.Instance.money < 5)
+            {
+                if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                {
+                    SkinCooldown.Instance.SkinButton1.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin3 == false)
+                {
+                    SkinCooldown.Instance.SkinButton3.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin5 == false)
+                {
+                    SkinCooldown.Instance.SkinButton5.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin6 == false)
+                {
+                    SkinCooldown.Instance.SkinButton6.interactable = false;
+                }
+            }
         }
         if (SkinCooldown.Instance.isPurchasedSkin2 == true)
         {
             SkinCooldown.Instance.SkinText2.SetActive(false);
-            SkinCooldown.Instance.SkinButton2.interactable = true;
-            rend.color = new Color32(124, 252, 255, 255);
-            currentSkin = 2;
-            PlayerPrefs.SetInt("CSkin", 2);
-            SkinCooldown.Instance.isPurchasedSkin2 = true;        
+            SkinCooldown.Instance.SkinButton2.interactable = true;     
         }
     }
 
@@ -266,6 +303,11 @@ public class WeightLiftScript : MonoBehaviour
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
+
+        rend.color = new Color32(250, 172, 255, 255);
+        currentSkin = 3;
+        PlayerPrefs.SetInt("CSkin", 3);
+
         if (SkinCooldown.Instance.isPurchasedSkin3 == false && PlayerMoney.Instance.money >= 5)
         {
             PlayerMoney.Instance.minusMoney(5);
@@ -277,15 +319,30 @@ public class WeightLiftScript : MonoBehaviour
             PlayerPrefs.SetInt("CSkin", 3);
             SkinCooldown.Instance.isPurchasedSkin3 = true;
             PlayerPrefs.SetInt("isPurchasedSkin3", SkinCooldown.Instance.isPurchasedSkin3 ? 1 : 0);
+            if (PlayerMoney.Instance.money < 5)
+            {
+                if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                {
+                    SkinCooldown.Instance.SkinButton1.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin2 == false)
+                {
+                    SkinCooldown.Instance.SkinButton2.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin5 == false)
+                {
+                    SkinCooldown.Instance.SkinButton5.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin6 == false)
+                {
+                    SkinCooldown.Instance.SkinButton6.interactable = false;
+                }
+            }
         }
-        else if (SkinCooldown.Instance.isPurchasedSkin3 == true)
+        if (SkinCooldown.Instance.isPurchasedSkin3 == true)
         {
             SkinCooldown.Instance.SkinText3.SetActive(false);
             SkinCooldown.Instance.SkinButton3.interactable = true;
-            rend.color = new Color32(250, 172, 255, 255);
-            currentSkin = 3;
-            PlayerPrefs.SetInt("CSkin", 3);
-            SkinCooldown.Instance.isPurchasedSkin3 = true;
         }
     }
 
@@ -326,6 +383,11 @@ public class WeightLiftScript : MonoBehaviour
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
+
+        rend.color = new Color32(138, 255, 152, 255);
+        currentSkin = 5;
+        PlayerPrefs.SetInt("CSkin", 5);
+
         if (SkinCooldown.Instance.isPurchasedSkin5 == false && PlayerMoney.Instance.money >= 5)
         {
             PlayerMoney.Instance.minusMoney(5);
@@ -337,15 +399,30 @@ public class WeightLiftScript : MonoBehaviour
             PlayerPrefs.SetInt("CSkin", 5);
             SkinCooldown.Instance.isPurchasedSkin5 = true;
             PlayerPrefs.SetInt("isPurchasedSkin5", SkinCooldown.Instance.isPurchasedSkin5 ? 1 : 0);
+            if (PlayerMoney.Instance.money < 5)
+            {
+                if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                {
+                    SkinCooldown.Instance.SkinButton1.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin2 == false)
+                {
+                    SkinCooldown.Instance.SkinButton2.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin3 == false)
+                {
+                    SkinCooldown.Instance.SkinButton3.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin6 == false)
+                {
+                    SkinCooldown.Instance.SkinButton6.interactable = false;
+                }
+            }
         }
-        else if (SkinCooldown.Instance.isPurchasedSkin5 == true)
+        if (SkinCooldown.Instance.isPurchasedSkin5 == true)
         {
             SkinCooldown.Instance.SkinText5.SetActive(false);
             SkinCooldown.Instance.SkinButton5.interactable = true;
-            rend.color = new Color32(138, 255, 152, 255);
-            currentSkin = 5;
-            PlayerPrefs.SetInt("CSkin", 5);
-            SkinCooldown.Instance.isPurchasedSkin5 = true;
         }
     }
 
@@ -371,6 +448,10 @@ public class WeightLiftScript : MonoBehaviour
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
+        rend.color = new Color32(255, 161, 129, 255);
+        currentSkin = 6;
+        PlayerPrefs.SetInt("CSkin", 6);
+
         if (SkinCooldown.Instance.isPurchasedSkin6 == false && PlayerMoney.Instance.money >= 5)
         {
             PlayerMoney.Instance.minusMoney(5);
@@ -382,15 +463,30 @@ public class WeightLiftScript : MonoBehaviour
             PlayerPrefs.SetInt("CSkin", 6);
             SkinCooldown.Instance.isPurchasedSkin6 = true;
             PlayerPrefs.SetInt("isPurchasedSkin6", SkinCooldown.Instance.isPurchasedSkin6 ? 1 : 0);
+            if (PlayerMoney.Instance.money < 5)
+            {
+                if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                {
+                    SkinCooldown.Instance.SkinButton1.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin2 == false)
+                {
+                    SkinCooldown.Instance.SkinButton2.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin3 == false)
+                {
+                    SkinCooldown.Instance.SkinButton3.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin5 == false)
+                {
+                    SkinCooldown.Instance.SkinButton5.interactable = false;
+                }
+            }
         }
-        else if (SkinCooldown.Instance.isPurchasedSkin6 == true)
+        if (SkinCooldown.Instance.isPurchasedSkin6 == true && currentSkin == 6)
         {
             SkinCooldown.Instance.SkinText6.SetActive(false);
             SkinCooldown.Instance.SkinButton6.interactable = true;
-            rend.color = new Color32(255, 161, 129, 255);
-            currentSkin = 6;
-            PlayerPrefs.SetInt("CSkin", 6);
-            SkinCooldown.Instance.isPurchasedSkin6 = true;
         }
     }
 
