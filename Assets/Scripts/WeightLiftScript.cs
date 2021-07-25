@@ -15,7 +15,7 @@ public class WeightLiftScript : MonoBehaviour
     public GameObject stamina0banner;
     public Canvas canvas;
     public GameObject staminaArrow;
-
+    public Button ShopButton;
 
     private bool idle = true;
     private bool nosto0;
@@ -556,6 +556,15 @@ public class WeightLiftScript : MonoBehaviour
         {
             stamina0banner.SetActive(false);
             staminaArrow.SetActive(false);
+        }
+
+        if (clickCounter == 1 || clickCounter == 0 || StaminaIndicator.instance.currentStamina < 5)
+        {
+            ShopButton.interactable = true;
+        }
+        else
+        {
+            ShopButton.interactable = false;
         }
 
         if (inputTimer >= 0.2f)

@@ -13,6 +13,7 @@ public class Progressbox : MonoBehaviour
 
     [SerializeField] private GameObject effectPrefab;
 
+    public GameObject TapToLiftText;
     public GameObject hahmoLVL1;
     public GameObject hahmoLVL2;
     public GameObject reachEndBanner;
@@ -36,6 +37,14 @@ public class Progressbox : MonoBehaviour
         {
             level = PlayerPrefs.GetInt("level");
             textLevel.text = this.level.ToString();
+            if (level < 1)
+            {
+                TapToLiftText.SetActive(true);
+            }
+            else
+            {
+                TapToLiftText.SetActive(false);
+            }
             if (level >= 3)
             {
                 hahmoLVL2.SetActive(true);
@@ -87,7 +96,7 @@ public class Progressbox : MonoBehaviour
 
     public void CheckIfReachedEnd()
     {
-        if (level >= 5)
+        if (level >= 15)
         {
             changeMindButton.SetActive(true);
         }
@@ -148,8 +157,12 @@ public class Progressbox : MonoBehaviour
         {
             ads.PlayInterstitialAd();
         }
+        if (level == 8)
+        {
+            ads.PlayInterstitialAd();
+        }
         //TÄSSÄ KOHDASSA MÄÄRITELLÄÄN PELIN LOPPU, MUISTA START METHODIIN TEHDÄ IF LAUSE JOSSA CHECKATAAN ONKO >= 5 LEVU NIIN CHANGEMINDBUTTON.SETACTIVE(TRUE);
-        else if (level == 5)
+        else if (level == 15)
         {
             reachEndBanner.SetActive(true);
         }

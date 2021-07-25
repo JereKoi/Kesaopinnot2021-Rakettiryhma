@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class PlayerSession : MonoBehaviour
 {
-    //[SerializeField] GameObject welcomePopup;
-    //[SerializeField] Text welcomePopupSeconds;
     private StaminaIndicator staminaIndicator;
 
     public static PlayerSession Instance { get; private set; }
@@ -16,7 +14,6 @@ public class PlayerSession : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -28,7 +25,6 @@ public class PlayerSession : MonoBehaviour
     {
         staminaIndicator.GetComponent<StaminaIndicator>();
         StaminaIndicator.instance.currentStamina = PlayerPrefs.GetFloat("S", 0);
-        welcomePopupShow();
         string dateQuitString = PlayerPrefs.GetString("dateQuit","");
         if (!dateQuitString.Equals (""))
         {
@@ -41,11 +37,10 @@ public class PlayerSession : MonoBehaviour
                 int seconds = (int)timespan.TotalSeconds;
                 Debug.Log("quit for " + seconds + " seconds");
                 staminaIndicator.currentStamina += seconds;
-                if (seconds>60) //in real game use days (total days)
-                {
-                    //welcomePopupSeconds.text = seconds + " SECONDS";
-                    welcomePopupShow();
-                }
+                //if (seconds>60) //in real game use days (total days)
+                //{
+                //    welcomePopupShow();
+                //}
             }
             PlayerPrefs.SetString("dateQuit", "");
         }
@@ -56,7 +51,7 @@ public class PlayerSession : MonoBehaviour
         DateTime dateQuit = DateTime.Now;
         PlayerPrefs.SetString("dateQuit", dateQuit.ToString());
         PlayerPrefs.SetFloat("S", staminaIndicator.currentStamina);
-        Debug.Log("quit at" + dateQuit.ToString());
+        //Debug.Log("quit at" + dateQuit.ToString());
     }
 
     IEnumerator StaminaCounter()
@@ -67,15 +62,5 @@ public class PlayerSession : MonoBehaviour
             StaminaIndicator.instance.currentStamina++;
             StaminaIndicator.instance.TextIndicator.text = ((int)StaminaIndicator.instance.currentStamina).ToString() + "%";
         }
-    }
-
-    public void welcomePopupShow()
-    {
-        //welcomePopup.SetActive(true);
-    }
-
-    public void welcomepopupHide()
-    {
-        //welcomePopup.SetActive(false);
     }
 }

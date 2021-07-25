@@ -38,20 +38,4 @@ public class SkinCooldown : MonoBehaviour
         Instance = this;
         
     }
-
-    private void Update()
-    {
-        ////if (PlayerMoney.Instance.money < 5 && isPurchasedSkin1 == false)
-        ////{
-        ////    SkinButton1.interactable = false;
-        ////}
-        ////else if (isPurchasedSkin1 == true)
-        ////{
-        ////    SkinButton1.interactable = true;
-        ////}
-        ////else
-        ////{
-        ////    SkinButton1.interactable = true;
-        ////}
-    }
 }

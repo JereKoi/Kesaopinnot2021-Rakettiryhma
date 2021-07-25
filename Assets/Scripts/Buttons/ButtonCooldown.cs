@@ -9,7 +9,7 @@ public class ButtonCooldown : MonoBehaviour
     [SerializeField]
     Button myButton;
     [SerializeField]
-    float cooldownDuration = 60f;
+    float cooldownDuration = 15f;
 
     private AdsManager ads;
 
@@ -41,14 +41,12 @@ public class ButtonCooldown : MonoBehaviour
 
     public void PlayRewardedAd()
     {
-        Debug.Log("Button toimii");
-        if (/*StaminaIndicator.instance.currentStamina <= 50 &&*/ Advertisement.IsReady("Rewarded_Android"))
+        if (Advertisement.IsReady("Rewarded_Android"))
         {
             Advertisement.Show("Rewarded_Android");
         }
         else
         {
-            Debug.Log("rewarded ad is not ready!");
         }
     }
 

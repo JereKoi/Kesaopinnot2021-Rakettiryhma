@@ -51,7 +51,6 @@ public class PlayerMoney : MonoBehaviour
     public void addMoney (int moneyToAdd)
     {
         money += moneyToAdd;
-        Debug.Log("added money");
         moneyText.text = money.ToString() + "$";
         moneyShopText.text = this.money.ToString() + "$";
         PlayerPrefs.SetInt("money", money);
@@ -61,7 +60,6 @@ public class PlayerMoney : MonoBehaviour
     {
         if (money - moneyToMinus < 0)
         {
-            Debug.Log("Ei voi ostaa, ei tarpeeksi rahaa");
             return;            
         }
         else

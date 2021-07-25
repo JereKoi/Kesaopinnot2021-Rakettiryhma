@@ -27,10 +27,6 @@ string gameId = "4191193";
             SoundManager.instance.muted = true;
             Advertisement.Show("Rewarded_Android");
         }
-        else
-        {
-            Debug.Log("rewarded ad is not ready!");
-        }
     }
 
     public void PlayInterstitialAd()
@@ -81,22 +77,19 @@ string gameId = "4191193";
 
     public void OnUnityAdsReady(string placementId)
     {
-        Debug.Log("Ads are ready!");
     }
 
     public void OnUnityAdsDidError(string message)
     {
-        Debug.Log("ERROR" + message);
     }
 
     public void OnUnityAdsDidStart(string placementId)
     {
-        Debug.Log("VIDEO STARTED");
     }
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
-        if (placementId == "Rewarded_Android" && showResult == ShowResult.Finished)
+        if (placementId == "Rewarded_Android"/* && showResult == ShowResult.Finished*/)
         {
             StaminaIndicator.instance.currentStamina = StaminaIndicator.instance.maxStamina;
             StaminaIndicator.instance.currentStamina = 100;
