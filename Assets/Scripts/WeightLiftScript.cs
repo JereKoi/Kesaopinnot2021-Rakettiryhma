@@ -53,7 +53,6 @@ public class WeightLiftScript : MonoBehaviour
             {
                 SkinCooldown.Instance.SkinButton1.interactable = true;
                 SkinCooldown.Instance.SkinText1.SetActive(false);
-                //ColorChangeToOrange();
             }
         }
         if (PlayerPrefs.HasKey("isPurchasedSkin2"))
@@ -63,7 +62,6 @@ public class WeightLiftScript : MonoBehaviour
             {
                 SkinCooldown.Instance.SkinButton2.interactable = true;
                 SkinCooldown.Instance.SkinText2.SetActive(false);
-                //ColorChangeToBlue();
             }
         }
         if (PlayerPrefs.HasKey("isPurchasedSkin3"))
@@ -73,7 +71,6 @@ public class WeightLiftScript : MonoBehaviour
             {
                 SkinCooldown.Instance.SkinButton3.interactable = true;
                 SkinCooldown.Instance.SkinText3.SetActive(false);
-                //ColorChangeToPink();
             }
         }
         if (currentSkin == 4)
@@ -87,7 +84,6 @@ public class WeightLiftScript : MonoBehaviour
             {
                 SkinCooldown.Instance.SkinButton5.interactable = true;
                 SkinCooldown.Instance.SkinText5.SetActive(false);
-                //ColorChangeToGreen();
             }
         }
         if (PlayerPrefs.HasKey("isPurchasedSkin6"))
@@ -97,7 +93,6 @@ public class WeightLiftScript : MonoBehaviour
             {
                 SkinCooldown.Instance.SkinButton6.interactable = true;
                 SkinCooldown.Instance.SkinText6.SetActive(false);
-                //ColorChangeToRed();
             }
         }        
 
@@ -178,9 +173,9 @@ public class WeightLiftScript : MonoBehaviour
         currentSkin = 1;
         PlayerPrefs.SetInt("CSkin", 1);
 
-        if (SkinCooldown.Instance.isPurchasedSkin1 == false && PlayerMoney.Instance.money >= 5)
+        if (SkinCooldown.Instance.isPurchasedSkin1 == false && PlayerMoney.Instance.money >= 10)
         {
-            PlayerMoney.Instance.minusMoney(5);
+            PlayerMoney.Instance.minusMoney(10);
             SkinCooldown.Instance.SkinText1.SetActive(false);
             PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
             PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
@@ -189,7 +184,7 @@ public class WeightLiftScript : MonoBehaviour
             PlayerPrefs.SetInt("CSkin", 1);
             SkinCooldown.Instance.isPurchasedSkin1 = true;
             PlayerPrefs.SetInt("isPurchasedSkin1", SkinCooldown.Instance.isPurchasedSkin1 ? 1 : 0);
-            if (PlayerMoney.Instance.money < 5)
+            if (PlayerMoney.Instance.money < 10)
             {
                 if (SkinCooldown.Instance.isPurchasedSkin2 == false)
                 {
@@ -218,7 +213,7 @@ public class WeightLiftScript : MonoBehaviour
 
     public void ColorChangeOrangeUpdate()
     {
-        if (SkinCooldown.Instance.isPurchasedSkin1 == false && PlayerMoney.Instance.money < 5)
+        if (SkinCooldown.Instance.isPurchasedSkin1 == false && PlayerMoney.Instance.money < 10)
         {
             SkinCooldown.Instance.SkinButton1.interactable = false;
         }
@@ -243,9 +238,9 @@ public class WeightLiftScript : MonoBehaviour
         currentSkin = 2;
         PlayerPrefs.SetInt("CSkin", 2);
 
-        if (SkinCooldown.Instance.isPurchasedSkin2 == false && PlayerMoney.Instance.money >= 5)
+        if (SkinCooldown.Instance.isPurchasedSkin2 == false && PlayerMoney.Instance.money >= 10)
         {
-            PlayerMoney.Instance.minusMoney(5);
+            PlayerMoney.Instance.minusMoney(10);
             SkinCooldown.Instance.SkinText2.SetActive(false);
             PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
             PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
@@ -254,7 +249,7 @@ public class WeightLiftScript : MonoBehaviour
             PlayerPrefs.SetInt("CSkin", 2);
             SkinCooldown.Instance.isPurchasedSkin2 = true;
             PlayerPrefs.SetInt("isPurchasedSkin2", SkinCooldown.Instance.isPurchasedSkin2 ? 1 : 0);
-            if (PlayerMoney.Instance.money < 5)
+            if (PlayerMoney.Instance.money < 10)
             {
                 if (SkinCooldown.Instance.isPurchasedSkin1 == false)
                 {
@@ -283,7 +278,7 @@ public class WeightLiftScript : MonoBehaviour
 
     public void ColorChangeBlueUpdate()
     {
-        if (SkinCooldown.Instance.isPurchasedSkin2 == false && PlayerMoney.Instance.money < 5)
+        if (SkinCooldown.Instance.isPurchasedSkin2 == false && PlayerMoney.Instance.money < 10)
         {
             SkinCooldown.Instance.SkinButton2.interactable = false;
         }
@@ -308,9 +303,9 @@ public class WeightLiftScript : MonoBehaviour
         currentSkin = 3;
         PlayerPrefs.SetInt("CSkin", 3);
 
-        if (SkinCooldown.Instance.isPurchasedSkin3 == false && PlayerMoney.Instance.money >= 5)
+        if (SkinCooldown.Instance.isPurchasedSkin3 == false && PlayerMoney.Instance.money >= 10)
         {
-            PlayerMoney.Instance.minusMoney(5);
+            PlayerMoney.Instance.minusMoney(10);
             SkinCooldown.Instance.SkinText3.SetActive(false);
             PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
             PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
@@ -319,7 +314,7 @@ public class WeightLiftScript : MonoBehaviour
             PlayerPrefs.SetInt("CSkin", 3);
             SkinCooldown.Instance.isPurchasedSkin3 = true;
             PlayerPrefs.SetInt("isPurchasedSkin3", SkinCooldown.Instance.isPurchasedSkin3 ? 1 : 0);
-            if (PlayerMoney.Instance.money < 5)
+            if (PlayerMoney.Instance.money < 10)
             {
                 if (SkinCooldown.Instance.isPurchasedSkin1 == false)
                 {
@@ -348,7 +343,7 @@ public class WeightLiftScript : MonoBehaviour
 
     public void ColorChangeToPinkUpdate()
     {
-        if (SkinCooldown.Instance.isPurchasedSkin3 == false && PlayerMoney.Instance.money < 5)
+        if (SkinCooldown.Instance.isPurchasedSkin3 == false && PlayerMoney.Instance.money < 10)
         {
             SkinCooldown.Instance.SkinButton3.interactable = false;
         }
@@ -388,9 +383,9 @@ public class WeightLiftScript : MonoBehaviour
         currentSkin = 5;
         PlayerPrefs.SetInt("CSkin", 5);
 
-        if (SkinCooldown.Instance.isPurchasedSkin5 == false && PlayerMoney.Instance.money >= 5)
+        if (SkinCooldown.Instance.isPurchasedSkin5 == false && PlayerMoney.Instance.money >= 10)
         {
-            PlayerMoney.Instance.minusMoney(5);
+            PlayerMoney.Instance.minusMoney(10);
             SkinCooldown.Instance.SkinText5.SetActive(false);
             PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
             PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
@@ -399,7 +394,7 @@ public class WeightLiftScript : MonoBehaviour
             PlayerPrefs.SetInt("CSkin", 5);
             SkinCooldown.Instance.isPurchasedSkin5 = true;
             PlayerPrefs.SetInt("isPurchasedSkin5", SkinCooldown.Instance.isPurchasedSkin5 ? 1 : 0);
-            if (PlayerMoney.Instance.money < 5)
+            if (PlayerMoney.Instance.money < 10)
             {
                 if (SkinCooldown.Instance.isPurchasedSkin1 == false)
                 {
@@ -428,7 +423,7 @@ public class WeightLiftScript : MonoBehaviour
 
     public void ColorChangeToGreenUpdate()
     {
-        if (SkinCooldown.Instance.isPurchasedSkin5 == false && PlayerMoney.Instance.money < 5)
+        if (SkinCooldown.Instance.isPurchasedSkin5 == false && PlayerMoney.Instance.money < 10)
         {
             SkinCooldown.Instance.SkinButton5.interactable = false;
         }
@@ -452,9 +447,9 @@ public class WeightLiftScript : MonoBehaviour
         currentSkin = 6;
         PlayerPrefs.SetInt("CSkin", 6);
 
-        if (SkinCooldown.Instance.isPurchasedSkin6 == false && PlayerMoney.Instance.money >= 5)
+        if (SkinCooldown.Instance.isPurchasedSkin6 == false && PlayerMoney.Instance.money >= 10)
         {
-            PlayerMoney.Instance.minusMoney(5);
+            PlayerMoney.Instance.minusMoney(10);
             SkinCooldown.Instance.SkinText6.SetActive(false);
             PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
             PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
@@ -463,7 +458,7 @@ public class WeightLiftScript : MonoBehaviour
             PlayerPrefs.SetInt("CSkin", 6);
             SkinCooldown.Instance.isPurchasedSkin6 = true;
             PlayerPrefs.SetInt("isPurchasedSkin6", SkinCooldown.Instance.isPurchasedSkin6 ? 1 : 0);
-            if (PlayerMoney.Instance.money < 5)
+            if (PlayerMoney.Instance.money < 10)
             {
                 if (SkinCooldown.Instance.isPurchasedSkin1 == false)
                 {
@@ -492,7 +487,7 @@ public class WeightLiftScript : MonoBehaviour
 
     public void ColorChangeToRedUpdate()
     {
-        if (SkinCooldown.Instance.isPurchasedSkin6 == false && PlayerMoney.Instance.money < 5)
+        if (SkinCooldown.Instance.isPurchasedSkin6 == false && PlayerMoney.Instance.money < 10)
         {
             SkinCooldown.Instance.SkinButton6.interactable = false;
         }
