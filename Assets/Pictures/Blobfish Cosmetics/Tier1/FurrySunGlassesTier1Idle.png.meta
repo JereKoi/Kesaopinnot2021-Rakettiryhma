@@ -1,0 +1,464 @@
+fileFormatVersion: 2
+guid: 50cb17fe99dc8fe489737eb422c9b773
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7615098689501492977
+    second: FurrySunGlassesTier1Idle_0
+  - first:
+      213: 6807897765501866344
+    second: FurrySunGlassesTier1Idle_1
+  - first:
+      213: -8256940819060519242
+    second: FurrySunGlassesTier1Idle_2
+  - first:
+      213: 7446998804533415023
+    second: FurrySunGlassesTier1Idle_3
+  - first:
+      213: 4209433661169715566
+    second: FurrySunGlassesTier1Idle_4
+  - first:
+      213: 2964220659056661082
+    second: FurrySunGlassesTier1Idle_5
+  - first:
+      213: -5319762309365878403
+    second: FurrySunGlassesTier1Idle_6
+  - first:
+      213: -4933990899532653683
+    second: FurrySunGlassesTier1Idle_7
+  - first:
+      213: 3871690177294123396
+    second: FurrySunGlassesTier1Idle_8
+  - first:
+      213: -7341329064124945525
+    second: FurrySunGlassesTier1Idle_9
+  - first:
+      213: -2494170448247512822
+    second: FurrySunGlassesTier1Idle_10
+  - first:
+      213: -3529127042465635010
+    second: FurrySunGlassesTier1Idle_11
+  - first:
+      213: 3848506058609903384
+    second: FurrySunGlassesTier1Idle_12
+  - first:
+      213: -738062784709390781
+    second: FurrySunGlassesTier1Idle_13
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_0
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 41
+        width: 332
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0988b2a61cb15690800000000000000
+      internalID: -7615098689501492977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_1
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 41
+        width: 331
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8611aeba2f28a7e50800000000000000
+      internalID: 6807897765501866344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_2
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 41
+        width: 332
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be897c7214796d80800000000000000
+      internalID: -8256940819060519242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_3
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 41
+        width: 331
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6c09f2f4fd095760800000000000000
+      internalID: 7446998804533415023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_4
+      rect:
+        serializedVersion: 2
+        x: 2094
+        y: 41
+        width: 331
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69c79fbc99ea6a30800000000000000
+      internalID: 4209433661169715566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_5
+      rect:
+        serializedVersion: 2
+        x: 2605
+        y: 41
+        width: 332
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5252fafbf6032920800000000000000
+      internalID: 2964220659056661082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_6
+      rect:
+        serializedVersion: 2
+        x: 3118
+        y: 41
+        width: 330
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d713cbc6d586c26b0800000000000000
+      internalID: -5319762309365878403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_7
+      rect:
+        serializedVersion: 2
+        x: 3629
+        y: 41
+        width: 332
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8b98541b61f68bb0800000000000000
+      internalID: -4933990899532653683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_8
+      rect:
+        serializedVersion: 2
+        x: 4141
+        y: 41
+        width: 331
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4814cf104b10bb530800000000000000
+      internalID: 3871690177294123396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_9
+      rect:
+        serializedVersion: 2
+        x: 4653
+        y: 41
+        width: 332
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8be499bc1c5e1a90800000000000000
+      internalID: -7341329064124945525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_10
+      rect:
+        serializedVersion: 2
+        x: 5165
+        y: 41
+        width: 331
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a012ee6213de26dd0800000000000000
+      internalID: -2494170448247512822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_11
+      rect:
+        serializedVersion: 2
+        x: 5678
+        y: 41
+        width: 331
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e356c9a27a5060fc0800000000000000
+      internalID: -3529127042465635010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_12
+      rect:
+        serializedVersion: 2
+        x: 6189
+        y: 41
+        width: 332
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817c16bbed3a86530800000000000000
+      internalID: 3848506058609903384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FurrySunGlassesTier1Idle_13
+      rect:
+        serializedVersion: 2
+        x: 6702
+        y: 41
+        width: 330
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e0677cecfd1c5f0800000000000000
+      internalID: -738062784709390781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,464 @@
+fileFormatVersion: 2
+guid: 849d20c59c5e02546af6c5ed9f95c60f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4767890639015283327
+    second: SunGlassesTier2painon-nosto2_4
+  - first:
+      213: 6576821172651225289
+    second: SunGlassesTier2painon-nosto2_5
+  - first:
+      213: 7307952125944566639
+    second: SunGlassesTier2painon-nosto2_6
+  - first:
+      213: 7994415944901758567
+    second: SunGlassesTier2painon-nosto2_8
+  - first:
+      213: 4053131411810673313
+    second: SunGlassesTier2painon-nosto2_10
+  - first:
+      213: -1849719360456357118
+    second: SunGlassesTier2painon-nosto2_12
+  - first:
+      213: 2761313562796530483
+    second: SunGlassesTier2painon-nosto2_13
+  - first:
+      213: 3542629024836417343
+    second: SunGlassesTier2painon-nosto2_14
+  - first:
+      213: 2437604883519220523
+    second: SunGlassesTier2painon-nosto2_15
+  - first:
+      213: 8149290250189945774
+    second: SunGlassesTier2painon-nosto2_16
+  - first:
+      213: -4813217230394221960
+    second: SunGlassesTier2painon-nosto2_17
+  - first:
+      213: -3144606967960821701
+    second: SunGlassesTier2painon-nosto2_18
+  - first:
+      213: -6589316320605308353
+    second: SunGlassesTier2painon-nosto2_19
+  - first:
+      213: -5421236450788225550
+    second: SunGlassesTier2painon-nosto2_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_4
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 41
+        width: 352
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1857595a9bc05ddb0800000000000000
+      internalID: -4767890639015283327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_5
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 41
+        width: 350
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0f423d200954b50800000000000000
+      internalID: 6576821172651225289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_6
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 41
+        width: 358
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f639c764dbf0b6560800000000000000
+      internalID: 7307952125944566639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_8
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 41
+        width: 360
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e869612fed1fe60800000000000000
+      internalID: 7994415944901758567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_10
+      rect:
+        serializedVersion: 2
+        x: 2083
+        y: 41
+        width: 358
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2e3fc6b8d9f3830800000000000000
+      internalID: 4053131411810673313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_12
+      rect:
+        serializedVersion: 2
+        x: 2595
+        y: 41
+        width: 356
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b06d9ba0a7456e0800000000000000
+      internalID: -1849719360456357118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_13
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 41
+        width: 351
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b94f72e08225620800000000000000
+      internalID: 2761313562796530483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_14
+      rect:
+        serializedVersion: 2
+        x: 3622
+        y: 41
+        width: 351
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37fc541452f92130800000000000000
+      internalID: 3542629024836417343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_15
+      rect:
+        serializedVersion: 2
+        x: 4133
+        y: 41
+        width: 351
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2babe00abc14d120800000000000000
+      internalID: 2437604883519220523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_16
+      rect:
+        serializedVersion: 2
+        x: 4644
+        y: 41
+        width: 351
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab30264e48181170800000000000000
+      internalID: 8149290250189945774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_17
+      rect:
+        serializedVersion: 2
+        x: 5155
+        y: 41
+        width: 351
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a10933e64043db0800000000000000
+      internalID: -4813217230394221960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_18
+      rect:
+        serializedVersion: 2
+        x: 5666
+        y: 41
+        width: 351
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b302a7c9f9c1c54d0800000000000000
+      internalID: -3144606967960821701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_19
+      rect:
+        serializedVersion: 2
+        x: 6177
+        y: 41
+        width: 353
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3af2a5d7bb0e84a0800000000000000
+      internalID: -6589316320605308353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunGlassesTier2painon-nosto2_20
+      rect:
+        serializedVersion: 2
+        x: 6689
+        y: 35
+        width: 376
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd4e53cb26e3c4b0800000000000000
+      internalID: -5421236450788225550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

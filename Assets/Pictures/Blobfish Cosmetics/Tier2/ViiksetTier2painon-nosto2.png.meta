@@ -1,0 +1,464 @@
+fileFormatVersion: 2
+guid: 2dfd7fc2511a52745b857a6f7a69e4f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8531260553260530149
+    second: ViiksetTier2painon-nosto2_4
+  - first:
+      213: 880433840544730456
+    second: ViiksetTier2painon-nosto2_5
+  - first:
+      213: -6523051969730093833
+    second: ViiksetTier2painon-nosto2_6
+  - first:
+      213: 2310927314701294295
+    second: ViiksetTier2painon-nosto2_8
+  - first:
+      213: -7644758735648176296
+    second: ViiksetTier2painon-nosto2_10
+  - first:
+      213: 5858331727215699060
+    second: ViiksetTier2painon-nosto2_12
+  - first:
+      213: 6613204918982460562
+    second: ViiksetTier2painon-nosto2_13
+  - first:
+      213: -85455153835235982
+    second: ViiksetTier2painon-nosto2_14
+  - first:
+      213: -7945808872457237527
+    second: ViiksetTier2painon-nosto2_15
+  - first:
+      213: 5180924161664135019
+    second: ViiksetTier2painon-nosto2_16
+  - first:
+      213: -7942832282371449258
+    second: ViiksetTier2painon-nosto2_17
+  - first:
+      213: 7714213311042630362
+    second: ViiksetTier2painon-nosto2_18
+  - first:
+      213: -2041323990173579759
+    second: ViiksetTier2painon-nosto2_19
+  - first:
+      213: 5615217909002160458
+    second: ViiksetTier2painon-nosto2_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_4
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 41
+        width: 352
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e9756bc540256670800000000000000
+      internalID: 8531260553260530149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_5
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 41
+        width: 350
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85dc6e9c9ede73c00800000000000000
+      internalID: 880433840544730456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_6
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 41
+        width: 358
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc53dc4bc67975a0800000000000000
+      internalID: -6523051969730093833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_8
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 41
+        width: 360
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da948e1620121020800000000000000
+      internalID: 2310927314701294295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_10
+      rect:
+        serializedVersion: 2
+        x: 2083
+        y: 41
+        width: 358
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85740200f6c58e590800000000000000
+      internalID: -7644758735648176296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_12
+      rect:
+        serializedVersion: 2
+        x: 2595
+        y: 41
+        width: 356
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 474a719caa9fc4150800000000000000
+      internalID: 5858331727215699060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_13
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 41
+        width: 351
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294c0d6e5d2d6cb50800000000000000
+      internalID: 6613204918982460562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_14
+      rect:
+        serializedVersion: 2
+        x: 3622
+        y: 41
+        width: 351
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275ac678df660def0800000000000000
+      internalID: -85455153835235982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_15
+      rect:
+        serializedVersion: 2
+        x: 4133
+        y: 41
+        width: 351
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eb0a00ede0dab190800000000000000
+      internalID: -7945808872457237527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_16
+      rect:
+        serializedVersion: 2
+        x: 4644
+        y: 41
+        width: 351
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6faa38431756e740800000000000000
+      internalID: 5180924161664135019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_17
+      rect:
+        serializedVersion: 2
+        x: 5155
+        y: 41
+        width: 351
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e9eb24f1465c190800000000000000
+      internalID: -7942832282371449258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_18
+      rect:
+        serializedVersion: 2
+        x: 5666
+        y: 41
+        width: 351
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad2394e72246e0b60800000000000000
+      internalID: 7714213311042630362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_19
+      rect:
+        serializedVersion: 2
+        x: 6177
+        y: 41
+        width: 353
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116883675a2cba3e0800000000000000
+      internalID: -2041323990173579759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ViiksetTier2painon-nosto2_20
+      rect:
+        serializedVersion: 2
+        x: 6689
+        y: 35
+        width: 376
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a494c7200f24ded40800000000000000
+      internalID: 5615217909002160458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

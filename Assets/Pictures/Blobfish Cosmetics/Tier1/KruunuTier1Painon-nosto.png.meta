@@ -1,0 +1,464 @@
+fileFormatVersion: 2
+guid: 958ebc1030826b04994bf8722cb38563
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9102485493554206160
+    second: KruunuTier1Painon-nosto_0
+  - first:
+      213: 2531928342856423311
+    second: KruunuTier1Painon-nosto_1
+  - first:
+      213: -4565900747424944675
+    second: KruunuTier1Painon-nosto_2
+  - first:
+      213: 4945864576487899669
+    second: KruunuTier1Painon-nosto_3
+  - first:
+      213: 8757285817566430673
+    second: KruunuTier1Painon-nosto_4
+  - first:
+      213: 7154100758793379366
+    second: KruunuTier1Painon-nosto_5
+  - first:
+      213: 1093802260713016122
+    second: KruunuTier1Painon-nosto_6
+  - first:
+      213: 6562209489439391538
+    second: KruunuTier1Painon-nosto_7
+  - first:
+      213: 8377567673484814488
+    second: KruunuTier1Painon-nosto_8
+  - first:
+      213: -6081796647754385622
+    second: KruunuTier1Painon-nosto_9
+  - first:
+      213: -7999012595390968683
+    second: KruunuTier1Painon-nosto_10
+  - first:
+      213: 7163707245154706691
+    second: KruunuTier1Painon-nosto_11
+  - first:
+      213: 2171806714105270334
+    second: KruunuTier1Painon-nosto_12
+  - first:
+      213: -6070405827172246932
+    second: KruunuTier1Painon-nosto_13
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_0
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 41
+        width: 332
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a2e8faba97da180800000000000000
+      internalID: -9102485493554206160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_1
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 41
+        width: 331
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8753b0c967332320800000000000000
+      internalID: 2531928342856423311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_2
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 41
+        width: 332
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dddab0e1679a2a0c0800000000000000
+      internalID: -4565900747424944675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_3
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 41
+        width: 331
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512cfb4c0ad33a440800000000000000
+      internalID: 4945864576487899669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_4
+      rect:
+        serializedVersion: 2
+        x: 2094
+        y: 41
+        width: 331
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d50d909d01288970800000000000000
+      internalID: 8757285817566430673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_5
+      rect:
+        serializedVersion: 2
+        x: 2605
+        y: 41
+        width: 331
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e5b3f6cb8784360800000000000000
+      internalID: 7154100758793379366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_6
+      rect:
+        serializedVersion: 2
+        x: 3118
+        y: 41
+        width: 330
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b81546c57fd2f00800000000000000
+      internalID: 1093802260713016122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_7
+      rect:
+        serializedVersion: 2
+        x: 3629
+        y: 41
+        width: 330
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f7bb733c6a11b50800000000000000
+      internalID: 6562209489439391538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_8
+      rect:
+        serializedVersion: 2
+        x: 4141
+        y: 41
+        width: 331
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898abdba969134470800000000000000
+      internalID: 8377567673484814488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_9
+      rect:
+        serializedVersion: 2
+        x: 4653
+        y: 41
+        width: 331
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27307eeb2e199ba0800000000000000
+      internalID: -6081796647754385622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_10
+      rect:
+        serializedVersion: 2
+        x: 5165
+        y: 41
+        width: 331
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c88d1dc6ccdf090800000000000000
+      internalID: -7999012595390968683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_11
+      rect:
+        serializedVersion: 2
+        x: 5678
+        y: 41
+        width: 324
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305a656d8c99a6360800000000000000
+      internalID: 7163707245154706691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_12
+      rect:
+        serializedVersion: 2
+        x: 6189
+        y: 41
+        width: 326
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e309d0323bec32e10800000000000000
+      internalID: 2171806714105270334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KruunuTier1Painon-nosto_13
+      rect:
+        serializedVersion: 2
+        x: 6702
+        y: 41
+        width: 344
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6adfe4001691cba0800000000000000
+      internalID: -6070405827172246932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
