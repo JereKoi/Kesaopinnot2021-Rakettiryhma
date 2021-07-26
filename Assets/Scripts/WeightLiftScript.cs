@@ -17,6 +17,36 @@ public class WeightLiftScript : MonoBehaviour
     public GameObject staminaArrow;
     public Button ShopButton;
 
+    //Cosmetics
+    public GameObject FurrySunglassesT1;
+    public GameObject KruunuT1;
+    public GameObject LippisT1;
+    public GameObject TreeniMyssyT1;
+    public GameObject ViiksetT1;
+    public GameObject FurrySunglassesT2;
+    public GameObject KruunuT2;
+    public GameObject LippisT2;
+    public GameObject SunglassesT2;
+    public GameObject TreeniMyssyT2;
+    public GameObject ViiksetT2;
+
+    //ShopText
+    public GameObject FurrySunglassesShopText;
+    public GameObject KruunuShopText;
+    public GameObject SunglassesText;
+    public GameObject TreeniMyssyText;
+    public GameObject ViiksetText;
+    public GameObject LippisShopText;
+
+    //Cosmetics bools
+    public bool isPurhcasedFurrySunglasses;
+    public bool isPurchasedKruunu;
+    public bool isPurchasedLippis;
+    public bool isPurchasedSunglasses;
+    public bool isPurchasedTreeniMyssy;
+    public bool isPurchasedViikset;
+
+    //Nosto funktion bools
     private bool idle = true;
     private bool nosto0;
     private bool nosto1;
@@ -212,6 +242,13 @@ public class WeightLiftScript : MonoBehaviour
                 if (BackgroundSave.instance.isPurchasedBackground3 == false)
                 {
                     BackgroundSave.instance.isPurchasedBackground3 = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 30)
+            {
+                if ()
+                {
+
                 }
             }
         }
