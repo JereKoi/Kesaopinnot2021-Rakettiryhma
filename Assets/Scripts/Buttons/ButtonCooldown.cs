@@ -9,14 +9,14 @@ public class ButtonCooldown : MonoBehaviour
     [SerializeField]
     Button myButton;
     [SerializeField]
-    float cooldownDuration = 15f;
+    float cooldownDuration = 10f;
 
     private AdsManager ads;
 
 
     private void Start()
     {
-        if (StaminaIndicator.instance.currentStamina < 10)
+        if (StaminaIndicator.instance.currentStamina < 5)
         {
             myButton.interactable = true;
         }
@@ -47,6 +47,7 @@ public class ButtonCooldown : MonoBehaviour
         }
         else
         {
+            return;
         }
     }
 

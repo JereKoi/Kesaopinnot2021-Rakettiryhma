@@ -203,6 +203,17 @@ public class WeightLiftScript : MonoBehaviour
                     SkinCooldown.Instance.SkinButton6.interactable = false;
                 }
             }
+            if (PlayerMoney.Instance.money < 20)
+            {
+                if (BackgroundSave.instance.isPurchasedBackground2 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground2 = false;
+                }
+                if (BackgroundSave.instance.isPurchasedBackground3 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground3 = false;
+                }
+            }
         }
         if (SkinCooldown.Instance.isPurchasedSkin1 == true)
         {

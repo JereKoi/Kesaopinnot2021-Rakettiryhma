@@ -12,6 +12,11 @@ public class BackgroundSave : MonoBehaviour
     public GameObject BackgroundText2;
     public Button BackgroundButton2;
     public Button BackgroundButton3;
+    public Button BackSkinButton1;
+    public Button BackSkinButton2;
+    public Button BackSkinButton3;
+    public Button BackSkinButton4;
+    public Button BackSkinButton5;
 
 
     public bool isPurchasedBackground2;
@@ -116,6 +121,32 @@ public class BackgroundSave : MonoBehaviour
                     BackgroundButton2.interactable = false;
                 }
             }
+            if (PlayerMoney.Instance.money < 10)
+            {
+                if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                {
+                    if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton1.interactable = false;
+                    }
+                    if (SkinCooldown.Instance.isPurchasedSkin2 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton2.interactable = false;
+                    }
+                    if (SkinCooldown.Instance.isPurchasedSkin3 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton3.interactable = false;
+                    }
+                    if (SkinCooldown.Instance.isPurchasedSkin5 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton5.interactable = false;
+                    }
+                    if (SkinCooldown.Instance.isPurchasedSkin6 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton6.interactable = false;
+                    }
+                }
+            }
         }
         if (isPurchasedBackground2 == true && currentBackground == 2)
         {
@@ -149,6 +180,32 @@ public class BackgroundSave : MonoBehaviour
                 if (isPurchasedBackground3 == false)
                 {
                     BackgroundButton3.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 10)
+            {
+                if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                {
+                    if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton1.interactable = false;
+                    }
+                    if (SkinCooldown.Instance.isPurchasedSkin2 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton2.interactable = false;
+                    }
+                    if (SkinCooldown.Instance.isPurchasedSkin3 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton3.interactable = false;
+                    }
+                    if (SkinCooldown.Instance.isPurchasedSkin5 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton5.interactable = false;
+                    }
+                    if (SkinCooldown.Instance.isPurchasedSkin6 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton6.interactable = false;
+                    }
                 }
             }
         }
