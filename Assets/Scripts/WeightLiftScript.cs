@@ -16,6 +16,7 @@ public class WeightLiftScript : MonoBehaviour
     public Canvas canvas;
     public GameObject staminaArrow;
     public Button ShopButton;
+    public Button ShopExitButton;
 
     //Cosmetics
     public GameObject FurrySunglassesT1;
@@ -39,12 +40,20 @@ public class WeightLiftScript : MonoBehaviour
     public GameObject LippisShopText;
 
     //Cosmetics bools
-    public bool isPurhcasedFurrySunglasses;
+    public bool isPurchasedFurrySunglasses;
     public bool isPurchasedKruunu;
     public bool isPurchasedLippis;
     public bool isPurchasedSunglasses;
     public bool isPurchasedTreeniMyssy;
     public bool isPurchasedViikset;
+
+    //Cosmetics buttons
+    public Button FurrySunglassesButton;
+    public Button KruunuButton;
+    public Button SunglassesButton;
+    public Button TreeniMyssyButton;
+    public Button ViiksetButton;
+    public Button LippisButton;
 
     //Nosto funktion bools
     private bool idle = true;
@@ -75,6 +84,17 @@ public class WeightLiftScript : MonoBehaviour
     private void Start()
     {
         instance = this;
+
+        if (PlayerPrefs.HasKey("isPurchasedFurrySunglasses"))
+        {
+            isPurchasedFurrySunglasses = PlayerPrefs.GetInt("isPurchasedFurrySunglasses") != 0;
+            if (isPurchasedFurrySunglasses == true)
+            {
+                FurrySunglassesButton.interactable = true;
+                FurrySunglassesShopText.SetActive(false);
+                CheckOnStartIfPlayerHasFurrySunglassesCosmeticOn();
+            }
+        }
 
         if (PlayerPrefs.HasKey("isPurchasedSkin1"))
         {
@@ -185,6 +205,7 @@ public class WeightLiftScript : MonoBehaviour
         ColorChangeToPinkUpdate();
         ColorChangeToGreenUpdate();
         ColorChangeToRedUpdate();
+        CosmeticUpdate();
     }
 
     //tassa vaihdetaan blobejen vareja kaupassa.
@@ -246,10 +267,30 @@ public class WeightLiftScript : MonoBehaviour
             }
             if (PlayerMoney.Instance.money < 30)
             {
-                //if ()
-                //{
-
-                //}
+                if (isPurchasedFurrySunglasses == false)
+                {
+                    FurrySunglassesButton.interactable = false;
+                }
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
+                }
+                if (isPurchasedLippis == false)
+                {
+                    LippisButton.interactable = false;
+                }
+                if (isPurchasedSunglasses == false)
+                {
+                    SunglassesButton.interactable = false;
+                }
+                if (isPurchasedTreeniMyssy == false)
+                {
+                    TreeniMyssyButton.interactable = false;
+                }
+                if (isPurchasedViikset == false)
+                {
+                    ViiksetButton.interactable = false;
+                }
             }
         }
         if (SkinCooldown.Instance.isPurchasedSkin1 == true)
@@ -316,6 +357,44 @@ public class WeightLiftScript : MonoBehaviour
                     SkinCooldown.Instance.SkinButton6.interactable = false;
                 }
             }
+            if (PlayerMoney.Instance.money < 30)
+            {
+                if (isPurchasedFurrySunglasses == false)
+                {
+                    FurrySunglassesButton.interactable = false;
+                }
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
+                }
+                if (isPurchasedLippis == false)
+                {
+                    LippisButton.interactable = false;
+                }
+                if (isPurchasedSunglasses == false)
+                {
+                    SunglassesButton.interactable = false;
+                }
+                if (isPurchasedTreeniMyssy == false)
+                {
+                    TreeniMyssyButton.interactable = false;
+                }
+                if (isPurchasedViikset == false)
+                {
+                    ViiksetButton.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 20)
+            {
+                if (BackgroundSave.instance.isPurchasedBackground2 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground2 = false;
+                }
+                if (BackgroundSave.instance.isPurchasedBackground3 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground3 = false;
+                }
+            }
         }
         if (SkinCooldown.Instance.isPurchasedSkin2 == true)
         {
@@ -379,6 +458,44 @@ public class WeightLiftScript : MonoBehaviour
                 if (SkinCooldown.Instance.isPurchasedSkin6 == false)
                 {
                     SkinCooldown.Instance.SkinButton6.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 30)
+            {
+                if (isPurchasedFurrySunglasses == false)
+                {
+                    FurrySunglassesButton.interactable = false;
+                }
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
+                }
+                if (isPurchasedLippis == false)
+                {
+                    LippisButton.interactable = false;
+                }
+                if (isPurchasedSunglasses == false)
+                {
+                    SunglassesButton.interactable = false;
+                }
+                if (isPurchasedTreeniMyssy == false)
+                {
+                    TreeniMyssyButton.interactable = false;
+                }
+                if (isPurchasedViikset == false)
+                {
+                    ViiksetButton.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 20)
+            {
+                if (BackgroundSave.instance.isPurchasedBackground2 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground2 = false;
+                }
+                if (BackgroundSave.instance.isPurchasedBackground3 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground3 = false;
                 }
             }
         }
@@ -461,6 +578,44 @@ public class WeightLiftScript : MonoBehaviour
                     SkinCooldown.Instance.SkinButton6.interactable = false;
                 }
             }
+            if (PlayerMoney.Instance.money < 30)
+            {
+                if (isPurchasedFurrySunglasses == false)
+                {
+                    FurrySunglassesButton.interactable = false;
+                }
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
+                }
+                if (isPurchasedLippis == false)
+                {
+                    LippisButton.interactable = false;
+                }
+                if (isPurchasedSunglasses == false)
+                {
+                    SunglassesButton.interactable = false;
+                }
+                if (isPurchasedTreeniMyssy == false)
+                {
+                    TreeniMyssyButton.interactable = false;
+                }
+                if (isPurchasedViikset == false)
+                {
+                    ViiksetButton.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 20)
+            {
+                if (BackgroundSave.instance.isPurchasedBackground2 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground2 = false;
+                }
+                if (BackgroundSave.instance.isPurchasedBackground3 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground3 = false;
+                }
+            }
         }
         if (SkinCooldown.Instance.isPurchasedSkin5 == true)
         {
@@ -525,6 +680,44 @@ public class WeightLiftScript : MonoBehaviour
                     SkinCooldown.Instance.SkinButton5.interactable = false;
                 }
             }
+            if (PlayerMoney.Instance.money < 30)
+            {
+                if (isPurchasedFurrySunglasses == false)
+                {
+                    FurrySunglassesButton.interactable = false;
+                }
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
+                }
+                if (isPurchasedLippis == false)
+                {
+                    LippisButton.interactable = false;
+                }
+                if (isPurchasedSunglasses == false)
+                {
+                    SunglassesButton.interactable = false;
+                }
+                if (isPurchasedTreeniMyssy == false)
+                {
+                    TreeniMyssyButton.interactable = false;
+                }
+                if (isPurchasedViikset == false)
+                {
+                    ViiksetButton.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 20)
+            {
+                if (BackgroundSave.instance.isPurchasedBackground2 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground2 = false;
+                }
+                if (BackgroundSave.instance.isPurchasedBackground3 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground3 = false;
+                }
+            }
         }
         if (SkinCooldown.Instance.isPurchasedSkin6 == true && currentSkin == 6)
         {
@@ -542,6 +735,187 @@ public class WeightLiftScript : MonoBehaviour
         else
         {
             SkinCooldown.Instance.SkinButton6.interactable = true;
+        }
+    }
+
+    //Tässä katsotaan Start metodissa onko pelaajalla päällään cosmetics
+    public void CheckOnStartIfPlayerHasFurrySunglassesCosmeticOn()
+    {
+        if (currentSkin == 7)
+        {
+            if (progressBox.level < 3)
+            {
+                FurrySunglassesT1.SetActive(true);
+            }
+            else
+            {
+                FurrySunglassesT2.SetActive(true);
+            }
+        }
+    }
+
+    //FurrySunglasses cosmetic metodi
+    public void FurrySunglassesCosmetic()
+    {
+        //if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3 || progressBox.hahmoLVL1.activeSelf == true)
+        //{
+
+        //}
+        //else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 || progressBox.hahmoLVL2.activeSelf == true)
+        //{
+
+        //}
+        currentSkin = 7;
+        PlayerPrefs.SetInt("CSkin", 7);
+
+        if (isPurchasedFurrySunglasses == false && PlayerMoney.Instance.money >= 30)
+        {
+            PlayerMoney.Instance.minusMoney(30);
+            FurrySunglassesShopText.SetActive(false);
+            PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
+            PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
+
+            currentSkin = 7;
+            PlayerPrefs.SetInt("CSkin", 7);
+            isPurchasedFurrySunglasses = true;
+            PlayerPrefs.SetInt("isPurchasedFurrySunglasses", isPurchasedFurrySunglasses ? 1 : 0);
+            if (PlayerMoney.Instance.money < 10)
+            {
+                if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                {
+                    SkinCooldown.Instance.SkinButton1.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin2 == false)
+                {
+                    SkinCooldown.Instance.SkinButton2.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin3 == false)
+                {
+                    SkinCooldown.Instance.SkinButton3.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin5 == false)
+                {
+                    SkinCooldown.Instance.SkinButton5.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 30)
+            {
+                if (isPurchasedFurrySunglasses == false)
+                {
+                    FurrySunglassesButton.interactable = false;
+                }
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
+                }
+                if (isPurchasedLippis == false)
+                {
+                    LippisButton.interactable = false;
+                }
+                if (isPurchasedSunglasses == false)
+                {
+                    SunglassesButton.interactable = false;
+                }
+                if (isPurchasedTreeniMyssy == false)
+                {
+                    TreeniMyssyButton.interactable = false;
+                }
+                if (isPurchasedViikset == false)
+                {
+                    ViiksetButton.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 20)
+            {
+                if (BackgroundSave.instance.isPurchasedBackground2 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground2 = false;
+                }
+                if (BackgroundSave.instance.isPurchasedBackground3 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground3 = false;
+                }
+            }
+        }
+        if (SkinCooldown.Instance.isPurchasedSkin6 == true && currentSkin == 6)
+        {
+            SkinCooldown.Instance.SkinText6.SetActive(false);
+            SkinCooldown.Instance.SkinButton6.interactable = true;
+        }
+    }
+
+
+    //Tässä katsotaan onko cosmetics päällä kun shopin laittaa kiinni
+    public void CheckOnShopExistIfPlayerHasCurrentSkin()
+    {
+        if (currentSkin == 7)
+        {
+            if (progressBox.level < 3)
+            {
+                FurrySunglassesT1.SetActive(true);
+            }
+            else
+            {
+                FurrySunglassesT2.SetActive(true);
+            }
+        }
+    }
+
+    //Tässä käydään Updatessa läpi että onko pelaajalla rahaa ostaa cosmetics
+    public void CosmeticUpdate()
+    {
+        if (isPurchasedFurrySunglasses == false && PlayerMoney.Instance.money < 30)
+        {
+            FurrySunglassesButton.interactable = false;
+        }
+        else
+        {
+            FurrySunglassesButton.interactable = true;
+        }
+
+        if (isPurchasedKruunu == false && PlayerMoney.Instance.money < 100)
+        {
+            KruunuButton.interactable = false;
+        }
+        else
+        {
+            KruunuButton.interactable = true;
+        }
+
+        if (isPurchasedSunglasses == false && PlayerMoney.Instance.money < 30)
+        {
+            SunglassesButton.interactable = false;
+        }
+        else
+        {
+            SunglassesButton.interactable = true;
+        }
+
+        if (isPurchasedTreeniMyssy == false && PlayerMoney.Instance.money < 30)
+        {
+            TreeniMyssyButton.interactable = false;
+        }
+        else
+        {
+            TreeniMyssyButton.interactable = true;
+        }
+
+        if (isPurchasedViikset == false && PlayerMoney.Instance.money < 30)
+        {
+            ViiksetButton.interactable = false;
+        }
+        else
+        {
+            ViiksetButton.interactable = true;
+        }
+
+        if (isPurchasedLippis == false && PlayerMoney.Instance.money < 30)
+        {
+            LippisButton.interactable = false;
+        }
+        else
+        {
+            LippisButton.interactable = true;
         }
     }
 

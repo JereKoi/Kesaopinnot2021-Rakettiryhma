@@ -208,6 +208,33 @@ public class BackgroundSave : MonoBehaviour
                     }
                 }
             }
+            if (PlayerMoney.Instance.money < 30)
+            {
+                if (WeightLiftScript.instance.isPurchasedFurrySunglasses == false)
+                {
+                   WeightLiftScript.instance.FurrySunglassesButton.interactable = false;
+                }
+                if (WeightLiftScript.instance.isPurchasedKruunu == false)
+                {
+                    WeightLiftScript.instance.KruunuButton.interactable = false;
+                }
+                if (WeightLiftScript.instance.isPurchasedLippis == false)
+                {
+                    WeightLiftScript.instance.LippisButton.interactable = false;
+                }
+                if (WeightLiftScript.instance.isPurchasedSunglasses == false)
+                {
+                    WeightLiftScript.instance.SunglassesButton.interactable = false;
+                }
+                if (WeightLiftScript.instance.isPurchasedTreeniMyssy == false)
+                {
+                    WeightLiftScript.instance.TreeniMyssyButton.interactable = false;
+                }
+                if (WeightLiftScript.instance.isPurchasedViikset == false)
+                {
+                    WeightLiftScript.instance.ViiksetButton.interactable = false;
+                }
+            }
         }
         if (isPurchasedBackground3 == true && currentBackground == 3)
         {

@@ -20,10 +20,10 @@ public class ButtonCooldown : MonoBehaviour
         {
             myButton.interactable = true;
         }
-        else
-        {
-            StartCoroutine(Cooldown());
-        }
+        //else
+        //{
+        //    StartCoroutine(Cooldown());
+        //}
     }
 
     void Awake()
@@ -55,7 +55,7 @@ public class ButtonCooldown : MonoBehaviour
     void OnButtonClick()
     {
         PlayRewardedAd();
-        StartCoroutine(Cooldown());
+        //StartCoroutine(Cooldown());
     }
 
     // Coroutine that will deactivate and reactivate the button 

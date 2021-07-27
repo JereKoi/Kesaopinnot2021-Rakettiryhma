@@ -790,6 +790,138 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1091245008}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 521381905}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 163166815}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1780388544}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 759120683}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 630580773}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 841852070}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1126257447}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 278039421}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 521396644}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1176146574}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1320644303}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &113594553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,6 +1146,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -1031,12 +1164,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!95 &163166819
 Animator:
@@ -1963,6 +2102,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -1980,12 +2120,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!95 &278039425
 Animator:
@@ -3753,6 +3899,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -3770,12 +3917,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!95 &521381909
 Animator:
@@ -3920,6 +4073,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -3937,12 +4091,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!95 &521396648
 Animator:
@@ -4855,6 +5015,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -4872,12 +5033,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!95 &630580777
 Animator:
@@ -5569,6 +5736,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -5586,12 +5754,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!95 &759120687
 Animator:
@@ -6296,6 +6470,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -6313,12 +6488,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!95 &841852074
 Animator:
@@ -7631,6 +7812,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1154946459}
+        m_MethodName: CheckOnStartIfPlayerHasFurrySunglassesCosmeticOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1079589337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7742,6 +7934,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -7759,12 +7952,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!95 &1091245012
 Animator:
@@ -8189,6 +8388,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -8206,12 +8406,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!95 &1126257451
 Animator:
@@ -8454,6 +8660,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -8471,12 +8678,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!114 &1154946460
 MonoBehaviour:
@@ -8566,6 +8779,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -8583,12 +8797,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!95 &1176146578
 Animator:
@@ -13977,6 +14197,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -13994,12 +14215,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!95 &1320644307
 Animator:
@@ -14351,7 +14578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1366025559
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16539,6 +16766,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -16556,12 +16784,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!95 &1780388548
 Animator:
@@ -16707,6 +16941,7 @@ MonoBehaviour:
   canvas: {fileID: 266576908}
   staminaArrow: {fileID: 161944052}
   ShopButton: {fileID: 113594552}
+  ShopExitButton: {fileID: 1079589336}
   FurrySunglassesT1: {fileID: 1091245008}
   KruunuT1: {fileID: 521381905}
   LippisT1: {fileID: 163166815}
@@ -16724,12 +16959,18 @@ MonoBehaviour:
   TreeniMyssyText: {fileID: 1032724335}
   ViiksetText: {fileID: 238195406}
   LippisShopText: {fileID: 1881472318}
-  isPurhcasedFurrySunglasses: 0
+  isPurchasedFurrySunglasses: 0
   isPurchasedKruunu: 0
   isPurchasedLippis: 0
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  FurrySunglassesButton: {fileID: 1865120711}
+  KruunuButton: {fileID: 1529550843}
+  SunglassesButton: {fileID: 414469619}
+  TreeniMyssyButton: {fileID: 2040291276}
+  ViiksetButton: {fileID: 1967767918}
+  LippisButton: {fileID: 1715749269}
   currentSkin: 0
 --- !u!95 &1850374995
 Animator:
@@ -16958,8 +17199,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 266576915}
-        m_MethodName: UpgradeButton
+      - m_Target: {fileID: 1154946459}
+        m_MethodName: FurrySunglassesCosmetic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
