@@ -16,11 +16,19 @@ public class ReachEndScript : MonoBehaviour
 
     public void StartNewGame()
     {
+        PlayerPrefs.DeleteAll();
         ReachEndBanner.SetActive(false);
         changeMindButton.SetActive(false);
         Progressbox.Instance.hahmoLVL1.SetActive(true);
         Progressbox.Instance.hahmoLVL2.SetActive(false);
-        PlayerPrefs.DeleteAll();
+        BackgroundSave.instance.isPurchasedBackground2 = false;
+        BackgroundSave.instance.isPurchasedBackground3 = false;
+        SkinCooldown.Instance.isPurchasedSkin1 = false;
+        SkinCooldown.Instance.isPurchasedSkin2 = false;
+        SkinCooldown.Instance.isPurchasedSkin3 = false;
+        SkinCooldown.Instance.isPurchasedSkin4 = false;
+        SkinCooldown.Instance.isPurchasedSkin5 = false;
+        SkinCooldown.Instance.isPurchasedSkin6 = false;
         WeightLiftScript.instance.ColorChangeToWhite();
         BackgroundSave.instance.SelectBackground1();
         Progressbox.Instance.StartNewGameReset();

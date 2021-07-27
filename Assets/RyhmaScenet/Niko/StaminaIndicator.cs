@@ -49,8 +49,9 @@ public class StaminaIndicator: MonoBehaviour
             {
                 TimeSpan timespan = dateNow - dateQuit;
                 int minutes = (int)timespan.TotalMinutes;
-                Debug.Log("quit for " + minutes + " minutes");
+                //Debug.Log("quit for " + minutes + " minutes");
                 currentStamina += minutes;
+                TextIndicator.text = ((int)currentStamina).ToString() + "%";
                 if (currentStamina >= 100)
                 {
                     currentStamina = 100;
@@ -119,7 +120,7 @@ public class StaminaIndicator: MonoBehaviour
         DateTime dateQuit = DateTime.Now;
         PlayerPrefs.SetString("dateQuit", dateQuit.ToString());
         PlayerPrefs.SetFloat("S", currentStamina);
-        Debug.Log("quit at" + dateQuit.ToString());
+        //Debug.Log("quit at" + dateQuit.ToString());
     }
 
     public void UseStamina(float amount)
@@ -131,13 +132,12 @@ public class StaminaIndicator: MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough stamina");
         }
     }
 
     private double FillSpeed()
     {
-        double time2fill = 1800; //1800(sec) AKA 30min menee täyttyä
+        double time2fill = 1500; //1800(sec) AKA 30min menee täyttyä
         return 100 / time2fill;
     }
 }

@@ -9,22 +9,23 @@ public class ButtonCooldown : MonoBehaviour
     [SerializeField]
     Button myButton;
     [SerializeField]
-    float cooldownDuration = 60f;
+    float cooldownDuration = 10f;
 
     private AdsManager ads;
 
 
     private void Start()
     {
-        if (StaminaIndicator.instance.currentStamina < 10)
+        if (StaminaIndicator.instance.currentStamina < 5)
         {
             myButton.interactable = true;
         }
-        else
-        {
-            StartCoroutine(Cooldown());
-        }
+        //else
+        //{
+        //    StartCoroutine(Cooldown());
+        //}
     }
+
     void Awake()
     {
         // Get a reference to your button
@@ -40,14 +41,13 @@ public class ButtonCooldown : MonoBehaviour
 
     public void PlayRewardedAd()
     {
-        Debug.Log("Button toimii");
-        if (/*StaminaIndicator.instance.currentStamina <= 50 &&*/ Advertisement.IsReady("Rewarded_Android"))
+        if (Advertisement.IsReady("Rewarded_Android"))
         {
             Advertisement.Show("Rewarded_Android");
         }
         else
         {
-            Debug.Log("rewarded ad is not ready!");
+            return;
         }
     }
 
@@ -55,7 +55,7 @@ public class ButtonCooldown : MonoBehaviour
     void OnButtonClick()
     {
         PlayRewardedAd();
-        StartCoroutine(Cooldown());
+        //StartCoroutine(Cooldown());
     }
 
     // Coroutine that will deactivate and reactivate the button 

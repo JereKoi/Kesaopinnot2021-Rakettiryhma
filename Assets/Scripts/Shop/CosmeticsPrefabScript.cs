@@ -23,7 +23,6 @@ public class CosmeticsPrefabScript : MonoBehaviour
     }
     public void UpgradeButton()
     {
-        Debug.Log("button toimii");
         activeIndex++;
     }
 }
