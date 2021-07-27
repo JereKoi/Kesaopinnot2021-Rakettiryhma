@@ -44,6 +44,27 @@ TextureImporter:
   - first:
       213: -3994364582754827217
     second: TreeniMyssyTier2painon-nosto2_20
+  - first:
+      213: 431219998505061428
+    second: TreeniMyssyTier2painon-nosto2_0
+  - first:
+      213: 3170840677858261728
+    second: TreeniMyssyTier2painon-nosto2_1
+  - first:
+      213: -4060426210112329394
+    second: TreeniMyssyTier2painon-nosto2_2
+  - first:
+      213: 8947891505950681908
+    second: TreeniMyssyTier2painon-nosto2_3
+  - first:
+      213: -6635979143083230554
+    second: TreeniMyssyTier2painon-nosto2_7
+  - first:
+      213: 1925380301190254987
+    second: TreeniMyssyTier2painon-nosto2_9
+  - first:
+      213: -8336566843045588926
+    second: TreeniMyssyTier2painon-nosto2_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -156,10 +177,10 @@ TextureImporter:
       name: TreeniMyssyTier2painon-nosto2_4
       rect:
         serializedVersion: 2
-        x: 45
-        y: 41
-        width: 352
-        height: 239
+        x: 2048
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,10 +198,10 @@ TextureImporter:
       name: TreeniMyssyTier2painon-nosto2_5
       rect:
         serializedVersion: 2
-        x: 556
-        y: 41
-        width: 350
-        height: 239
+        x: 2560
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +219,10 @@ TextureImporter:
       name: TreeniMyssyTier2painon-nosto2_6
       rect:
         serializedVersion: 2
-        x: 1059
-        y: 41
-        width: 358
-        height: 239
+        x: 3072
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +240,10 @@ TextureImporter:
       name: TreeniMyssyTier2painon-nosto2_8
       rect:
         serializedVersion: 2
-        x: 1570
-        y: 41
-        width: 360
-        height: 239
+        x: 4096
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +261,10 @@ TextureImporter:
       name: TreeniMyssyTier2painon-nosto2_10
       rect:
         serializedVersion: 2
-        x: 2083
-        y: 41
-        width: 358
-        height: 239
+        x: 5120
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,10 +282,10 @@ TextureImporter:
       name: TreeniMyssyTier2painon-nosto2_12
       rect:
         serializedVersion: 2
-        x: 2595
-        y: 41
-        width: 356
-        height: 239
+        x: 6144
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,10 +303,10 @@ TextureImporter:
       name: TreeniMyssyTier2painon-nosto2_13
       rect:
         serializedVersion: 2
-        x: 3111
-        y: 41
-        width: 351
-        height: 239
+        x: 6656
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,13 +321,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TreeniMyssyTier2painon-nosto2_14
+      name: TreeniMyssyTier2painon-nosto2_0
       rect:
         serializedVersion: 2
-        x: 3622
-        y: 41
-        width: 351
-        height: 239
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,20 +335,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37ba8816f1b099e90800000000000000
-      internalID: -7018566314871968909
+      spriteID: 43c40fecd400cf500800000000000000
+      internalID: 431219998505061428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TreeniMyssyTier2painon-nosto2_15
+      name: TreeniMyssyTier2painon-nosto2_1
       rect:
         serializedVersion: 2
-        x: 4133
-        y: 41
-        width: 351
-        height: 239
+        x: 512
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,20 +356,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d34e668481c90550800000000000000
-      internalID: 6127641542949487570
+      spriteID: 0eab913fbc6110c20800000000000000
+      internalID: 3170840677858261728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TreeniMyssyTier2painon-nosto2_16
+      name: TreeniMyssyTier2painon-nosto2_2
       rect:
         serializedVersion: 2
-        x: 4644
-        y: 41
-        width: 351
-        height: 239
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,20 +377,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71750885660986d50800000000000000
-      internalID: 6730788412351076119
+      spriteID: e49a19dffd776a7c0800000000000000
+      internalID: -4060426210112329394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TreeniMyssyTier2painon-nosto2_17
+      name: TreeniMyssyTier2painon-nosto2_3
       rect:
         serializedVersion: 2
-        x: 5155
-        y: 41
-        width: 351
-        height: 239
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,20 +398,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4380247ff032e2fc0800000000000000
-      internalID: -3517835707449997260
+      spriteID: 43bececaaeb4d2c70800000000000000
+      internalID: 8947891505950681908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TreeniMyssyTier2painon-nosto2_18
+      name: TreeniMyssyTier2painon-nosto2_7
       rect:
         serializedVersion: 2
-        x: 5666
-        y: 41
-        width: 351
-        height: 239
+        x: 3584
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,20 +419,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01c89caa379e30570800000000000000
-      internalID: 8431839610363546640
+      spriteID: 6aa7f97d02448e3a0800000000000000
+      internalID: -6635979143083230554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TreeniMyssyTier2painon-nosto2_19
+      name: TreeniMyssyTier2painon-nosto2_9
       rect:
         serializedVersion: 2
-        x: 6177
-        y: 41
-        width: 353
-        height: 239
+        x: 4608
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,20 +440,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9af8a887b6298bf0800000000000000
-      internalID: -321683328666633574
+      spriteID: b81dafdce2358ba10800000000000000
+      internalID: 1925380301190254987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TreeniMyssyTier2painon-nosto2_20
+      name: TreeniMyssyTier2painon-nosto2_11
       rect:
         serializedVersion: 2
-        x: 6689
-        y: 35
-        width: 376
-        height: 339
+        x: 5632
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,8 +461,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f244f75339a2198c0800000000000000
-      internalID: -3994364582754827217
+      spriteID: 240d7f110a09e4c80800000000000000
+      internalID: -8336566843045588926
       vertices: []
       indices: 
       edges: []

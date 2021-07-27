@@ -44,6 +44,18 @@ TextureImporter:
   - first:
       213: -4895546117624319802
     second: ViiksetTier1painon-nosto_18
+  - first:
+      213: 6894990907507153935
+    second: ViiksetTier1painon-nosto_0
+  - first:
+      213: -599975757546270504
+    second: ViiksetTier1painon-nosto_1
+  - first:
+      213: 4698729754374188680
+    second: ViiksetTier1painon-nosto_2
+  - first:
+      213: 2370381168060872499
+    second: ViiksetTier1painon-nosto_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -156,10 +168,10 @@ TextureImporter:
       name: ViiksetTier1painon-nosto_4
       rect:
         serializedVersion: 2
-        x: 45
-        y: 41
-        width: 332
-        height: 239
+        x: 2048
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,10 +189,10 @@ TextureImporter:
       name: ViiksetTier1painon-nosto_5
       rect:
         serializedVersion: 2
-        x: 557
-        y: 41
-        width: 331
-        height: 239
+        x: 2560
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +210,10 @@ TextureImporter:
       name: ViiksetTier1painon-nosto_6
       rect:
         serializedVersion: 2
-        x: 1069
-        y: 41
-        width: 332
-        height: 239
+        x: 3072
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +231,10 @@ TextureImporter:
       name: ViiksetTier1painon-nosto_7
       rect:
         serializedVersion: 2
-        x: 1581
-        y: 41
-        width: 331
-        height: 239
+        x: 3584
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +252,10 @@ TextureImporter:
       name: ViiksetTier1painon-nosto_8
       rect:
         serializedVersion: 2
-        x: 2094
-        y: 41
-        width: 331
-        height: 239
+        x: 4096
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,10 +273,10 @@ TextureImporter:
       name: ViiksetTier1painon-nosto_9
       rect:
         serializedVersion: 2
-        x: 2605
-        y: 41
-        width: 331
-        height: 239
+        x: 4608
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,10 +294,10 @@ TextureImporter:
       name: ViiksetTier1painon-nosto_10
       rect:
         serializedVersion: 2
-        x: 3118
-        y: 41
-        width: 330
-        height: 239
+        x: 5120
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,10 +315,10 @@ TextureImporter:
       name: ViiksetTier1painon-nosto_11
       rect:
         serializedVersion: 2
-        x: 3629
-        y: 41
-        width: 330
-        height: 239
+        x: 5632
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,10 +336,10 @@ TextureImporter:
       name: ViiksetTier1painon-nosto_12
       rect:
         serializedVersion: 2
-        x: 4141
-        y: 41
-        width: 331
-        height: 239
+        x: 6144
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -345,10 +357,10 @@ TextureImporter:
       name: ViiksetTier1painon-nosto_13
       rect:
         serializedVersion: 2
-        x: 4653
-        y: 41
-        width: 331
-        height: 239
+        x: 6656
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,13 +375,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ViiksetTier1painon-nosto_14
+      name: ViiksetTier1painon-nosto_0
       rect:
         serializedVersion: 2
-        x: 5165
-        y: 41
-        width: 331
-        height: 239
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,20 +389,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ef182a94051d8bd0800000000000000
-      internalID: -2626419898176757787
+      spriteID: f0c138bf2bdefaf50800000000000000
+      internalID: 6894990907507153935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ViiksetTier1painon-nosto_15
+      name: ViiksetTier1painon-nosto_1
       rect:
         serializedVersion: 2
-        x: 5678
-        y: 41
-        width: 324
-        height: 239
+        x: 512
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,20 +410,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14e25ae02f8319e70800000000000000
-      internalID: 9120133332680912449
+      spriteID: 8d0db913a357ca7f0800000000000000
+      internalID: -599975757546270504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ViiksetTier1painon-nosto_16
+      name: ViiksetTier1painon-nosto_2
       rect:
         serializedVersion: 2
-        x: 6189
-        y: 41
-        width: 326
-        height: 239
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,20 +431,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3c12ca306a8c7360800000000000000
-      internalID: 7168756852774280254
+      spriteID: 88e280111dd353140800000000000000
+      internalID: 4698729754374188680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ViiksetTier1painon-nosto_18
+      name: ViiksetTier1painon-nosto_3
       rect:
         serializedVersion: 2
-        x: 6702
-        y: 41
-        width: 347
-        height: 331
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,8 +452,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c0b5756eb68f0cb0800000000000000
-      internalID: -4895546117624319802
+      spriteID: 3373b801d1945e020800000000000000
+      internalID: 2370381168060872499
       vertices: []
       indices: 
       edges: []

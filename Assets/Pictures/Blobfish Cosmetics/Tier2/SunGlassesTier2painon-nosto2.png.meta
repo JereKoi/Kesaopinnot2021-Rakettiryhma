@@ -44,6 +44,27 @@ TextureImporter:
   - first:
       213: -5421236450788225550
     second: SunGlassesTier2painon-nosto2_20
+  - first:
+      213: 7301650860682272706
+    second: SunGlassesTier2painon-nosto2_0
+  - first:
+      213: 6239516578041616289
+    second: SunGlassesTier2painon-nosto2_1
+  - first:
+      213: -2122150208759160198
+    second: SunGlassesTier2painon-nosto2_2
+  - first:
+      213: -5339106869717543783
+    second: SunGlassesTier2painon-nosto2_3
+  - first:
+      213: 6923609134897212235
+    second: SunGlassesTier2painon-nosto2_7
+  - first:
+      213: -1764276140822902690
+    second: SunGlassesTier2painon-nosto2_9
+  - first:
+      213: 8096110749685476999
+    second: SunGlassesTier2painon-nosto2_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -156,10 +177,10 @@ TextureImporter:
       name: SunGlassesTier2painon-nosto2_4
       rect:
         serializedVersion: 2
-        x: 45
-        y: 41
-        width: 352
-        height: 239
+        x: 2048
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,10 +198,10 @@ TextureImporter:
       name: SunGlassesTier2painon-nosto2_5
       rect:
         serializedVersion: 2
-        x: 556
-        y: 41
-        width: 350
-        height: 239
+        x: 2560
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +219,10 @@ TextureImporter:
       name: SunGlassesTier2painon-nosto2_6
       rect:
         serializedVersion: 2
-        x: 1059
-        y: 41
-        width: 358
-        height: 239
+        x: 3072
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +240,10 @@ TextureImporter:
       name: SunGlassesTier2painon-nosto2_8
       rect:
         serializedVersion: 2
-        x: 1570
-        y: 41
-        width: 360
-        height: 239
+        x: 4096
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +261,10 @@ TextureImporter:
       name: SunGlassesTier2painon-nosto2_10
       rect:
         serializedVersion: 2
-        x: 2083
-        y: 41
-        width: 358
-        height: 239
+        x: 5120
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,10 +282,10 @@ TextureImporter:
       name: SunGlassesTier2painon-nosto2_12
       rect:
         serializedVersion: 2
-        x: 2595
-        y: 41
-        width: 356
-        height: 239
+        x: 6144
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,10 +303,10 @@ TextureImporter:
       name: SunGlassesTier2painon-nosto2_13
       rect:
         serializedVersion: 2
-        x: 3111
-        y: 41
-        width: 351
-        height: 239
+        x: 6656
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,13 +321,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SunGlassesTier2painon-nosto2_14
+      name: SunGlassesTier2painon-nosto2_0
       rect:
         serializedVersion: 2
-        x: 3622
-        y: 41
-        width: 351
-        height: 239
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,20 +335,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f37fc541452f92130800000000000000
-      internalID: 3542629024836417343
+      spriteID: 2cf54e0a5cca45560800000000000000
+      internalID: 7301650860682272706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SunGlassesTier2painon-nosto2_15
+      name: SunGlassesTier2painon-nosto2_1
       rect:
         serializedVersion: 2
-        x: 4133
-        y: 41
-        width: 351
-        height: 239
+        x: 512
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,20 +356,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2babe00abc14d120800000000000000
-      internalID: 2437604883519220523
+      spriteID: 1a7d454f447379650800000000000000
+      internalID: 6239516578041616289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SunGlassesTier2painon-nosto2_16
+      name: SunGlassesTier2painon-nosto2_2
       rect:
         serializedVersion: 2
-        x: 4644
-        y: 41
-        width: 351
-        height: 239
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,20 +377,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eab30264e48181170800000000000000
-      internalID: 8149290250189945774
+      spriteID: a72a3e6f0ab9c82e0800000000000000
+      internalID: -2122150208759160198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SunGlassesTier2painon-nosto2_17
+      name: SunGlassesTier2painon-nosto2_3
       rect:
         serializedVersion: 2
-        x: 5155
-        y: 41
-        width: 351
-        height: 239
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,20 +398,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87a10933e64043db0800000000000000
-      internalID: -4813217230394221960
+      spriteID: 99453acf69ea7e5b0800000000000000
+      internalID: -5339106869717543783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SunGlassesTier2painon-nosto2_18
+      name: SunGlassesTier2painon-nosto2_7
       rect:
         serializedVersion: 2
-        x: 5666
-        y: 41
-        width: 351
-        height: 239
+        x: 3584
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,20 +419,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b302a7c9f9c1c54d0800000000000000
-      internalID: -3144606967960821701
+      spriteID: b4ba23943d9951060800000000000000
+      internalID: 6923609134897212235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SunGlassesTier2painon-nosto2_19
+      name: SunGlassesTier2painon-nosto2_9
       rect:
         serializedVersion: 2
-        x: 6177
-        y: 41
-        width: 353
-        height: 239
+        x: 4608
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,20 +440,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3af2a5d7bb0e84a0800000000000000
-      internalID: -6589316320605308353
+      spriteID: e58cd8c82380487e0800000000000000
+      internalID: -1764276140822902690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SunGlassesTier2painon-nosto2_20
+      name: SunGlassesTier2painon-nosto2_11
       rect:
         serializedVersion: 2
-        x: 6689
-        y: 35
-        width: 376
-        height: 341
+        x: 5632
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,8 +461,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fd4e53cb26e3c4b0800000000000000
-      internalID: -5421236450788225550
+      spriteID: 78e6931f4d92b5070800000000000000
+      internalID: 8096110749685476999
       vertices: []
       indices: 
       edges: []

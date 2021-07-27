@@ -246,10 +246,10 @@ public class WeightLiftScript : MonoBehaviour
             }
             if (PlayerMoney.Instance.money < 30)
             {
-                if ()
-                {
+                //if ()
+                //{
 
-                }
+                //}
             }
         }
         if (SkinCooldown.Instance.isPurchasedSkin1 == true)

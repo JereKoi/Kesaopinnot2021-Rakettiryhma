@@ -44,6 +44,24 @@ TextureImporter:
   - first:
       213: 6966690632863230726
     second: FurrySunGlassesTier2painon-nosto2_19
+  - first:
+      213: 1665857184124574123
+    second: FurrySunGlassesTier2painon-nosto2_1
+  - first:
+      213: 240857643769607307
+    second: FurrySunGlassesTier2painon-nosto2_2
+  - first:
+      213: 3068933169718003365
+    second: FurrySunGlassesTier2painon-nosto2_3
+  - first:
+      213: 8868257235348434298
+    second: FurrySunGlassesTier2painon-nosto2_7
+  - first:
+      213: 5806374724783279135
+    second: FurrySunGlassesTier2painon-nosto2_9
+  - first:
+      213: 8425912674215185614
+    second: FurrySunGlassesTier2painon-nosto2_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -156,10 +174,10 @@ TextureImporter:
       name: FurrySunGlassesTier2painon-nosto2_0
       rect:
         serializedVersion: 2
-        x: 6689
-        y: 35
-        width: 376
-        height: 337
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,10 +195,10 @@ TextureImporter:
       name: FurrySunGlassesTier2painon-nosto2_4
       rect:
         serializedVersion: 2
-        x: 45
-        y: 41
-        width: 352
-        height: 239
+        x: 2048
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +216,10 @@ TextureImporter:
       name: FurrySunGlassesTier2painon-nosto2_5
       rect:
         serializedVersion: 2
-        x: 556
-        y: 41
-        width: 350
-        height: 239
+        x: 2560
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +237,10 @@ TextureImporter:
       name: FurrySunGlassesTier2painon-nosto2_6
       rect:
         serializedVersion: 2
-        x: 1059
-        y: 41
-        width: 358
-        height: 239
+        x: 3072
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +258,10 @@ TextureImporter:
       name: FurrySunGlassesTier2painon-nosto2_8
       rect:
         serializedVersion: 2
-        x: 1570
-        y: 41
-        width: 360
-        height: 239
+        x: 4096
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,10 +279,10 @@ TextureImporter:
       name: FurrySunGlassesTier2painon-nosto2_10
       rect:
         serializedVersion: 2
-        x: 2083
-        y: 41
-        width: 358
-        height: 239
+        x: 5120
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,10 +300,10 @@ TextureImporter:
       name: FurrySunGlassesTier2painon-nosto2_12
       rect:
         serializedVersion: 2
-        x: 2595
-        y: 41
-        width: 356
-        height: 239
+        x: 6144
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,10 +321,10 @@ TextureImporter:
       name: FurrySunGlassesTier2painon-nosto2_13
       rect:
         serializedVersion: 2
-        x: 3111
-        y: 41
-        width: 351
-        height: 239
+        x: 6656
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,13 +339,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FurrySunGlassesTier2painon-nosto2_14
+      name: FurrySunGlassesTier2painon-nosto2_1
       rect:
         serializedVersion: 2
-        x: 3622
-        y: 41
-        width: 351
-        height: 239
+        x: 512
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,20 +353,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bbbd2cd915cf10f0800000000000000
-      internalID: -1143979065469977676
+      spriteID: ba9174a68405e1710800000000000000
+      internalID: 1665857184124574123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FurrySunGlassesTier2painon-nosto2_15
+      name: FurrySunGlassesTier2painon-nosto2_2
       rect:
         serializedVersion: 2
-        x: 4133
-        y: 41
-        width: 351
-        height: 239
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,20 +374,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c08b01ad52783510800000000000000
-      internalID: 1529097819951694020
+      spriteID: b84335a30c2b75300800000000000000
+      internalID: 240857643769607307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FurrySunGlassesTier2painon-nosto2_16
+      name: FurrySunGlassesTier2painon-nosto2_3
       rect:
         serializedVersion: 2
-        x: 4644
-        y: 41
-        width: 351
-        height: 239
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,20 +395,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 663fe210b42ff4390800000000000000
-      internalID: -7831774823017680026
+      spriteID: 5a6847c357a079a20800000000000000
+      internalID: 3068933169718003365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FurrySunGlassesTier2painon-nosto2_17
+      name: FurrySunGlassesTier2painon-nosto2_7
       rect:
         serializedVersion: 2
-        x: 5155
-        y: 41
-        width: 351
-        height: 239
+        x: 3584
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,20 +416,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8027552b67374c700800000000000000
-      internalID: 559699207336063496
+      spriteID: a7d2bb138f0621b70800000000000000
+      internalID: 8868257235348434298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FurrySunGlassesTier2painon-nosto2_18
+      name: FurrySunGlassesTier2painon-nosto2_9
       rect:
         serializedVersion: 2
-        x: 5666
-        y: 41
-        width: 351
-        height: 239
+        x: 4608
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,20 +437,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15dcbd987a6e708d0800000000000000
-      internalID: -2880079829433332399
+      spriteID: f1c83877c03649050800000000000000
+      internalID: 5806374724783279135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FurrySunGlassesTier2painon-nosto2_19
+      name: FurrySunGlassesTier2painon-nosto2_11
       rect:
         serializedVersion: 2
-        x: 6177
-        y: 41
-        width: 353
-        height: 239
+        x: 5632
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,8 +458,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60baadf2838aea060800000000000000
-      internalID: 6966690632863230726
+      spriteID: eccce0f4feadee470800000000000000
+      internalID: 8425912674215185614
       vertices: []
       indices: 
       edges: []
