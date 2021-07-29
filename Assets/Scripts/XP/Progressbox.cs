@@ -16,6 +16,7 @@ public class Progressbox : MonoBehaviour
     public GameObject TapToLiftText;
     public GameObject hahmoLVL1;
     public GameObject hahmoLVL2;
+    public GameObject hahmoLVL3;
     public GameObject reachEndBanner;
 
     public GameObject changeMindButton;
@@ -45,13 +46,17 @@ public class Progressbox : MonoBehaviour
             {
                 TapToLiftText.SetActive(false);
             }
-            if (level >= 3)
+            if (level == 5)
             {
                 hahmoLVL2.SetActive(true);
             }
-            else if (level < 3)
+            if (level < 3)
             {
                 hahmoLVL1.SetActive(true);
+            }
+            if (level >= 10)
+            {
+                hahmoLVL3.SetActive(true);
             }
         }
         else
@@ -62,27 +67,35 @@ public class Progressbox : MonoBehaviour
         }
     }
 
-    public void CheckSpriteProgress()
-    {
-        if (level < 3)
-        {
-            hahmoLVL2.SetActive(false);
-            hahmoLVL1.SetActive(true);
-        }
-        else if (level >= 3)
-        {
-            hahmoLVL1.SetActive(false);
-            hahmoLVL2.SetActive(true);
-        }
-    }
-
-
     private void OnEnable()
     {
         uiFillImage.color = color;
         level = 0;
         currentAmount = 0;
         uiFillImage.fillAmount = currentAmount;
+    }
+
+    public void CheckSpriteProgress()
+    {
+        if (level < 5)
+        {
+            hahmoLVL1.SetActive(true);
+        }
+        else if (level >= 5 && level < 10)
+        {
+            hahmoLVL2.SetActive(true);
+        }
+        else if (level >= 10)
+        {
+            hahmoLVL3.SetActive(true);
+        }
+        if (WeightLiftScript.instance.currentSkin == 7)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL3.SetActive(false);
+            WeightLiftScript.instance.FurrySunglassesCosmetic();
+        }
     }
 
     public void StartNewGameReset()
@@ -148,7 +161,7 @@ public class Progressbox : MonoBehaviour
         //ads.PlayInterstitialAd();
         PlayerPrefs.SetInt("level", level);
 
-        if (level >= 3)
+        if (level == 5)
         {
             hahmoLVL1.SetActive(false);
             hahmoLVL2.SetActive(true);
@@ -160,6 +173,12 @@ public class Progressbox : MonoBehaviour
         if (level == 8)
         {
             ads.PlayInterstitialAd();
+        }
+        if (level >= 10)
+        {
+            hahmoLVL3.SetActive(true);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL1.SetActive(false);
         }
         //TÄSSÄ KOHDASSA MÄÄRITELLÄÄN PELIN LOPPU, MUISTA START METHODIIN TEHDÄ IF LAUSE JOSSA CHECKATAAN ONKO >= 5 LEVU NIIN CHANGEMINDBUTTON.SETACTIVE(TRUE);
         else if (level == 15)

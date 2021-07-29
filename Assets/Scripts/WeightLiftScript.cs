@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class WeightLiftScript : MonoBehaviour
@@ -10,7 +8,6 @@ public class WeightLiftScript : MonoBehaviour
     [SerializeField]
     GameObject floatingMoneyText;
 
-    public GameObject Hahmo;
     public AdsManager ads;
     public GameObject stamina0banner;
     public Canvas canvas;
@@ -22,6 +19,7 @@ public class WeightLiftScript : MonoBehaviour
     public GameObject FurrySunglassesT1;
     public GameObject KruunuT1;
     public GameObject LippisT1;
+    public GameObject SunglassesT1;
     public GameObject TreeniMyssyT1;
     public GameObject ViiksetT1;
     public GameObject FurrySunglassesT2;
@@ -30,6 +28,12 @@ public class WeightLiftScript : MonoBehaviour
     public GameObject SunglassesT2;
     public GameObject TreeniMyssyT2;
     public GameObject ViiksetT2;
+    public GameObject FurrySunglassesT3;
+    public GameObject KruunuT3;
+    public GameObject LippisT3;
+    public GameObject TreeniMyssyT3;
+    public GameObject ViiksetT3;
+    public GameObject SunglassesT3;
 
     //ShopText
     public GameObject FurrySunglassesShopText;
@@ -71,6 +75,10 @@ public class WeightLiftScript : MonoBehaviour
     private bool nosto11;
     private bool nosto12;
     private bool nosto13;
+    //Nämä alla olevat boolit lisätty Tier3. Nostofunktion jatkoksi on tehty pieni pätkä koodia
+    private bool nosto14;
+    private bool nosto15;
+    private bool nosto16;
 
     private int clickCounter = 0;
     public int currentSkin;
@@ -81,6 +89,8 @@ public class WeightLiftScript : MonoBehaviour
 
     public static WeightLiftScript instance;
 
+
+    //Start metodissa käydään läpi tallennetut cosmeticsit läpi
     private void Start()
     {
         instance = this;
@@ -144,7 +154,7 @@ public class WeightLiftScript : MonoBehaviour
                 SkinCooldown.Instance.SkinButton6.interactable = true;
                 SkinCooldown.Instance.SkinText6.SetActive(false);
             }
-        }        
+        }
 
         if (progressBox.hahmoLVL1 == true && progressBox.hahmoLVL2 == false)
         {
@@ -154,14 +164,19 @@ public class WeightLiftScript : MonoBehaviour
         {
             progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
+        if (progressBox.hahmoLVL3 == true && progressBox.hahmoLVL1 == false && progressBox.hahmoLVL2 == false)
+        {
+            progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
+        }
         anim = GetComponent<Animator>();
         inputTimer = 0;
-        ads.ShowBanner();        
+        ads.ShowBanner();
     }
 
+    //Awake metodissa käydään läpi blobfishin värit
     private void Awake()
     {
-        if (PlayerPrefs.HasKey("CSkin") && progressBox.hahmoLVL1 == true || progressBox.hahmoLVL2 == true)
+        if (PlayerPrefs.HasKey("CSkin") /*&& progressBox.hahmoLVL1 == true || progressBox.hahmoLVL2 == true*/)
         {
             currentSkin = PlayerPrefs.GetInt("CSkin");
             if (currentSkin == 1)
@@ -188,6 +203,11 @@ public class WeightLiftScript : MonoBehaviour
             {
                 ColorChangeToRed();
             }
+            //TÄSSÄ KOHDASSA ALKAA COSMETICSIEN TARKISTUS
+            else if (currentSkin == 7)
+            {
+                FurrySunglassesTest();
+            }
         }
         else
         {
@@ -211,13 +231,17 @@ public class WeightLiftScript : MonoBehaviour
     //tassa vaihdetaan blobejen vareja kaupassa.
     public void ColorChangeToOrange()
     {
-        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3 || progressBox.hahmoLVL1.activeSelf == true)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 || progressBox.hahmoLVL2.activeSelf == true)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 5 || progressBox.hahmoLVL2.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 || progressBox.hahmoLVL3.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
         }
 
         rend.color = new Color32(255, 245, 71, 255);
@@ -271,10 +295,6 @@ public class WeightLiftScript : MonoBehaviour
                 {
                     FurrySunglassesButton.interactable = false;
                 }
-                if (isPurchasedKruunu == false)
-                {
-                    KruunuButton.interactable = false;
-                }
                 if (isPurchasedLippis == false)
                 {
                     LippisButton.interactable = false;
@@ -292,6 +312,13 @@ public class WeightLiftScript : MonoBehaviour
                     ViiksetButton.interactable = false;
                 }
             }
+            if (PlayerMoney.Instance.money < 100)
+            {
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
+                }
+            }
         }
         if (SkinCooldown.Instance.isPurchasedSkin1 == true)
         {
@@ -300,6 +327,7 @@ public class WeightLiftScript : MonoBehaviour
         }
     }
 
+    //Tässä katsotaan Update metodissa että onko pelaajalla rahaa ostaa oranssi väri blobille
     public void ColorChangeOrangeUpdate()
     {
         if (SkinCooldown.Instance.isPurchasedSkin1 == false && PlayerMoney.Instance.money < 10)
@@ -314,13 +342,17 @@ public class WeightLiftScript : MonoBehaviour
 
     public void ColorChangeToBlue()
     {
-        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3 || progressBox.hahmoLVL1.activeSelf == true)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 || progressBox.hahmoLVL2.activeSelf == true)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 5 || progressBox.hahmoLVL2.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 || progressBox.hahmoLVL3.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
         }
 
         rend.color = new Color32(124, 252, 255, 255);
@@ -363,10 +395,6 @@ public class WeightLiftScript : MonoBehaviour
                 {
                     FurrySunglassesButton.interactable = false;
                 }
-                if (isPurchasedKruunu == false)
-                {
-                    KruunuButton.interactable = false;
-                }
                 if (isPurchasedLippis == false)
                 {
                     LippisButton.interactable = false;
@@ -384,6 +412,13 @@ public class WeightLiftScript : MonoBehaviour
                     ViiksetButton.interactable = false;
                 }
             }
+            if (PlayerMoney.Instance.money < 100)
+            {
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
+                }
+            }
             if (PlayerMoney.Instance.money < 20)
             {
                 if (BackgroundSave.instance.isPurchasedBackground2 == false)
@@ -399,10 +434,11 @@ public class WeightLiftScript : MonoBehaviour
         if (SkinCooldown.Instance.isPurchasedSkin2 == true)
         {
             SkinCooldown.Instance.SkinText2.SetActive(false);
-            SkinCooldown.Instance.SkinButton2.interactable = true;     
+            SkinCooldown.Instance.SkinButton2.interactable = true;
         }
     }
 
+    //Tässä katsotaan Update metodissa että onko pelaajalla rahaa ostaa sininen väri blobille
     public void ColorChangeBlueUpdate()
     {
         if (SkinCooldown.Instance.isPurchasedSkin2 == false && PlayerMoney.Instance.money < 10)
@@ -417,13 +453,21 @@ public class WeightLiftScript : MonoBehaviour
 
     public void ColorChangeToPink()
     {
-        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3 || progressBox.hahmoLVL1.activeSelf == true)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 || progressBox.hahmoLVL2.activeSelf == true)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level == 5 || progressBox.hahmoLVL2.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 && currentSkin != 7 || progressBox.hahmoLVL3.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
+        }
+        if (FurrySunglassesT3.activeSelf == false|| FurrySunglassesT3.activeSelf == true)
+        {
+            rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
         }
 
         rend.color = new Color32(250, 172, 255, 255);
@@ -466,10 +510,6 @@ public class WeightLiftScript : MonoBehaviour
                 {
                     FurrySunglassesButton.interactable = false;
                 }
-                if (isPurchasedKruunu == false)
-                {
-                    KruunuButton.interactable = false;
-                }
                 if (isPurchasedLippis == false)
                 {
                     LippisButton.interactable = false;
@@ -485,6 +525,13 @@ public class WeightLiftScript : MonoBehaviour
                 if (isPurchasedViikset == false)
                 {
                     ViiksetButton.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 100)
+            {
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
                 }
             }
             if (PlayerMoney.Instance.money < 20)
@@ -506,6 +553,7 @@ public class WeightLiftScript : MonoBehaviour
         }
     }
 
+    //Tässä katsotaan Update metodissa että onko pelaajalla rahaa ostaa pinkki väri blobille
     public void ColorChangeToPinkUpdate()
     {
         if (SkinCooldown.Instance.isPurchasedSkin3 == false && PlayerMoney.Instance.money < 10)
@@ -518,15 +566,20 @@ public class WeightLiftScript : MonoBehaviour
         }
     }
 
+    //Tässä katsotaan onko pelaajalla pelkästään valkoinen skini päällä
     public void ColorChangeToWhite()
     {
-        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3 || progressBox.hahmoLVL1.activeSelf == true)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 || progressBox.hahmoLVL2.activeSelf == true)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 5 || progressBox.hahmoLVL2.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 || progressBox.hahmoLVL3.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
         }
         rend.color = new Color32(255, 255, 255, 255);
         currentSkin = 4;
@@ -535,13 +588,17 @@ public class WeightLiftScript : MonoBehaviour
     }
     public void ColorChangeToGreen()
     {
-        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3 || progressBox.hahmoLVL1.activeSelf == true)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 || progressBox.hahmoLVL2.activeSelf == true)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 5 || progressBox.hahmoLVL2.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 || progressBox.hahmoLVL3.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
         }
 
         rend.color = new Color32(138, 255, 152, 255);
@@ -584,10 +641,6 @@ public class WeightLiftScript : MonoBehaviour
                 {
                     FurrySunglassesButton.interactable = false;
                 }
-                if (isPurchasedKruunu == false)
-                {
-                    KruunuButton.interactable = false;
-                }
                 if (isPurchasedLippis == false)
                 {
                     LippisButton.interactable = false;
@@ -603,6 +656,13 @@ public class WeightLiftScript : MonoBehaviour
                 if (isPurchasedViikset == false)
                 {
                     ViiksetButton.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 100)
+            {
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
                 }
             }
             if (PlayerMoney.Instance.money < 20)
@@ -624,6 +684,7 @@ public class WeightLiftScript : MonoBehaviour
         }
     }
 
+    //Tässä katsotaan Update metodissa että onko pelaajalla rahaa ostaa vihreä väri blobille
     public void ColorChangeToGreenUpdate()
     {
         if (SkinCooldown.Instance.isPurchasedSkin5 == false && PlayerMoney.Instance.money < 10)
@@ -638,13 +699,17 @@ public class WeightLiftScript : MonoBehaviour
 
     public void ColorChangeToRed()
     {
-        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3 || progressBox.hahmoLVL1.activeSelf == true)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 || progressBox.hahmoLVL2.activeSelf == true)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 5 || progressBox.hahmoLVL2.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+        }
+        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 || progressBox.hahmoLVL3.activeSelf == true)
+        {
+            rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
         }
         rend.color = new Color32(255, 161, 129, 255);
         currentSkin = 6;
@@ -686,10 +751,6 @@ public class WeightLiftScript : MonoBehaviour
                 {
                     FurrySunglassesButton.interactable = false;
                 }
-                if (isPurchasedKruunu == false)
-                {
-                    KruunuButton.interactable = false;
-                }
                 if (isPurchasedLippis == false)
                 {
                     LippisButton.interactable = false;
@@ -705,6 +766,13 @@ public class WeightLiftScript : MonoBehaviour
                 if (isPurchasedViikset == false)
                 {
                     ViiksetButton.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 100)
+            {
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
                 }
             }
             if (PlayerMoney.Instance.money < 20)
@@ -726,6 +794,7 @@ public class WeightLiftScript : MonoBehaviour
         }
     }
 
+    //Tässä katsotaan Update metodissa että onko pelaajalla rahaa ostaa punainen väri blobille
     public void ColorChangeToRedUpdate()
     {
         if (SkinCooldown.Instance.isPurchasedSkin6 == false && PlayerMoney.Instance.money < 10)
@@ -743,30 +812,57 @@ public class WeightLiftScript : MonoBehaviour
     {
         if (currentSkin == 7)
         {
-            if (progressBox.level < 3)
+            if (progressBox.level < 5)
             {
                 FurrySunglassesT1.SetActive(true);
+                FurrySunglassesT2.SetActive(false);
+                FurrySunglassesT3.SetActive(false);
+                progressBox.hahmoLVL1.SetActive(false);
             }
-            else
+            else if (progressBox.level < 10)
             {
+                FurrySunglassesT1.SetActive(false);
                 FurrySunglassesT2.SetActive(true);
+                FurrySunglassesT3.SetActive(false);
+                progressBox.hahmoLVL2.SetActive(false);
             }
+            else if (progressBox.level >= 10)
+            {
+                FurrySunglassesT1.SetActive(false);
+                FurrySunglassesT2.SetActive(false);
+                FurrySunglassesT3.SetActive(true);
+                progressBox.hahmoLVL3.SetActive(false);
+            }
+        }
+        if (currentSkin != 7)
+        {
+            FurrySunglassesT1.SetActive(false);
+            FurrySunglassesT2.SetActive(false);
+            FurrySunglassesT3.SetActive(false);
         }
     }
 
     //FurrySunglasses cosmetic metodi
     public void FurrySunglassesCosmetic()
     {
-        //if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 3 || progressBox.hahmoLVL1.activeSelf == true)
-        //{
-
-        //}
-        //else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 3 || progressBox.hahmoLVL2.activeSelf == true)
-        //{
-
-        //}
         currentSkin = 7;
         PlayerPrefs.SetInt("CSkin", 7);
+
+        if (isPurchasedFurrySunglasses == true && currentSkin == 7)
+        {
+            if (progressBox.level < 5)
+            {
+                FurrySunglassesT1.SetActive(true);
+            }
+            else if (progressBox.level >= 5 && progressBox.level < 10)
+            {
+                FurrySunglassesT2.SetActive(true);
+            }
+            else if (progressBox.level >= 10)
+            {
+                FurrySunglassesT3.SetActive(true);
+            }
+        }
 
         if (isPurchasedFurrySunglasses == false && PlayerMoney.Instance.money >= 30)
         {
@@ -804,10 +900,6 @@ public class WeightLiftScript : MonoBehaviour
                 {
                     FurrySunglassesButton.interactable = false;
                 }
-                if (isPurchasedKruunu == false)
-                {
-                    KruunuButton.interactable = false;
-                }
                 if (isPurchasedLippis == false)
                 {
                     LippisButton.interactable = false;
@@ -825,6 +917,13 @@ public class WeightLiftScript : MonoBehaviour
                     ViiksetButton.interactable = false;
                 }
             }
+            if (PlayerMoney.Instance.money < 100)
+            {
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
+                }
+            }
             if (PlayerMoney.Instance.money < 20)
             {
                 if (BackgroundSave.instance.isPurchasedBackground2 == false)
@@ -837,28 +936,55 @@ public class WeightLiftScript : MonoBehaviour
                 }
             }
         }
-        if (SkinCooldown.Instance.isPurchasedSkin6 == true && currentSkin == 6)
+        if (isPurchasedFurrySunglasses == true && currentSkin == 7)
         {
-            SkinCooldown.Instance.SkinText6.SetActive(false);
-            SkinCooldown.Instance.SkinButton6.interactable = true;
+            FurrySunglassesShopText.SetActive(false);
+            FurrySunglassesButton.interactable = true;
         }
     }
 
+    public void FurrySunglassesTest()
+    {
+        if (progressBox.level >= 10)
+        {
+            FurrySunglassesT3.SetActive(true);
+        }
+    }
 
     //Tässä katsotaan onko cosmetics päällä kun shopin laittaa kiinni
-    public void CheckOnShopExistIfPlayerHasCurrentSkin()
+    public void CheckOnShopExistIfPlayerHasColorOrSkinAndProgress()
     {
+        if (progressBox.level < 5)
+        {
+            progressBox.hahmoLVL2.SetActive(false);
+            progressBox.hahmoLVL1.SetActive(true);
+        }
+        else if (progressBox.level >= 10)
+        {
+            progressBox.hahmoLVL1.SetActive(false);
+            progressBox.hahmoLVL2.SetActive(true);
+        }
+
         if (currentSkin == 7)
         {
-            if (progressBox.level < 3)
+            if (progressBox.level < 5)
             {
                 FurrySunglassesT1.SetActive(true);
+                FurrySunglassesT2.SetActive(false);
+                FurrySunglassesT3.SetActive(false);
             }
-            else
+            else if (progressBox.level > 5 && progressBox.level < 15)
             {
+                FurrySunglassesT1.SetActive(false);
                 FurrySunglassesT2.SetActive(true);
+                FurrySunglassesT3.SetActive(false);
+            }
+            else if (progressBox.level >= 15)
+            {
+                FurrySunglassesT3.SetActive(true);
             }
         }
+
     }
 
     //Tässä käydään Updatessa läpi että onko pelaajalla rahaa ostaa cosmetics
@@ -936,6 +1062,20 @@ public class WeightLiftScript : MonoBehaviour
         anim.SetBool("nosto11", nosto11);
         anim.SetBool("nosto12", nosto12);
         anim.SetBool("nosto13", nosto13);
+        if (progressBox.hahmoLVL3.activeSelf || FurrySunglassesT3.activeSelf || KruunuT3.activeSelf || LippisT3.activeSelf || TreeniMyssyT3.activeSelf || ViiksetT3.activeSelf || SunglassesT3.activeSelf)
+        {
+            anim.SetBool("nosto14", nosto14);
+            anim.SetBool("nosto15", nosto15);
+            anim.SetBool("nosto16", nosto16);
+        }
+        //anim.SetBool("nosto14", nosto14);
+        //anim.SetBool("nosto15", nosto15);
+        //anim.SetBool("nosto16", nosto16);
+
+        //if (progressBox.level >= 10 && clickCounter >= 15 && progressBox.hahmoLVL3.activeSelf)
+        //{
+
+        //}
     }
 
     private void CheckInput()
@@ -945,7 +1085,28 @@ public class WeightLiftScript : MonoBehaviour
             inputTimer = 0;
             NostoFunction();
             clickCounter++;
-            if (clickCounter >= 18)
+            // Jos level on yhtäsuuri tai suurempi kuin 10 niin tarvii 19 clickiä että saa finashattua yhen setin painon nostoa, muuten eli else lauseessa normi 17 tarvii clickiä
+            if (progressBox.level >= 10 && clickCounter >= 19 && progressBox.hahmoLVL3.activeSelf || FurrySunglassesT3.activeSelf && clickCounter >= 19)
+            {
+                clickCounter = 0;
+                if (progressBox.level < 2)
+                {
+                    progressBox.UpdateProgress(0.2f);
+                }
+                else
+                {
+                    progressBox.UpdateProgress(0.1f);
+                }
+                StaminaIndicator.instance.UseStamina(5);
+                GameObject prefab = Instantiate(floatingMoneyText, transform.position, Quaternion.identity) as GameObject;
+                prefab.transform.SetParent(canvas.transform, false);
+                Destroy(prefab, 1f);
+                PlayerMoney.Instance.addMoney(1);
+                RateManager.Instance.ClickPlay();
+                nosto16 = false;
+                idle = true;
+            }
+            else if (clickCounter >= 16 && progressBox.hahmoLVL1.activeSelf || clickCounter >= 16 && progressBox.hahmoLVL2.activeSelf)
             {
                 clickCounter = 0;
                 if (progressBox.level < 2)
@@ -965,7 +1126,6 @@ public class WeightLiftScript : MonoBehaviour
                 nosto13 = false;
                 idle = true;
             }
-            
         }
         if (StaminaIndicator.instance.currentStamina < 5)
         {
@@ -1100,6 +1260,30 @@ public class WeightLiftScript : MonoBehaviour
                 nosto13 = false;
                 clickCounter--;
             }
+            else if (clickCounter <= 15)
+            {
+                idle = false;
+                nosto12 = false;
+                nosto13 = true;
+                nosto14 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 16)
+            {
+                idle = false;
+                nosto13 = false;
+                nosto14 = true;
+                nosto15 = false;
+                clickCounter--;
+            }
+            else if (clickCounter <= 17)
+            {
+                idle = false;
+                nosto14 = false;
+                nosto15 = true;
+                nosto16 = false;
+                clickCounter--;
+            }
         }
     }
     private void NostoFunction()
@@ -1109,27 +1293,27 @@ public class WeightLiftScript : MonoBehaviour
             idle = false;
             nosto0 = true;
         }
-        else if(clickCounter <= 2)
+        else if (clickCounter <= 2)
         {
             idle = false;
             nosto0 = false;
             nosto1 = true;
         }
-        else if(clickCounter <= 3)
+        else if (clickCounter <= 3)
         {
             idle = false;
             nosto0 = false;
             nosto1 = false;
             nosto2 = true;
         }
-        else if(clickCounter <= 4)
+        else if (clickCounter <= 4)
         {
             idle = false;
             nosto1 = false;
             nosto2 = false;
             nosto3 = true;
         }
-        else if(clickCounter <= 5)
+        else if (clickCounter <= 5)
         {
             idle = false;
             nosto2 = false;
@@ -1198,6 +1382,27 @@ public class WeightLiftScript : MonoBehaviour
             nosto11 = false;
             nosto12 = false;
             nosto13 = true;
+        }
+        else if (clickCounter <= 15)
+        {
+            idle = false;
+            nosto12 = false;
+            nosto13 = false;
+            nosto14 = true;
+        }
+        else if (clickCounter <= 16)
+        {
+            idle = false;
+            nosto16 = false;
+            nosto14 = false;
+            nosto15 = true;
+        }
+        else if (clickCounter <= 17)
+        {
+            idle = false;
+            nosto14 = false;
+            nosto15 = false;
+            nosto16 = true;
         }
     }
 }
