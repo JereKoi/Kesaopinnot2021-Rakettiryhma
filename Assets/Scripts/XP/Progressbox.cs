@@ -89,7 +89,7 @@ public class Progressbox : MonoBehaviour
         {
             hahmoLVL3.SetActive(true);
         }
-        if (WeightLiftScript.instance.currentSkin == 7)
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
         {
             hahmoLVL1.SetActive(false);
             hahmoLVL2.SetActive(false);

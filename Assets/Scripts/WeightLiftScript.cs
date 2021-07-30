@@ -50,6 +50,7 @@ public class WeightLiftScript : MonoBehaviour
     public bool isPurchasedSunglasses;
     public bool isPurchasedTreeniMyssy;
     public bool isPurchasedViikset;
+    //public int currentCosmetic;
 
     //Cosmetics buttons
     public Button FurrySunglassesButton;
@@ -81,7 +82,7 @@ public class WeightLiftScript : MonoBehaviour
     private bool nosto16;
 
     private int clickCounter = 0;
-    public int currentSkin;
+    //public int currentSkin;
     private float inputTimer;
 
     private Animator anim;
@@ -133,7 +134,7 @@ public class WeightLiftScript : MonoBehaviour
                 SkinCooldown.Instance.SkinText3.SetActive(false);
             }
         }
-        if (currentSkin == 4)
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4)
         {
             ColorChangeToWhite();
         }
@@ -178,40 +179,45 @@ public class WeightLiftScript : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("CSkin") /*&& progressBox.hahmoLVL1 == true || progressBox.hahmoLVL2 == true*/)
         {
-            currentSkin = PlayerPrefs.GetInt("CSkin");
-            if (currentSkin == 1)
+            CurrentSkinCurrentCosmeticHolder.instance.currentSkin = PlayerPrefs.GetInt("CSkin");
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1)
             {
                 ColorChangeToOrange();
             }
-            else if (currentSkin == 2)
+            else if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 2)
             {
                 ColorChangeToBlue();
             }
-            else if (currentSkin == 3)
+            else if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 3)
             {
                 ColorChangeToPink();
             }
-            else if (currentSkin == 4)
+            else if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4)
             {
                 ColorChangeToWhite();
             }
-            else if (currentSkin == 5)
+            else if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 5)
             {
                 ColorChangeToGreen();
             }
-            else if (currentSkin == 6)
+            else if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 6)
             {
                 ColorChangeToRed();
             }
             //TÄSSÄ KOHDASSA ALKAA COSMETICSIEN TARKISTUS
-            else if (currentSkin == 7)
+        }
+        if (PlayerPrefs.HasKey("CurrentCosmetic"))
+        {
+            CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = PlayerPrefs.GetInt("CurrentCosmetic");
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
             {
                 FurrySunglassesTest();
             }
-        }
-        else
-        {
-            return;
+            //if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 3)
+            //{
+            //    FurrySunglassesTest();
+            //    ColorChangeToPink();
+            //}
         }
     }
 
@@ -231,21 +237,28 @@ public class WeightLiftScript : MonoBehaviour
     //tassa vaihdetaan blobejen vareja kaupassa.
     public void ColorChangeToOrange()
     {
-        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 1|| progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+            CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 0;
         }
-        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 5 || progressBox.hahmoLVL2.activeSelf == true)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 1 || progressBox.hahmoLVL2.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+            CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 0;
         }
-        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 || progressBox.hahmoLVL3.activeSelf == true)
+        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 1 || progressBox.hahmoLVL3.activeSelf == true)
         {
             rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
+            CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 0;
+        }
+        if (FurrySunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+        {
+            rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
         }
 
         rend.color = new Color32(255, 245, 71, 255);
-        currentSkin = 1;
+        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 1;
         PlayerPrefs.SetInt("CSkin", 1);
 
         if (SkinCooldown.Instance.isPurchasedSkin1 == false && PlayerMoney.Instance.money >= 10)
@@ -255,7 +268,7 @@ public class WeightLiftScript : MonoBehaviour
             PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
             PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
             rend.color = new Color32(255, 245, 71, 255);
-            currentSkin = 1;
+            CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 1;
             PlayerPrefs.SetInt("CSkin", 1);
             SkinCooldown.Instance.isPurchasedSkin1 = true;
             PlayerPrefs.SetInt("isPurchasedSkin1", SkinCooldown.Instance.isPurchasedSkin1 ? 1 : 0);
@@ -356,7 +369,7 @@ public class WeightLiftScript : MonoBehaviour
         }
 
         rend.color = new Color32(124, 252, 255, 255);
-        currentSkin = 2;
+        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 2;
         PlayerPrefs.SetInt("CSkin", 2);
 
         if (SkinCooldown.Instance.isPurchasedSkin2 == false && PlayerMoney.Instance.money >= 10)
@@ -366,7 +379,7 @@ public class WeightLiftScript : MonoBehaviour
             PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
             PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
             rend.color = new Color32(124, 252, 255, 255);
-            currentSkin = 2;
+            CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 2;
             PlayerPrefs.SetInt("CSkin", 2);
             SkinCooldown.Instance.isPurchasedSkin2 = true;
             PlayerPrefs.SetInt("isPurchasedSkin2", SkinCooldown.Instance.isPurchasedSkin2 ? 1 : 0);
@@ -456,22 +469,25 @@ public class WeightLiftScript : MonoBehaviour
         if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
+            CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 0;
         }
         else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level == 5 || progressBox.hahmoLVL2.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
+            CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 0;
         }
-        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 && currentSkin != 7 || progressBox.hahmoLVL3.activeSelf == true)
+        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 1 || progressBox.hahmoLVL3.activeSelf == true)
         {
             rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
+            CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 0;
         }
-        if (FurrySunglassesT3.activeSelf == false|| FurrySunglassesT3.activeSelf == true)
+        if (FurrySunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
         {
             rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
         }
 
         rend.color = new Color32(250, 172, 255, 255);
-        currentSkin = 3;
+        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 3;
         PlayerPrefs.SetInt("CSkin", 3);
 
         if (SkinCooldown.Instance.isPurchasedSkin3 == false && PlayerMoney.Instance.money >= 10)
@@ -481,7 +497,7 @@ public class WeightLiftScript : MonoBehaviour
             PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
             PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
             rend.color = new Color32(250, 172, 255, 255);
-            currentSkin = 3;
+            CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 3;
             PlayerPrefs.SetInt("CSkin", 3);
             SkinCooldown.Instance.isPurchasedSkin3 = true;
             PlayerPrefs.SetInt("isPurchasedSkin3", SkinCooldown.Instance.isPurchasedSkin3 ? 1 : 0);
@@ -569,6 +585,9 @@ public class WeightLiftScript : MonoBehaviour
     //Tässä katsotaan onko pelaajalla pelkästään valkoinen skini päällä
     public void ColorChangeToWhite()
     {
+        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 4;
+        PlayerPrefs.SetInt("CSkin", 4);
+
         if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
@@ -581,9 +600,25 @@ public class WeightLiftScript : MonoBehaviour
         {
             rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
         }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+        {
+            if (progressBox.level < 5)
+            {
+                rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                rend = FurrySunglassesT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+        }
         rend.color = new Color32(255, 255, 255, 255);
-        currentSkin = 4;
-        PlayerPrefs.SetInt("CSkin", 4);
         SkinCooldown.Instance.isPurchasedSkin4 = true;
     }
     public void ColorChangeToGreen()
@@ -602,7 +637,7 @@ public class WeightLiftScript : MonoBehaviour
         }
 
         rend.color = new Color32(138, 255, 152, 255);
-        currentSkin = 5;
+        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 5;
         PlayerPrefs.SetInt("CSkin", 5);
 
         if (SkinCooldown.Instance.isPurchasedSkin5 == false && PlayerMoney.Instance.money >= 10)
@@ -612,7 +647,7 @@ public class WeightLiftScript : MonoBehaviour
             PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
             PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
             rend.color = new Color32(138, 255, 152, 255);
-            currentSkin = 5;
+            CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 5;
             PlayerPrefs.SetInt("CSkin", 5);
             SkinCooldown.Instance.isPurchasedSkin5 = true;
             PlayerPrefs.SetInt("isPurchasedSkin5", SkinCooldown.Instance.isPurchasedSkin5 ? 1 : 0);
@@ -712,7 +747,7 @@ public class WeightLiftScript : MonoBehaviour
             rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
         }
         rend.color = new Color32(255, 161, 129, 255);
-        currentSkin = 6;
+        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 6;
         PlayerPrefs.SetInt("CSkin", 6);
 
         if (SkinCooldown.Instance.isPurchasedSkin6 == false && PlayerMoney.Instance.money >= 10)
@@ -722,7 +757,7 @@ public class WeightLiftScript : MonoBehaviour
             PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
             PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
             rend.color = new Color32(255, 161, 129, 255);
-            currentSkin = 6;
+            CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 6;
             PlayerPrefs.SetInt("CSkin", 6);
             SkinCooldown.Instance.isPurchasedSkin6 = true;
             PlayerPrefs.SetInt("isPurchasedSkin6", SkinCooldown.Instance.isPurchasedSkin6 ? 1 : 0);
@@ -787,7 +822,7 @@ public class WeightLiftScript : MonoBehaviour
                 }
             }
         }
-        if (SkinCooldown.Instance.isPurchasedSkin6 == true && currentSkin == 6)
+        if (SkinCooldown.Instance.isPurchasedSkin6 == true && CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 6)
         {
             SkinCooldown.Instance.SkinText6.SetActive(false);
             SkinCooldown.Instance.SkinButton6.interactable = true;
@@ -810,7 +845,7 @@ public class WeightLiftScript : MonoBehaviour
     //Tässä katsotaan Start metodissa onko pelaajalla päällään cosmetics
     public void CheckOnStartIfPlayerHasFurrySunglassesCosmeticOn()
     {
-        if (currentSkin == 7)
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
         {
             if (progressBox.level < 5)
             {
@@ -834,7 +869,7 @@ public class WeightLiftScript : MonoBehaviour
                 progressBox.hahmoLVL3.SetActive(false);
             }
         }
-        if (currentSkin != 7)
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 1)
         {
             FurrySunglassesT1.SetActive(false);
             FurrySunglassesT2.SetActive(false);
@@ -845,22 +880,31 @@ public class WeightLiftScript : MonoBehaviour
     //FurrySunglasses cosmetic metodi
     public void FurrySunglassesCosmetic()
     {
-        currentSkin = 7;
-        PlayerPrefs.SetInt("CSkin", 7);
+        CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 1;
+        PlayerPrefs.SetInt("CurrentCosmetic", 1);
 
-        if (isPurchasedFurrySunglasses == true && currentSkin == 7)
+        if (isPurchasedFurrySunglasses == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
         {
             if (progressBox.level < 5)
             {
                 FurrySunglassesT1.SetActive(true);
+                progressBox.hahmoLVL1.SetActive(false);
+                progressBox.hahmoLVL2.SetActive(false);
+                progressBox.hahmoLVL3.SetActive(false);
             }
             else if (progressBox.level >= 5 && progressBox.level < 10)
             {
                 FurrySunglassesT2.SetActive(true);
+                progressBox.hahmoLVL1.SetActive(false);
+                progressBox.hahmoLVL2.SetActive(false);
+                progressBox.hahmoLVL3.SetActive(false);
             }
             else if (progressBox.level >= 10)
             {
                 FurrySunglassesT3.SetActive(true);
+                progressBox.hahmoLVL1.SetActive(false);
+                progressBox.hahmoLVL2.SetActive(false);
+                progressBox.hahmoLVL3.SetActive(false);
             }
         }
 
@@ -871,8 +915,8 @@ public class WeightLiftScript : MonoBehaviour
             PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
             PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
 
-            currentSkin = 7;
-            PlayerPrefs.SetInt("CSkin", 7);
+            CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 1;
+            PlayerPrefs.SetInt("CurrentCosmetic", 1);
             isPurchasedFurrySunglasses = true;
             PlayerPrefs.SetInt("isPurchasedFurrySunglasses", isPurchasedFurrySunglasses ? 1 : 0);
             if (PlayerMoney.Instance.money < 10)
@@ -936,7 +980,7 @@ public class WeightLiftScript : MonoBehaviour
                 }
             }
         }
-        if (isPurchasedFurrySunglasses == true && currentSkin == 7)
+        if (isPurchasedFurrySunglasses == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
         {
             FurrySunglassesShopText.SetActive(false);
             FurrySunglassesButton.interactable = true;
@@ -945,9 +989,80 @@ public class WeightLiftScript : MonoBehaviour
 
     public void FurrySunglassesTest()
     {
+        if (progressBox.level < 5)
+        {
+            FurrySunglassesT1.SetActive(true);
+        }
+        if (progressBox.level > 5 && progressBox.level < 10)
+        {
+            FurrySunglassesT2.SetActive(true);
+        }
         if (progressBox.level >= 10)
         {
             FurrySunglassesT3.SetActive(true);
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+        {
+            if (progressBox.level < 5)
+            {
+                FurrySunglassesT1.SetActive(true);
+                rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 245, 71, 255);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                FurrySunglassesT2.SetActive(true);
+                rend = FurrySunglassesT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 245, 71, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                FurrySunglassesT3.SetActive(true);
+                rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 245, 71, 255);
+            }
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 3 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+        {
+            if (progressBox.level < 5)
+            {
+                FurrySunglassesT1.SetActive(true);
+                rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(250, 172, 255, 255);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                FurrySunglassesT2.SetActive(true);
+                rend = FurrySunglassesT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(250, 172, 255, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                FurrySunglassesT3.SetActive(true);
+                rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(250, 172, 255, 255);
+            }
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+        {
+            if (progressBox.level < 5)
+            {
+                FurrySunglassesT1.SetActive(true);
+                rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                FurrySunglassesT2.SetActive(true);
+                rend = FurrySunglassesT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                FurrySunglassesT3.SetActive(true);
+                rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
         }
     }
 
@@ -965,7 +1080,7 @@ public class WeightLiftScript : MonoBehaviour
             progressBox.hahmoLVL2.SetActive(true);
         }
 
-        if (currentSkin == 7)
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 7)
         {
             if (progressBox.level < 5)
             {
