@@ -50,7 +50,6 @@ public class WeightLiftScript : MonoBehaviour
     public bool isPurchasedSunglasses;
     public bool isPurchasedTreeniMyssy;
     public bool isPurchasedViikset;
-    //public int currentCosmetic;
 
     //Cosmetics buttons
     public Button FurrySunglassesButton;
@@ -82,7 +81,6 @@ public class WeightLiftScript : MonoBehaviour
     private bool nosto16;
 
     private int clickCounter = 0;
-    //public int currentSkin;
     private float inputTimer;
 
     private Animator anim;
@@ -104,6 +102,61 @@ public class WeightLiftScript : MonoBehaviour
                 FurrySunglassesButton.interactable = true;
                 FurrySunglassesShopText.SetActive(false);
                 CheckOnStartIfPlayerHasFurrySunglassesCosmeticOn();
+            }
+        }
+
+        if (PlayerPrefs.HasKey("isPurchasedKruunu"))
+        {
+            isPurchasedKruunu = PlayerPrefs.GetInt("isPurchasedKruunu") != 0;
+            if (isPurchasedKruunu == true)
+            {
+                KruunuButton.interactable = true;
+                KruunuShopText.SetActive(false);
+                CheckOnStartifPlayerHasKruunuOn();
+            }
+        }
+
+        if (PlayerPrefs.HasKey("isPurchasedSunglasses"))
+        {
+            isPurchasedSunglasses = PlayerPrefs.GetInt("isPurchasedSunglasses") != 0;
+            if (isPurchasedSunglasses == true)
+            {
+                SunglassesButton.interactable = true;
+                SunglassesText.SetActive(false);
+                CheckOnStartIfPlayerHasSunglassesOn();
+            }
+        }
+
+        if (PlayerPrefs.HasKey("isPurchasedTreeniMyssy"))
+        {
+            isPurchasedTreeniMyssy = PlayerPrefs.GetInt("isPurchasedTreeniMyssy") != 0;
+            if (isPurchasedTreeniMyssy == true)
+            {
+                TreeniMyssyButton.interactable = true;
+                TreeniMyssyText.SetActive(false);
+                CheckOnStartIfPlayerHasTreeniMyssyOn();
+            }
+        }
+
+        if (PlayerPrefs.HasKey("isPurchasedViikset"))
+        {
+            isPurchasedViikset = PlayerPrefs.GetInt("isPurchasedViikset") != 0;
+            if (isPurchasedViikset == true)
+            {
+                ViiksetButton.interactable = true;
+                ViiksetText.SetActive(false);
+                CheckOnStartIfPlayerHasViiksetOn();
+            }
+        }
+
+        if (PlayerPrefs.HasKey("isPurchasedLippis"))
+        {
+            isPurchasedLippis = PlayerPrefs.GetInt("isPurchasedLippis") != 0;
+            if (isPurchasedLippis == true)
+            {
+                LippisButton.interactable = true;
+                LippisShopText.SetActive(false);
+                CheckOnStartIfPlayerHasLippisOn();
             }
         }
 
@@ -177,7 +230,7 @@ public class WeightLiftScript : MonoBehaviour
     //Awake metodissa käydään läpi blobfishin värit
     private void Awake()
     {
-        if (PlayerPrefs.HasKey("CSkin") /*&& progressBox.hahmoLVL1 == true || progressBox.hahmoLVL2 == true*/)
+        if (PlayerPrefs.HasKey("CSkin"))
         {
             CurrentSkinCurrentCosmeticHolder.instance.currentSkin = PlayerPrefs.GetInt("CSkin");
             if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1)
@@ -204,6 +257,8 @@ public class WeightLiftScript : MonoBehaviour
             {
                 ColorChangeToRed();
             }
+
+
             //TÄSSÄ KOHDASSA ALKAA COSMETICSIEN TARKISTUS
         }
         if (PlayerPrefs.HasKey("CurrentCosmetic"))
@@ -213,11 +268,26 @@ public class WeightLiftScript : MonoBehaviour
             {
                 FurrySunglassesTest();
             }
-            //if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 3)
-            //{
-            //    FurrySunglassesTest();
-            //    ColorChangeToPink();
-            //}
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2)
+            {
+                KruunuCosmeticTest();
+            }
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3)
+            {
+                SunglassesCosmeticTest();
+            }
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4)
+            {
+                TreeniMyssyCosmeticTest();
+            }
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+            {
+                ViiksetCosmeticTest();
+            }
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+            {
+                LippisCosmeticTest();
+            }
         }
     }
 
@@ -237,7 +307,7 @@ public class WeightLiftScript : MonoBehaviour
     //tassa vaihdetaan blobejen vareja kaupassa.
     public void ColorChangeToOrange()
     {
-        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 1|| progressBox.hahmoLVL1.activeSelf == true)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 1 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
             CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 0;
@@ -252,7 +322,17 @@ public class WeightLiftScript : MonoBehaviour
             rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
             CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 0;
         }
-        if (FurrySunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+
+        //FurrySunglasses cosmetic Oranssin värin vaihto
+        if (FurrySunglassesT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level < 5)
+        {
+            rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
+        }
+        else if (FurrySunglassesT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = FurrySunglassesT2.GetComponent<SpriteRenderer>();
+        }
+        else if (FurrySunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level >= 10)
         {
             rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
         }
@@ -368,6 +448,20 @@ public class WeightLiftScript : MonoBehaviour
             rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
         }
 
+
+        if (FurrySunglassesT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level < 5)
+        {
+            rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
+        }
+        else if (FurrySunglassesT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = FurrySunglassesT2.GetComponent<SpriteRenderer>();
+        }
+        else if (FurrySunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level >= 10)
+        {
+            rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
+        }
+
         rend.color = new Color32(124, 252, 255, 255);
         CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 2;
         PlayerPrefs.SetInt("CSkin", 2);
@@ -481,7 +575,17 @@ public class WeightLiftScript : MonoBehaviour
             rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
             CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 0;
         }
-        if (FurrySunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+
+
+        if (FurrySunglassesT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level < 5)
+        {
+            rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
+        }
+        else if (FurrySunglassesT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = FurrySunglassesT2.GetComponent<SpriteRenderer>();
+        }
+        else if (FurrySunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level >= 10)
         {
             rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
         }
@@ -600,6 +704,8 @@ public class WeightLiftScript : MonoBehaviour
         {
             rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
         }
+
+
         if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
         {
             if (progressBox.level < 5)
@@ -634,6 +740,18 @@ public class WeightLiftScript : MonoBehaviour
         else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 || progressBox.hahmoLVL3.activeSelf == true)
         {
             rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
+        }
+        if (FurrySunglassesT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level < 5)
+        {
+            rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
+        }
+        else if (FurrySunglassesT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = FurrySunglassesT2.GetComponent<SpriteRenderer>();
+        }
+        else if (FurrySunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level >= 10)
+        {
+            rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
         }
 
         rend.color = new Color32(138, 255, 152, 255);
@@ -746,6 +864,22 @@ public class WeightLiftScript : MonoBehaviour
         {
             rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
         }
+
+
+        if (FurrySunglassesT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level < 5)
+        {
+            rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
+        }
+        else if (FurrySunglassesT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = FurrySunglassesT2.GetComponent<SpriteRenderer>();
+        }
+        else if (FurrySunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level >= 10)
+        {
+            rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
+        }
+
+
         rend.color = new Color32(255, 161, 129, 255);
         CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 6;
         PlayerPrefs.SetInt("CSkin", 6);
@@ -987,6 +1121,188 @@ public class WeightLiftScript : MonoBehaviour
         }
     }
 
+    public void CheckOnStartifPlayerHasKruunuOn()
+    {
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2)
+        {
+            if (progressBox.level < 5)
+            {
+                KruunuT1.SetActive(true);
+                KruunuT2.SetActive(false);
+                KruunuT3.SetActive(false);
+                progressBox.hahmoLVL1.SetActive(false);
+            }
+            else if (progressBox.level < 10)
+            {
+                KruunuT1.SetActive(false);
+                KruunuT2.SetActive(true);
+                KruunuT3.SetActive(false);
+                progressBox.hahmoLVL2.SetActive(false);
+            }
+            else if (progressBox.level >= 10)
+            {
+                KruunuT1.SetActive(false);
+                KruunuT2.SetActive(false);
+                KruunuT3.SetActive(true);
+                progressBox.hahmoLVL3.SetActive(false);
+            }
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 2)
+        {
+            KruunuT1.SetActive(false);
+            KruunuT2.SetActive(false);
+            KruunuT3.SetActive(false);
+        }
+    }
+
+    public void CheckOnStartIfPlayerHasSunglassesOn()
+    {
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3)
+        {
+            if (progressBox.level < 5)
+            {
+                SunglassesT1.SetActive(true);
+                SunglassesT2.SetActive(false);
+                SunglassesT3.SetActive(false);
+                progressBox.hahmoLVL1.SetActive(false);
+            }
+            else if (progressBox.level < 10)
+            {
+                SunglassesT1.SetActive(false);
+                SunglassesT2.SetActive(true);
+                SunglassesT3.SetActive(false);
+                progressBox.hahmoLVL2.SetActive(false);
+            }
+            else if (progressBox.level >= 10)
+            {
+                SunglassesT1.SetActive(false);
+                SunglassesT2.SetActive(false);
+                SunglassesT3.SetActive(true);
+                progressBox.hahmoLVL3.SetActive(false);
+            }
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 3)
+        {
+            SunglassesT1.SetActive(false);
+            SunglassesT2.SetActive(false);
+            SunglassesT3.SetActive(false);
+        }
+    }
+
+    public void CheckOnStartIfPlayerHasTreeniMyssyOn()
+    {
+        {
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4)
+            {
+                if (progressBox.level < 5)
+                {
+                    TreeniMyssyT1.SetActive(true);
+                    TreeniMyssyT2.SetActive(false);
+                    TreeniMyssyT3.SetActive(false);
+                    progressBox.hahmoLVL1.SetActive(false);
+                }
+                else if (progressBox.level < 10)
+                {
+                    TreeniMyssyT1.SetActive(false);
+                    TreeniMyssyT2.SetActive(true);
+                    TreeniMyssyT3.SetActive(false);
+                    progressBox.hahmoLVL2.SetActive(false);
+                }
+                else if (progressBox.level >= 10)
+                {
+                    TreeniMyssyT1.SetActive(false);
+                    TreeniMyssyT2.SetActive(false);
+                    TreeniMyssyT3.SetActive(true);
+                    progressBox.hahmoLVL3.SetActive(false);
+                }
+            }
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 4)
+            {
+                TreeniMyssyT1.SetActive(false);
+                TreeniMyssyT2.SetActive(false);
+                TreeniMyssyT3.SetActive(false);
+            }
+        }
+    }
+
+    public void CheckOnStartIfPlayerHasViiksetOn()
+    {
+        {
+            {
+                if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+                {
+                    if (progressBox.level < 5)
+                    {
+                        ViiksetT1.SetActive(true);
+                        ViiksetT2.SetActive(false);
+                        ViiksetT3.SetActive(false);
+                        progressBox.hahmoLVL1.SetActive(false);
+                    }
+                    else if (progressBox.level < 10)
+                    {
+                        ViiksetT1.SetActive(false);
+                        ViiksetT2.SetActive(true);
+                        ViiksetT3.SetActive(false);
+                        progressBox.hahmoLVL2.SetActive(false);
+                    }
+                    else if (progressBox.level >= 10)
+                    {
+                        ViiksetT1.SetActive(false);
+                        ViiksetT2.SetActive(false);
+                        ViiksetT3.SetActive(true);
+                        progressBox.hahmoLVL3.SetActive(false);
+                    }
+                }
+                if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 5)
+                {
+                    ViiksetT1.SetActive(false);
+                    ViiksetT2.SetActive(false);
+                    ViiksetT3.SetActive(false);
+                }
+            }
+        }
+    }
+
+    public void CheckOnStartIfPlayerHasLippisOn()
+    {
+        {
+            {
+                {
+                    if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+                    {
+                        if (progressBox.level < 5)
+                        {
+                            LippisT1.SetActive(true);
+                            LippisT2.SetActive(false);
+                            LippisT3.SetActive(false);
+                            progressBox.hahmoLVL1.SetActive(false);
+                        }
+                        else if (progressBox.level < 10)
+                        {
+                            LippisT1.SetActive(false);
+                            LippisT2.SetActive(true);
+                            LippisT3.SetActive(false);
+                            progressBox.hahmoLVL2.SetActive(false);
+                        }
+                        else if (progressBox.level >= 10)
+                        {
+                            LippisT1.SetActive(false);
+                            LippisT2.SetActive(false);
+                            LippisT3.SetActive(true);
+                            progressBox.hahmoLVL3.SetActive(false);
+                        }
+                    }
+                    if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 6)
+                    {
+                        LippisT1.SetActive(false);
+                        LippisT2.SetActive(false);
+                        LippisT3.SetActive(false);
+                    }
+                }
+            }
+        }
+    }
+
     public void FurrySunglassesTest()
     {
         if (progressBox.level < 5)
@@ -1001,6 +1317,8 @@ public class WeightLiftScript : MonoBehaviour
         {
             FurrySunglassesT3.SetActive(true);
         }
+
+        //Oranssiväri furrysunglass
         if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
         {
             if (progressBox.level < 5)
@@ -1022,6 +1340,31 @@ public class WeightLiftScript : MonoBehaviour
                 rend.color = new Color32(255, 245, 71, 255);
             }
         }
+
+        //Sininenväri furrysunglass
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 2 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+        {
+            if (progressBox.level < 5)
+            {
+                FurrySunglassesT1.SetActive(true);
+                rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(124, 252, 255, 255);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                FurrySunglassesT2.SetActive(true);
+                rend = FurrySunglassesT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(124, 252, 255, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                FurrySunglassesT3.SetActive(true);
+                rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(124, 252, 255, 255);
+            }
+        }
+
+        //Pinkkiväri furrysunglass
         if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 3 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
         {
             if (progressBox.level < 5)
@@ -1043,6 +1386,8 @@ public class WeightLiftScript : MonoBehaviour
                 rend.color = new Color32(250, 172, 255, 255);
             }
         }
+
+        //Valkoinenväri furrysunglass
         if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
         {
             if (progressBox.level < 5)
@@ -1064,6 +1409,1401 @@ public class WeightLiftScript : MonoBehaviour
                 rend.color = new Color32(255, 255, 255, 255);
             }
         }
+
+        //Vihreäväri furrysunglass
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+        {
+            if (progressBox.level < 5)
+            {
+                FurrySunglassesT1.SetActive(true);
+                rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(138, 255, 152, 255);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                FurrySunglassesT2.SetActive(true);
+                rend = FurrySunglassesT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(138, 255, 152, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                FurrySunglassesT3.SetActive(true);
+                rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(138, 255, 152, 255);
+            }
+        }
+
+        //Punanenväri furrysunglass
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 6 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+        {
+            if (progressBox.level < 5)
+            {
+                FurrySunglassesT1.SetActive(true);
+                rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 161, 129, 255);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                FurrySunglassesT2.SetActive(true);
+                rend = FurrySunglassesT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 161, 129, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                FurrySunglassesT3.SetActive(true);
+                rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 161, 129, 255);
+            }
+        }
+    }
+
+    public void KruunuCosmetic()
+    {
+        CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 2;
+        PlayerPrefs.SetInt("CurrentCosmetic", 2);
+
+        if (isPurchasedKruunu == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2)
+        {
+            if (progressBox.level < 5)
+            {
+                KruunuT1.SetActive(true);
+                progressBox.hahmoLVL1.SetActive(false);
+                progressBox.hahmoLVL2.SetActive(false);
+                progressBox.hahmoLVL3.SetActive(false);
+            }
+            else if (progressBox.level >= 5 && progressBox.level < 10)
+            {
+                KruunuT2.SetActive(true);
+                progressBox.hahmoLVL1.SetActive(false);
+                progressBox.hahmoLVL2.SetActive(false);
+                progressBox.hahmoLVL3.SetActive(false);
+            }
+            else if (progressBox.level >= 10)
+            {
+                KruunuT3.SetActive(true);
+                progressBox.hahmoLVL1.SetActive(false);
+                progressBox.hahmoLVL2.SetActive(false);
+                progressBox.hahmoLVL3.SetActive(false);
+            }
+        }
+
+        if (isPurchasedKruunu == false && PlayerMoney.Instance.money >= 30) // VAIHDA 100 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        {
+            PlayerMoney.Instance.minusMoney(30);
+            KruunuShopText.SetActive(false);
+            PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
+            PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
+
+            CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 2;
+            PlayerPrefs.SetInt("CurrentCosmetic", 2);
+            isPurchasedKruunu = true;
+            PlayerPrefs.SetInt("isPurchasedKruunu", isPurchasedKruunu ? 1 : 0);
+            if (PlayerMoney.Instance.money < 10)
+            {
+                if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                {
+                    SkinCooldown.Instance.SkinButton1.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin2 == false)
+                {
+                    SkinCooldown.Instance.SkinButton2.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin3 == false)
+                {
+                    SkinCooldown.Instance.SkinButton3.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin5 == false)
+                {
+                    SkinCooldown.Instance.SkinButton5.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 30)
+            {
+                if (isPurchasedFurrySunglasses == false)
+                {
+                    FurrySunglassesButton.interactable = false;
+                }
+                if (isPurchasedLippis == false)
+                {
+                    LippisButton.interactable = false;
+                }
+                if (isPurchasedSunglasses == false)
+                {
+                    SunglassesButton.interactable = false;
+                }
+                if (isPurchasedTreeniMyssy == false)
+                {
+                    TreeniMyssyButton.interactable = false;
+                }
+                if (isPurchasedViikset == false)
+                {
+                    ViiksetButton.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 100)
+            {
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 20)
+            {
+                if (BackgroundSave.instance.isPurchasedBackground2 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground2 = false;
+                }
+                if (BackgroundSave.instance.isPurchasedBackground3 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground3 = false;
+                }
+            }
+        }
+        if (isPurchasedKruunu == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2)
+        {
+            FurrySunglassesShopText.SetActive(false);
+            FurrySunglassesButton.interactable = true;
+        }
+    }
+
+    public void KruunuCosmeticTest()
+    {
+        if (progressBox.level < 5)
+        {
+            KruunuT1.SetActive(true);
+        }
+        if (progressBox.level > 5 && progressBox.level < 10)
+        {
+            KruunuT2.SetActive(true);
+        }
+        if (progressBox.level >= 10)
+        {
+            KruunuT3.SetActive(true);
+        }
+
+        //Oranssiväri Kruunu
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2)
+        {
+            if (progressBox.level < 5)
+            {
+                KruunuT1.SetActive(true);
+                rend = KruunuT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 245, 71, 255);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                KruunuT2.SetActive(true);
+                rend = KruunuT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 245, 71, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                KruunuT3.SetActive(true);
+                rend = KruunuT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 245, 71, 255);
+            }
+        }
+
+        //Sininenväri Kruunu
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 2 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2)
+        {
+            if (progressBox.level < 5)
+            {
+                KruunuT1.SetActive(true);
+                rend = KruunuT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(124, 252, 255, 255);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                KruunuT2.SetActive(true);
+                rend = KruunuT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(124, 252, 255, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                KruunuT3.SetActive(true);
+                rend = KruunuT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(124, 252, 255, 255);
+            }
+        }
+
+        //Pinkkiväri Kruunu
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 3 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2)
+        {
+            if (progressBox.level < 5)
+            {
+                KruunuT1.SetActive(true);
+                rend = KruunuT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(250, 172, 255, 255);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                KruunuT2.SetActive(true);
+                rend = KruunuT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(250, 172, 255, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                KruunuT3.SetActive(true);
+                rend = KruunuT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(250, 172, 255, 255);
+            }
+        }
+
+        //Valkoinenväri Kruunu
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2)
+        {
+            if (progressBox.level < 5)
+            {
+                KruunuT1.SetActive(true);
+                rend = KruunuT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                KruunuT2.SetActive(true);
+                rend = KruunuT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                KruunuT3.SetActive(true);
+                rend = KruunuT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+        }
+
+        //Vihreäväri Kruunu
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2)
+        {
+            if (progressBox.level < 5)
+            {
+                KruunuT1.SetActive(true);
+                rend = KruunuT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(138, 255, 152, 255);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                KruunuT2.SetActive(true);
+                rend = KruunuT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(138, 255, 152, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                KruunuT3.SetActive(true);
+                rend = KruunuT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(138, 255, 152, 255);
+            }
+        }
+
+        //Punanenväri Kruunu
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 6 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2)
+        {
+            if (progressBox.level < 5)
+            {
+                KruunuT1.SetActive(true);
+                rend = KruunuT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 161, 129, 255);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                KruunuT2.SetActive(true);
+                rend = KruunuT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 161, 129, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                KruunuT3.SetActive(true);
+                rend = KruunuT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 161, 129, 255);
+            }
+        }
+    }
+
+    public void SunglassesCosmetic()
+    {
+        CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 3;
+        PlayerPrefs.SetInt("CurrentCosmetic", 3);
+
+        if (isPurchasedSunglasses == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3)
+        {
+            if (progressBox.level < 5)
+            {
+                SunglassesT1.SetActive(true);
+                progressBox.hahmoLVL1.SetActive(false);
+                progressBox.hahmoLVL2.SetActive(false);
+                progressBox.hahmoLVL3.SetActive(false);
+            }
+            else if (progressBox.level >= 5 && progressBox.level < 10)
+            {
+                SunglassesT2.SetActive(true);
+                progressBox.hahmoLVL1.SetActive(false);
+                progressBox.hahmoLVL2.SetActive(false);
+                progressBox.hahmoLVL3.SetActive(false);
+            }
+            else if (progressBox.level >= 10)
+            {
+                SunglassesT3.SetActive(true);
+                progressBox.hahmoLVL1.SetActive(false);
+                progressBox.hahmoLVL2.SetActive(false);
+                progressBox.hahmoLVL3.SetActive(false);
+            }
+        }
+
+        if (isPurchasedSunglasses == false && PlayerMoney.Instance.money >= 30)
+        {
+            PlayerMoney.Instance.minusMoney(30);
+            SunglassesText.SetActive(false);
+            PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
+            PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
+
+            CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 3;
+            PlayerPrefs.SetInt("CurrentCosmetic", 3);
+            isPurchasedSunglasses = true;
+            PlayerPrefs.SetInt("isPurchasedSunglasses", isPurchasedSunglasses ? 1 : 0);
+            if (PlayerMoney.Instance.money < 10)
+            {
+                if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                {
+                    SkinCooldown.Instance.SkinButton1.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin2 == false)
+                {
+                    SkinCooldown.Instance.SkinButton2.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin3 == false)
+                {
+                    SkinCooldown.Instance.SkinButton3.interactable = false;
+                }
+                if (SkinCooldown.Instance.isPurchasedSkin5 == false)
+                {
+                    SkinCooldown.Instance.SkinButton5.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 30)
+            {
+                if (isPurchasedFurrySunglasses == false)
+                {
+                    FurrySunglassesButton.interactable = false;
+                }
+                if (isPurchasedLippis == false)
+                {
+                    LippisButton.interactable = false;
+                }
+                if (isPurchasedSunglasses == false)
+                {
+                    SunglassesButton.interactable = false;
+                }
+                if (isPurchasedTreeniMyssy == false)
+                {
+                    TreeniMyssyButton.interactable = false;
+                }
+                if (isPurchasedViikset == false)
+                {
+                    ViiksetButton.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 100)
+            {
+                if (isPurchasedKruunu == false)
+                {
+                    KruunuButton.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 20)
+            {
+                if (BackgroundSave.instance.isPurchasedBackground2 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground2 = false;
+                }
+                if (BackgroundSave.instance.isPurchasedBackground3 == false)
+                {
+                    BackgroundSave.instance.isPurchasedBackground3 = false;
+                }
+            }
+        }
+        if (isPurchasedSunglasses == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3)
+        {
+            SunglassesText.SetActive(false);
+            SunglassesButton.interactable = true;
+        }
+    }
+
+    public void SunglassesCosmeticTest()
+    {
+        {
+            if (progressBox.level < 5)
+            {
+                SunglassesT1.SetActive(true);
+            }
+            if (progressBox.level > 5 && progressBox.level < 10)
+            {
+                SunglassesT2.SetActive(true);
+            }
+            if (progressBox.level >= 10)
+            {
+                SunglassesT3.SetActive(true);
+            }
+
+            //Oranssiväri Kruunu
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3)
+            {
+                if (progressBox.level < 5)
+                {
+                    SunglassesT1.SetActive(true);
+                    rend = SunglassesT1.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(255, 245, 71, 255);
+                }
+                if (progressBox.level > 5 && progressBox.level < 10)
+                {
+                    SunglassesT2.SetActive(true);
+                    rend = SunglassesT2.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(255, 245, 71, 255);
+                }
+                if (progressBox.level >= 10)
+                {
+                    SunglassesT3.SetActive(true);
+                    rend = SunglassesT3.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(255, 245, 71, 255);
+                }
+            }
+
+            //Sininenväri Kruunu
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 2 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3)
+            {
+                if (progressBox.level < 5)
+                {
+                    SunglassesT1.SetActive(true);
+                    rend = SunglassesT1.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(124, 252, 255, 255);
+                }
+                if (progressBox.level > 5 && progressBox.level < 10)
+                {
+                    SunglassesT2.SetActive(true);
+                    rend = SunglassesT2.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(124, 252, 255, 255);
+                }
+                if (progressBox.level >= 10)
+                {
+                    SunglassesT3.SetActive(true);
+                    rend = SunglassesT3.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(124, 252, 255, 255);
+                }
+            }
+
+            //Pinkkiväri Kruunu
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 3 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3)
+            {
+                if (progressBox.level < 5)
+                {
+                    SunglassesT1.SetActive(true);
+                    rend = SunglassesT1.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(250, 172, 255, 255);
+                }
+                if (progressBox.level > 5 && progressBox.level < 10)
+                {
+                    SunglassesT2.SetActive(true);
+                    rend = SunglassesT2.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(250, 172, 255, 255);
+                }
+                if (progressBox.level >= 10)
+                {
+                    SunglassesT3.SetActive(true);
+                    rend = SunglassesT3.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(250, 172, 255, 255);
+                }
+            }
+
+            //Valkoinenväri Kruunu
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3)
+            {
+                if (progressBox.level < 5)
+                {
+                    SunglassesT1.SetActive(true);
+                    rend = SunglassesT1.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(255, 255, 255, 255);
+                }
+                if (progressBox.level > 5 && progressBox.level < 10)
+                {
+                    SunglassesT2.SetActive(true);
+                    rend = SunglassesT2.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(255, 255, 255, 255);
+                }
+                if (progressBox.level >= 10)
+                {
+                    SunglassesT3.SetActive(true);
+                    rend = SunglassesT3.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(255, 255, 255, 255);
+                }
+            }
+
+            //Vihreäväri Kruunu
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3)
+            {
+                if (progressBox.level < 5)
+                {
+                    SunglassesT1.SetActive(true);
+                    rend = SunglassesT1.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(138, 255, 152, 255);
+                }
+                if (progressBox.level > 5 && progressBox.level < 10)
+                {
+                    SunglassesT2.SetActive(true);
+                    rend = SunglassesT2.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(138, 255, 152, 255);
+                }
+                if (progressBox.level >= 10)
+                {
+                    SunglassesT3.SetActive(true);
+                    rend = SunglassesT3.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(138, 255, 152, 255);
+                }
+            }
+
+            //Punanenväri Kruunu
+            if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 6 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3)
+            {
+                if (progressBox.level < 5)
+                {
+                    SunglassesT1.SetActive(true);
+                    rend = SunglassesT1.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(255, 161, 129, 255);
+                }
+                if (progressBox.level > 5 && progressBox.level < 10)
+                {
+                    SunglassesT2.SetActive(true);
+                    rend = SunglassesT2.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(255, 161, 129, 255);
+                }
+                if (progressBox.level >= 10)
+                {
+                    SunglassesT3.SetActive(true);
+                    rend = SunglassesT3.GetComponent<SpriteRenderer>();
+                    rend.color = new Color32(255, 161, 129, 255);
+                }
+            }
+        }
+    }
+
+    public void TreeniMyssyCosmetic()
+    {
+
+        {
+            CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 4;
+            PlayerPrefs.SetInt("CurrentCosmetic", 4);
+
+            if (isPurchasedTreeniMyssy == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4)
+            {
+                if (progressBox.level < 5)
+                {
+                    TreeniMyssyT1.SetActive(true);
+                    progressBox.hahmoLVL1.SetActive(false);
+                    progressBox.hahmoLVL2.SetActive(false);
+                    progressBox.hahmoLVL3.SetActive(false);
+                }
+                else if (progressBox.level >= 5 && progressBox.level < 10)
+                {
+                    TreeniMyssyT2.SetActive(true);
+                    progressBox.hahmoLVL1.SetActive(false);
+                    progressBox.hahmoLVL2.SetActive(false);
+                    progressBox.hahmoLVL3.SetActive(false);
+                }
+                else if (progressBox.level >= 10)
+                {
+                    TreeniMyssyT3.SetActive(true);
+                    progressBox.hahmoLVL1.SetActive(false);
+                    progressBox.hahmoLVL2.SetActive(false);
+                    progressBox.hahmoLVL3.SetActive(false);
+                }
+            }
+
+            if (isPurchasedTreeniMyssy == false && PlayerMoney.Instance.money >= 30)
+            {
+                PlayerMoney.Instance.minusMoney(30);
+                TreeniMyssyText.SetActive(false);
+                PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
+                PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
+
+                CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 4;
+                PlayerPrefs.SetInt("CurrentCosmetic", 4);
+                isPurchasedTreeniMyssy = true;
+                PlayerPrefs.SetInt("isPurchasedSunglasses", isPurchasedTreeniMyssy ? 1 : 0);
+                if (PlayerMoney.Instance.money < 10)
+                {
+                    if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton1.interactable = false;
+                    }
+                    if (SkinCooldown.Instance.isPurchasedSkin2 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton2.interactable = false;
+                    }
+                    if (SkinCooldown.Instance.isPurchasedSkin3 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton3.interactable = false;
+                    }
+                    if (SkinCooldown.Instance.isPurchasedSkin5 == false)
+                    {
+                        SkinCooldown.Instance.SkinButton5.interactable = false;
+                    }
+                }
+                if (PlayerMoney.Instance.money < 30)
+                {
+                    if (isPurchasedFurrySunglasses == false)
+                    {
+                        FurrySunglassesButton.interactable = false;
+                    }
+                    if (isPurchasedLippis == false)
+                    {
+                        LippisButton.interactable = false;
+                    }
+                    if (isPurchasedSunglasses == false)
+                    {
+                        SunglassesButton.interactable = false;
+                    }
+                    if (isPurchasedTreeniMyssy == false)
+                    {
+                        TreeniMyssyButton.interactable = false;
+                    }
+                    if (isPurchasedViikset == false)
+                    {
+                        ViiksetButton.interactable = false;
+                    }
+                }
+                if (PlayerMoney.Instance.money < 100)
+                {
+                    if (isPurchasedKruunu == false)
+                    {
+                        KruunuButton.interactable = false;
+                    }
+                }
+                if (PlayerMoney.Instance.money < 20)
+                {
+                    if (BackgroundSave.instance.isPurchasedBackground2 == false)
+                    {
+                        BackgroundSave.instance.isPurchasedBackground2 = false;
+                    }
+                    if (BackgroundSave.instance.isPurchasedBackground3 == false)
+                    {
+                        BackgroundSave.instance.isPurchasedBackground3 = false;
+                    }
+                }
+            }
+            if (isPurchasedTreeniMyssy == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4)
+            {
+                TreeniMyssyText.SetActive(false);
+                TreeniMyssyButton.interactable = true;
+            }
+        }
+    }
+
+    public void TreeniMyssyCosmeticTest()
+    {
+        {
+            {
+                if (progressBox.level < 5)
+                {
+                    TreeniMyssyT1.SetActive(true);
+                }
+                if (progressBox.level > 5 && progressBox.level < 10)
+                {
+                    TreeniMyssyT2.SetActive(true);
+                }
+                if (progressBox.level >= 10)
+                {
+                    TreeniMyssyT3.SetActive(true);
+                }
+
+                //Oranssiväri Kruunu
+                if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4)
+                {
+                    if (progressBox.level < 5)
+                    {
+                        TreeniMyssyT1.SetActive(true);
+                        rend = TreeniMyssyT1.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(255, 245, 71, 255);
+                    }
+                    if (progressBox.level > 5 && progressBox.level < 10)
+                    {
+                        TreeniMyssyT2.SetActive(true);
+                        rend = TreeniMyssyT2.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(255, 245, 71, 255);
+                    }
+                    if (progressBox.level >= 10)
+                    {
+                        TreeniMyssyT3.SetActive(true);
+                        rend = TreeniMyssyT3.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(255, 245, 71, 255);
+                    }
+                }
+
+                //Sininenväri Kruunu
+                if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 2 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4)
+                {
+                    if (progressBox.level < 5)
+                    {
+                        TreeniMyssyT1.SetActive(true);
+                        rend = TreeniMyssyT1.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(124, 252, 255, 255);
+                    }
+                    if (progressBox.level > 5 && progressBox.level < 10)
+                    {
+                        TreeniMyssyT2.SetActive(true);
+                        rend = TreeniMyssyT2.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(124, 252, 255, 255);
+                    }
+                    if (progressBox.level >= 10)
+                    {
+                        TreeniMyssyT3.SetActive(true);
+                        rend = TreeniMyssyT3.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(124, 252, 255, 255);
+                    }
+                }
+
+                //Pinkkiväri Kruunu
+                if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 3 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4)
+                {
+                    if (progressBox.level < 5)
+                    {
+                        TreeniMyssyT1.SetActive(true);
+                        rend = TreeniMyssyT1.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(250, 172, 255, 255);
+                    }
+                    if (progressBox.level > 5 && progressBox.level < 10)
+                    {
+                        TreeniMyssyT2.SetActive(true);
+                        rend = TreeniMyssyT2.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(250, 172, 255, 255);
+                    }
+                    if (progressBox.level >= 10)
+                    {
+                        TreeniMyssyT3.SetActive(true);
+                        rend = TreeniMyssyT3.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(250, 172, 255, 255);
+                    }
+                }
+
+                //Valkoinenväri Kruunu
+                if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4)
+                {
+                    if (progressBox.level < 5)
+                    {
+                        TreeniMyssyT1.SetActive(true);
+                        rend = TreeniMyssyT1.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(255, 255, 255, 255);
+                    }
+                    if (progressBox.level > 5 && progressBox.level < 10)
+                    {
+                        TreeniMyssyT2.SetActive(true);
+                        rend = TreeniMyssyT2.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(255, 255, 255, 255);
+                    }
+                    if (progressBox.level >= 10)
+                    {
+                        TreeniMyssyT3.SetActive(true);
+                        rend = TreeniMyssyT3.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(255, 255, 255, 255);
+                    }
+                }
+
+                //Vihreäväri Kruunu
+                if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4)
+                {
+                    if (progressBox.level < 5)
+                    {
+                        TreeniMyssyT1.SetActive(true);
+                        rend = TreeniMyssyT1.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(138, 255, 152, 255);
+                    }
+                    if (progressBox.level > 5 && progressBox.level < 10)
+                    {
+                        TreeniMyssyT2.SetActive(true);
+                        rend = TreeniMyssyT2.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(138, 255, 152, 255);
+                    }
+                    if (progressBox.level >= 10)
+                    {
+                        TreeniMyssyT3.SetActive(true);
+                        rend = TreeniMyssyT3.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(138, 255, 152, 255);
+                    }
+                }
+
+                //Punanenväri Kruunu
+                if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 6 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4)
+                {
+                    if (progressBox.level < 5)
+                    {
+                        TreeniMyssyT1.SetActive(true);
+                        rend = TreeniMyssyT1.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(255, 161, 129, 255);
+                    }
+                    if (progressBox.level > 5 && progressBox.level < 10)
+                    {
+                        TreeniMyssyT2.SetActive(true);
+                        rend = TreeniMyssyT2.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(255, 161, 129, 255);
+                    }
+                    if (progressBox.level >= 10)
+                    {
+                        TreeniMyssyT3.SetActive(true);
+                        rend = TreeniMyssyT3.GetComponent<SpriteRenderer>();
+                        rend.color = new Color32(255, 161, 129, 255);
+                    }
+                }
+            }
+        }
+    }
+
+    public void ViiksetCosmetic()
+    {
+        {
+
+            {
+                CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 5;
+                PlayerPrefs.SetInt("CurrentCosmetic", 5);
+
+                if (isPurchasedTreeniMyssy == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+                {
+                    if (progressBox.level < 5)
+                    {
+                        ViiksetT1.SetActive(true);
+                        progressBox.hahmoLVL1.SetActive(false);
+                        progressBox.hahmoLVL2.SetActive(false);
+                        progressBox.hahmoLVL3.SetActive(false);
+                    }
+                    else if (progressBox.level >= 5 && progressBox.level < 10)
+                    {
+                        ViiksetT2.SetActive(true);
+                        progressBox.hahmoLVL1.SetActive(false);
+                        progressBox.hahmoLVL2.SetActive(false);
+                        progressBox.hahmoLVL3.SetActive(false);
+                    }
+                    else if (progressBox.level >= 10)
+                    {
+                        ViiksetT3.SetActive(true);
+                        progressBox.hahmoLVL1.SetActive(false);
+                        progressBox.hahmoLVL2.SetActive(false);
+                        progressBox.hahmoLVL3.SetActive(false);
+                    }
+                }
+
+                if (isPurchasedViikset == false && PlayerMoney.Instance.money >= 30)
+                {
+                    PlayerMoney.Instance.minusMoney(30);
+                    ViiksetText.SetActive(false);
+                    PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
+                    PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
+
+                    CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 5;
+                    PlayerPrefs.SetInt("CurrentCosmetic", 5);
+                    isPurchasedViikset = true;
+                    PlayerPrefs.SetInt("isPurchasedViikset", isPurchasedViikset ? 1 : 0);
+                    if (PlayerMoney.Instance.money < 10)
+                    {
+                        if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                        {
+                            SkinCooldown.Instance.SkinButton1.interactable = false;
+                        }
+                        if (SkinCooldown.Instance.isPurchasedSkin2 == false)
+                        {
+                            SkinCooldown.Instance.SkinButton2.interactable = false;
+                        }
+                        if (SkinCooldown.Instance.isPurchasedSkin3 == false)
+                        {
+                            SkinCooldown.Instance.SkinButton3.interactable = false;
+                        }
+                        if (SkinCooldown.Instance.isPurchasedSkin5 == false)
+                        {
+                            SkinCooldown.Instance.SkinButton5.interactable = false;
+                        }
+                    }
+                    if (PlayerMoney.Instance.money < 30)
+                    {
+                        if (isPurchasedFurrySunglasses == false)
+                        {
+                            FurrySunglassesButton.interactable = false;
+                        }
+                        if (isPurchasedLippis == false)
+                        {
+                            LippisButton.interactable = false;
+                        }
+                        if (isPurchasedSunglasses == false)
+                        {
+                            SunglassesButton.interactable = false;
+                        }
+                        if (isPurchasedTreeniMyssy == false)
+                        {
+                            TreeniMyssyButton.interactable = false;
+                        }
+                        if (isPurchasedViikset == false)
+                        {
+                            ViiksetButton.interactable = false;
+                        }
+                    }
+                    if (PlayerMoney.Instance.money < 100)
+                    {
+                        if (isPurchasedKruunu == false)
+                        {
+                            KruunuButton.interactable = false;
+                        }
+                    }
+                    if (PlayerMoney.Instance.money < 20)
+                    {
+                        if (BackgroundSave.instance.isPurchasedBackground2 == false)
+                        {
+                            BackgroundSave.instance.isPurchasedBackground2 = false;
+                        }
+                        if (BackgroundSave.instance.isPurchasedBackground3 == false)
+                        {
+                            BackgroundSave.instance.isPurchasedBackground3 = false;
+                        }
+                    }
+                }
+                if (isPurchasedViikset == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+                {
+                    ViiksetText.SetActive(false);
+                    ViiksetButton.interactable = true;
+                }
+            }
+        }
+    }
+
+    public void ViiksetCosmeticTest()
+    {
+        {
+            {
+                {
+                    if (progressBox.level < 5)
+                    {
+                        ViiksetT1.SetActive(true);
+                    }
+                    if (progressBox.level > 5 && progressBox.level < 10)
+                    {
+                        ViiksetT2.SetActive(true);
+                    }
+                    if (progressBox.level >= 10)
+                    {
+                        ViiksetT3.SetActive(true);
+                    }
+
+                    //Oranssiväri Kruunu
+                    if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+                    {
+                        if (progressBox.level < 5)
+                        {
+                            ViiksetT1.SetActive(true);
+                            rend = ViiksetT1.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(255, 245, 71, 255);
+                        }
+                        if (progressBox.level > 5 && progressBox.level < 10)
+                        {
+                            ViiksetT2.SetActive(true);
+                            rend = ViiksetT2.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(255, 245, 71, 255);
+                        }
+                        if (progressBox.level >= 10)
+                        {
+                            ViiksetT3.SetActive(true);
+                            rend = ViiksetT3.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(255, 245, 71, 255);
+                        }
+                    }
+
+                    //Sininenväri Kruunu
+                    if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 2 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+                    {
+                        if (progressBox.level < 5)
+                        {
+                            ViiksetT1.SetActive(true);
+                            rend = ViiksetT1.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(124, 252, 255, 255);
+                        }
+                        if (progressBox.level > 5 && progressBox.level < 10)
+                        {
+                            ViiksetT2.SetActive(true);
+                            rend = ViiksetT2.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(124, 252, 255, 255);
+                        }
+                        if (progressBox.level >= 10)
+                        {
+                            ViiksetT3.SetActive(true);
+                            rend = ViiksetT3.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(124, 252, 255, 255);
+                        }
+                    }
+
+                    //Pinkkiväri Kruunu
+                    if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 3 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+                    {
+                        if (progressBox.level < 5)
+                        {
+                            ViiksetT1.SetActive(true);
+                            rend = ViiksetT1.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(250, 172, 255, 255);
+                        }
+                        if (progressBox.level > 5 && progressBox.level < 10)
+                        {
+                            ViiksetT2.SetActive(true);
+                            rend = ViiksetT2.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(250, 172, 255, 255);
+                        }
+                        if (progressBox.level >= 10)
+                        {
+                            ViiksetT3.SetActive(true);
+                            rend = ViiksetT3.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(250, 172, 255, 255);
+                        }
+                    }
+
+                    //Valkoinenväri Kruunu
+                    if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+                    {
+                        if (progressBox.level < 5)
+                        {
+                            ViiksetT1.SetActive(true);
+                            rend = ViiksetT1.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(255, 255, 255, 255);
+                        }
+                        if (progressBox.level > 5 && progressBox.level < 10)
+                        {
+                            ViiksetT2.SetActive(true);
+                            rend = ViiksetT2.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(255, 255, 255, 255);
+                        }
+                        if (progressBox.level >= 10)
+                        {
+                            ViiksetT3.SetActive(true);
+                            rend = ViiksetT3.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(255, 255, 255, 255);
+                        }
+                    }
+
+                    //Vihreäväri Kruunu
+                    if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+                    {
+                        if (progressBox.level < 5)
+                        {
+                            ViiksetT1.SetActive(true);
+                            rend = ViiksetT1.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(138, 255, 152, 255);
+                        }
+                        if (progressBox.level > 5 && progressBox.level < 10)
+                        {
+                            ViiksetT2.SetActive(true);
+                            rend = ViiksetT2.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(138, 255, 152, 255);
+                        }
+                        if (progressBox.level >= 10)
+                        {
+                            ViiksetT3.SetActive(true);
+                            rend = ViiksetT3.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(138, 255, 152, 255);
+                        }
+                    }
+
+                    //Punanenväri Kruunu
+                    if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 6 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+                    {
+                        if (progressBox.level < 5)
+                        {
+                            ViiksetT1.SetActive(true);
+                            rend = ViiksetT1.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(255, 161, 129, 255);
+                        }
+                        if (progressBox.level > 5 && progressBox.level < 10)
+                        {
+                            ViiksetT2.SetActive(true);
+                            rend = ViiksetT2.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(255, 161, 129, 255);
+                        }
+                        if (progressBox.level >= 10)
+                        {
+                            ViiksetT3.SetActive(true);
+                            rend = ViiksetT3.GetComponent<SpriteRenderer>();
+                            rend.color = new Color32(255, 161, 129, 255);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void LippisCosmetic()
+    {
+        {
+            {
+                {
+                    CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 6;
+                    PlayerPrefs.SetInt("CurrentCosmetic", 6);
+
+                    if (isPurchasedTreeniMyssy == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+                    {
+                        if (progressBox.level < 5)
+                        {
+                            LippisT1.SetActive(true);
+                            progressBox.hahmoLVL1.SetActive(false);
+                            progressBox.hahmoLVL2.SetActive(false);
+                            progressBox.hahmoLVL3.SetActive(false);
+                        }
+                        else if (progressBox.level >= 5 && progressBox.level < 10)
+                        {
+                            LippisT2.SetActive(true);
+                            progressBox.hahmoLVL1.SetActive(false);
+                            progressBox.hahmoLVL2.SetActive(false);
+                            progressBox.hahmoLVL3.SetActive(false);
+                        }
+                        else if (progressBox.level >= 10)
+                        {
+                            LippisT3.SetActive(true);
+                            progressBox.hahmoLVL1.SetActive(false);
+                            progressBox.hahmoLVL2.SetActive(false);
+                            progressBox.hahmoLVL3.SetActive(false);
+                        }
+                    }
+
+                    if (isPurchasedLippis == false && PlayerMoney.Instance.money >= 30)
+                    {
+                        PlayerMoney.Instance.minusMoney(30);
+                        LippisShopText.SetActive(false);
+                        PlayerMoney.Instance.moneyText.text = PlayerMoney.Instance.money.ToString() + "$";
+                        PlayerMoney.Instance.moneyShopText.text = PlayerMoney.Instance.money.ToString() + "$";
+
+                        CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 6;
+                        PlayerPrefs.SetInt("CurrentCosmetic", 6);
+                        isPurchasedLippis = true;
+                        PlayerPrefs.SetInt("isPurchasedLippis", isPurchasedViikset ? 1 : 0);
+                        if (PlayerMoney.Instance.money < 10)
+                        {
+                            if (SkinCooldown.Instance.isPurchasedSkin1 == false)
+                            {
+                                SkinCooldown.Instance.SkinButton1.interactable = false;
+                            }
+                            if (SkinCooldown.Instance.isPurchasedSkin2 == false)
+                            {
+                                SkinCooldown.Instance.SkinButton2.interactable = false;
+                            }
+                            if (SkinCooldown.Instance.isPurchasedSkin3 == false)
+                            {
+                                SkinCooldown.Instance.SkinButton3.interactable = false;
+                            }
+                            if (SkinCooldown.Instance.isPurchasedSkin5 == false)
+                            {
+                                SkinCooldown.Instance.SkinButton5.interactable = false;
+                            }
+                        }
+                        if (PlayerMoney.Instance.money < 30)
+                        {
+                            if (isPurchasedFurrySunglasses == false)
+                            {
+                                FurrySunglassesButton.interactable = false;
+                            }
+                            if (isPurchasedLippis == false)
+                            {
+                                LippisButton.interactable = false;
+                            }
+                            if (isPurchasedSunglasses == false)
+                            {
+                                SunglassesButton.interactable = false;
+                            }
+                            if (isPurchasedTreeniMyssy == false)
+                            {
+                                TreeniMyssyButton.interactable = false;
+                            }
+                            if (isPurchasedViikset == false)
+                            {
+                                ViiksetButton.interactable = false;
+                            }
+                        }
+                        if (PlayerMoney.Instance.money < 100)
+                        {
+                            if (isPurchasedKruunu == false)
+                            {
+                                KruunuButton.interactable = false;
+                            }
+                        }
+                        if (PlayerMoney.Instance.money < 20)
+                        {
+                            if (BackgroundSave.instance.isPurchasedBackground2 == false)
+                            {
+                                BackgroundSave.instance.isPurchasedBackground2 = false;
+                            }
+                            if (BackgroundSave.instance.isPurchasedBackground3 == false)
+                            {
+                                BackgroundSave.instance.isPurchasedBackground3 = false;
+                            }
+                        }
+                    }
+                    if (isPurchasedViikset == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+                    {
+                        LippisShopText.SetActive(false);
+                        LippisButton.interactable = true;
+                    }
+                }
+            }
+        }
+    }
+
+    public void LippisCosmeticTest()
+    {
+        {
+            {
+                {
+                    {
+                        if (progressBox.level < 5)
+                        {
+                            LippisT1.SetActive(true);
+                        }
+                        if (progressBox.level > 5 && progressBox.level < 10)
+                        {
+                            LippisT2.SetActive(true);
+                        }
+                        if (progressBox.level >= 10)
+                        {
+                            LippisT3.SetActive(true);
+                        }
+
+                        //Oranssiväri Kruunu
+                        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+                        {
+                            if (progressBox.level < 5)
+                            {
+                                LippisT1.SetActive(true);
+                                rend = LippisT1.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(255, 245, 71, 255);
+                            }
+                            if (progressBox.level > 5 && progressBox.level < 10)
+                            {
+                                LippisT2.SetActive(true);
+                                rend = LippisT2.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(255, 245, 71, 255);
+                            }
+                            if (progressBox.level >= 10)
+                            {
+                                LippisT3.SetActive(true);
+                                rend = LippisT3.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(255, 245, 71, 255);
+                            }
+                        }
+
+                        //Sininenväri Kruunu
+                        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 2 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+                        {
+                            if (progressBox.level < 5)
+                            {
+                                LippisT1.SetActive(true);
+                                rend = LippisT1.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(124, 252, 255, 255);
+                            }
+                            if (progressBox.level > 5 && progressBox.level < 10)
+                            {
+                                LippisT2.SetActive(true);
+                                rend = LippisT2.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(124, 252, 255, 255);
+                            }
+                            if (progressBox.level >= 10)
+                            {
+                                LippisT3.SetActive(true);
+                                rend = LippisT3.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(124, 252, 255, 255);
+                            }
+                        }
+
+                        //Pinkkiväri Kruunu
+                        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 3 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+                        {
+                            if (progressBox.level < 5)
+                            {
+                                LippisT1.SetActive(true);
+                                rend = LippisT1.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(250, 172, 255, 255);
+                            }
+                            if (progressBox.level > 5 && progressBox.level < 10)
+                            {
+                                LippisT2.SetActive(true);
+                                rend = LippisT2.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(250, 172, 255, 255);
+                            }
+                            if (progressBox.level >= 10)
+                            {
+                                LippisT3.SetActive(true);
+                                rend = LippisT3.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(250, 172, 255, 255);
+                            }
+                        }
+
+                        //Valkoinenväri Kruunu
+                        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+                        {
+                            if (progressBox.level < 5)
+                            {
+                                LippisT1.SetActive(true);
+                                rend = LippisT1.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(255, 255, 255, 255);
+                            }
+                            if (progressBox.level > 5 && progressBox.level < 10)
+                            {
+                                LippisT2.SetActive(true);
+                                rend = LippisT2.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(255, 255, 255, 255);
+                            }
+                            if (progressBox.level >= 10)
+                            {
+                                LippisT3.SetActive(true);
+                                rend = LippisT3.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(255, 255, 255, 255);
+                            }
+                        }
+
+                        //Vihreäväri Kruunu
+                        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+                        {
+                            if (progressBox.level < 5)
+                            {
+                                LippisT1.SetActive(true);
+                                rend = LippisT1.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(138, 255, 152, 255);
+                            }
+                            if (progressBox.level > 5 && progressBox.level < 10)
+                            {
+                                LippisT2.SetActive(true);
+                                rend = LippisT2.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(138, 255, 152, 255);
+                            }
+                            if (progressBox.level >= 10)
+                            {
+                                LippisT3.SetActive(true);
+                                rend = LippisT3.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(138, 255, 152, 255);
+                            }
+                        }
+
+                        //Punanenväri Kruunu
+                        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 6 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+                        {
+                            if (progressBox.level < 5)
+                            {
+                                LippisT1.SetActive(true);
+                                rend = LippisT1.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(255, 161, 129, 255);
+                            }
+                            if (progressBox.level > 5 && progressBox.level < 10)
+                            {
+                                LippisT2.SetActive(true);
+                                rend = LippisT2.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(255, 161, 129, 255);
+                            }
+                            if (progressBox.level >= 10)
+                            {
+                                LippisT3.SetActive(true);
+                                rend = LippisT3.GetComponent<SpriteRenderer>();
+                                rend.color = new Color32(255, 161, 129, 255);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     //Tässä katsotaan onko cosmetics päällä kun shopin laittaa kiinni
@@ -1080,7 +2820,7 @@ public class WeightLiftScript : MonoBehaviour
             progressBox.hahmoLVL2.SetActive(true);
         }
 
-        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 7)
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
         {
             if (progressBox.level < 5)
             {
@@ -1099,7 +2839,6 @@ public class WeightLiftScript : MonoBehaviour
                 FurrySunglassesT3.SetActive(true);
             }
         }
-
     }
 
     //Tässä käydään Updatessa läpi että onko pelaajalla rahaa ostaa cosmetics

@@ -77,15 +77,15 @@ public class Progressbox : MonoBehaviour
 
     public void CheckSpriteProgress()
     {
-        if (level < 5)
+        if (level < 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 0)
         {
             hahmoLVL1.SetActive(true);
         }
-        else if (level >= 5 && level < 10)
+        else if (level >= 5 && level < 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 0)
         {
             hahmoLVL2.SetActive(true);
         }
-        else if (level >= 10)
+        else if (level >= 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 0)
         {
             hahmoLVL3.SetActive(true);
         }
@@ -94,7 +94,7 @@ public class Progressbox : MonoBehaviour
             hahmoLVL1.SetActive(false);
             hahmoLVL2.SetActive(false);
             hahmoLVL3.SetActive(false);
-            WeightLiftScript.instance.FurrySunglassesCosmetic();
+            WeightLiftScript.instance.FurrySunglassesTest();
         }
     }
 
@@ -161,10 +161,14 @@ public class Progressbox : MonoBehaviour
         //ads.PlayInterstitialAd();
         PlayerPrefs.SetInt("level", level);
 
-        if (level == 5)
+        if (level > 5 && level < 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 0)
         {
             hahmoLVL1.SetActive(false);
             hahmoLVL2.SetActive(true);
+        }
+        if (level > 5 && level < 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+        {
+            WeightLiftScript.instance.FurrySunglassesTest();
         }
         if (level == 4)
         {
@@ -174,11 +178,15 @@ public class Progressbox : MonoBehaviour
         {
             ads.PlayInterstitialAd();
         }
-        if (level >= 10)
+        if (level >= 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 0)
         {
             hahmoLVL3.SetActive(true);
             hahmoLVL2.SetActive(false);
             hahmoLVL1.SetActive(false);
+        }
+        if (level >= 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+        {
+            WeightLiftScript.instance.FurrySunglassesTest();
         }
         //TÄSSÄ KOHDASSA MÄÄRITELLÄÄN PELIN LOPPU, MUISTA START METHODIIN TEHDÄ IF LAUSE JOSSA CHECKATAAN ONKO >= 5 LEVU NIIN CHANGEMINDBUTTON.SETACTIVE(TRUE);
         else if (level == 15)

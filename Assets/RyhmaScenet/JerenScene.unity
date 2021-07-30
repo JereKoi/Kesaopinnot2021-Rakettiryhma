@@ -3990,7 +3990,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1154946459}
-        m_MethodName: ColorChangeToWhite
+        m_MethodName: SunglassesCosmetic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16707,8 +16707,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 266576915}
-        m_MethodName: UpgradeButton
+      - m_Target: {fileID: 2071353769}
+        m_MethodName: KruunuCosmetic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17822,8 +17822,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 266576915}
-        m_MethodName: UpgradeButton
+      - m_Target: {fileID: 260120620}
+        m_MethodName: LippisCosmetic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19202,8 +19202,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 266576915}
-        m_MethodName: UpgradeButton
+      - m_Target: {fileID: 260120620}
+        m_MethodName: ViiksetCosmetic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19578,8 +19578,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 266576915}
-        m_MethodName: UpgradeButton
+      - m_Target: {fileID: 2071353769}
+        m_MethodName: TreeniMyssyCosmetic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
