@@ -307,17 +307,23 @@ public class WeightLiftScript : MonoBehaviour
     //tassa vaihdetaan blobejen vareja kaupassa.
     public void ColorChangeToOrange()
     {
-        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 1 || progressBox.hahmoLVL1.activeSelf == true)
+        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 1;
+        PlayerPrefs.SetInt("CSkin", 1);
+
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 1  && CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1 || 
+            CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1 && progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
             CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 0;
         }
-        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 1 || progressBox.hahmoLVL2.activeSelf == true)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 5 && progressBox.level < 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 1 && CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1 || 
+            CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1 && progressBox.hahmoLVL2.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
             CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 0;
         }
-        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 1 || progressBox.hahmoLVL3.activeSelf == true)
+        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic != 1 && CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1 || 
+            CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 1 && progressBox.hahmoLVL3.activeSelf == true)
         {
             rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
             CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 0;
@@ -337,9 +343,73 @@ public class WeightLiftScript : MonoBehaviour
             rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
         }
 
+        if (KruunuT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level < 5)
+        {
+            rend = KruunuT1.GetComponent<SpriteRenderer>();
+        }
+        else if (KruunuT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = KruunuT2.GetComponent<SpriteRenderer>();
+        }
+        else if (KruunuT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level >= 10)
+        {
+            rend = KruunuT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (SunglassesT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level < 5)
+        {
+            rend = SunglassesT1.GetComponent<SpriteRenderer>();
+        }
+        else if (SunglassesT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = SunglassesT2.GetComponent<SpriteRenderer>();
+        }
+        else if (SunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level >= 10)
+        {
+            rend = SunglassesT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (TreeniMyssyT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level < 5)
+        {
+            rend = TreeniMyssyT1.GetComponent<SpriteRenderer>();
+        }
+        else if (TreeniMyssyT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = TreeniMyssyT2.GetComponent<SpriteRenderer>();
+        }
+        else if (TreeniMyssyT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level >= 10)
+        {
+            rend = TreeniMyssyT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (ViiksetT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level < 5)
+        {
+            rend = ViiksetT1.GetComponent<SpriteRenderer>();
+        }
+        else if (ViiksetT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = ViiksetT2.GetComponent<SpriteRenderer>();
+        }
+        else if (ViiksetT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level >= 10)
+        {
+            rend = ViiksetT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (LippisT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level < 5)
+        {
+            rend = LippisT1.GetComponent<SpriteRenderer>();
+        }
+        else if (LippisT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = LippisT2.GetComponent<SpriteRenderer>();
+        }
+        else if (LippisT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level >= 10)
+        {
+            rend = LippisT3.GetComponent<SpriteRenderer>();
+        }
+
         rend.color = new Color32(255, 245, 71, 255);
-        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 1;
-        PlayerPrefs.SetInt("CSkin", 1);
+
 
         if (SkinCooldown.Instance.isPurchasedSkin1 == false && PlayerMoney.Instance.money >= 10)
         {
@@ -435,6 +505,9 @@ public class WeightLiftScript : MonoBehaviour
 
     public void ColorChangeToBlue()
     {
+        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 2;
+        PlayerPrefs.SetInt("CSkin", 2);
+
         if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
@@ -462,9 +535,74 @@ public class WeightLiftScript : MonoBehaviour
             rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
         }
 
+        if (KruunuT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level < 5)
+        {
+            rend = KruunuT1.GetComponent<SpriteRenderer>();
+        }
+        else if (KruunuT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = KruunuT2.GetComponent<SpriteRenderer>();
+        }
+        else if (KruunuT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level >= 10)
+        {
+            rend = KruunuT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (SunglassesT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level < 5)
+        {
+            rend = SunglassesT1.GetComponent<SpriteRenderer>();
+        }
+        else if (SunglassesT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = SunglassesT2.GetComponent<SpriteRenderer>();
+        }
+        else if (SunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level >= 10)
+        {
+            rend = SunglassesT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (TreeniMyssyT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level < 5)
+        {
+            rend = TreeniMyssyT1.GetComponent<SpriteRenderer>();
+        }
+        else if (TreeniMyssyT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = TreeniMyssyT2.GetComponent<SpriteRenderer>();
+        }
+        else if (TreeniMyssyT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level >= 10)
+        {
+            rend = TreeniMyssyT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (ViiksetT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level < 5)
+        {
+            rend = ViiksetT1.GetComponent<SpriteRenderer>();
+        }
+        else if (ViiksetT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = ViiksetT2.GetComponent<SpriteRenderer>();
+        }
+        else if (ViiksetT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level >= 10)
+        {
+            rend = ViiksetT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (LippisT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level < 5)
+        {
+            rend = LippisT1.GetComponent<SpriteRenderer>();
+        }
+        else if (LippisT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = LippisT2.GetComponent<SpriteRenderer>();
+        }
+        else if (LippisT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level >= 10)
+        {
+            rend = LippisT3.GetComponent<SpriteRenderer>();
+        }
+
+
         rend.color = new Color32(124, 252, 255, 255);
-        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 2;
-        PlayerPrefs.SetInt("CSkin", 2);
+
 
         if (SkinCooldown.Instance.isPurchasedSkin2 == false && PlayerMoney.Instance.money >= 10)
         {
@@ -560,6 +698,9 @@ public class WeightLiftScript : MonoBehaviour
 
     public void ColorChangeToPink()
     {
+        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 3;
+        PlayerPrefs.SetInt("CSkin", 3);
+
         if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
@@ -590,9 +731,74 @@ public class WeightLiftScript : MonoBehaviour
             rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
         }
 
+        if (KruunuT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level < 5)
+        {
+            rend = KruunuT1.GetComponent<SpriteRenderer>();
+        }
+        else if (KruunuT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = KruunuT2.GetComponent<SpriteRenderer>();
+        }
+        else if (KruunuT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level >= 10)
+        {
+            rend = KruunuT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (SunglassesT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level < 5)
+        {
+            rend = SunglassesT1.GetComponent<SpriteRenderer>();
+        }
+        else if (SunglassesT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = SunglassesT2.GetComponent<SpriteRenderer>();
+        }
+        else if (SunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level >= 10)
+        {
+            rend = SunglassesT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (TreeniMyssyT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level < 5)
+        {
+            rend = TreeniMyssyT1.GetComponent<SpriteRenderer>();
+        }
+        else if (TreeniMyssyT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = TreeniMyssyT2.GetComponent<SpriteRenderer>();
+        }
+        else if (TreeniMyssyT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level >= 10)
+        {
+            rend = TreeniMyssyT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (ViiksetT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level < 5)
+        {
+            rend = ViiksetT1.GetComponent<SpriteRenderer>();
+        }
+        else if (ViiksetT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = ViiksetT2.GetComponent<SpriteRenderer>();
+        }
+        else if (ViiksetT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level >= 10)
+        {
+            rend = ViiksetT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (LippisT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level < 5)
+        {
+            rend = LippisT1.GetComponent<SpriteRenderer>();
+        }
+        else if (LippisT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = LippisT2.GetComponent<SpriteRenderer>();
+        }
+        else if (LippisT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level >= 10)
+        {
+            rend = LippisT3.GetComponent<SpriteRenderer>();
+        }
+
+
         rend.color = new Color32(250, 172, 255, 255);
-        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 3;
-        PlayerPrefs.SetInt("CSkin", 3);
+
 
         if (SkinCooldown.Instance.isPurchasedSkin3 == false && PlayerMoney.Instance.money >= 10)
         {
@@ -692,15 +898,15 @@ public class WeightLiftScript : MonoBehaviour
         CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 4;
         PlayerPrefs.SetInt("CSkin", 4);
 
-        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
+        if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 && CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 5 || progressBox.hahmoLVL2.activeSelf == true)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level > 5 && progressBox.level < 10 && CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 || progressBox.hahmoLVL2.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 || progressBox.hahmoLVL3.activeSelf == true)
+        else if (progressBox.hahmoLVL3.activeSelf == false && progressBox.level >= 10 && CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 || progressBox.hahmoLVL3.activeSelf == true)
         {
             rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
         }
@@ -713,7 +919,7 @@ public class WeightLiftScript : MonoBehaviour
                 rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
                 rend.color = new Color32(255, 255, 255, 255);
             }
-            if (progressBox.level > 5 && progressBox.level < 10)
+            if (progressBox.level >= 5 && progressBox.level < 10)
             {
                 rend = FurrySunglassesT2.GetComponent<SpriteRenderer>();
                 rend.color = new Color32(255, 255, 255, 255);
@@ -724,16 +930,109 @@ public class WeightLiftScript : MonoBehaviour
                 rend.color = new Color32(255, 255, 255, 255);
             }
         }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2)
+        {
+            if (progressBox.level < 5)
+            {
+                rend = KruunuT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level >= 5 && progressBox.level < 10)
+            {
+                rend = KruunuT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                rend = KruunuT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3)
+        {
+            if (progressBox.level < 5)
+            {
+                rend = SunglassesT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level >= 5 && progressBox.level < 10)
+            {
+                rend = SunglassesT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                rend = SunglassesT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4)
+        {
+            if (progressBox.level < 5)
+            {
+                rend = TreeniMyssyT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level >= 5 && progressBox.level < 10)
+            {
+                rend = TreeniMyssyT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                rend = TreeniMyssyT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+        {
+            if (progressBox.level < 5)
+            {
+                rend = ViiksetT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level >= 5 && progressBox.level < 10)
+            {
+                rend = ViiksetT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                rend = ViiksetT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentSkin == 4 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+        {
+            if (progressBox.level < 5)
+            {
+                rend = LippisT1.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level >= 5 && progressBox.level < 10)
+            {
+                rend = LippisT2.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+            if (progressBox.level >= 10)
+            {
+                rend = LippisT3.GetComponent<SpriteRenderer>();
+                rend.color = new Color32(255, 255, 255, 255);
+            }
+        }
         rend.color = new Color32(255, 255, 255, 255);
         SkinCooldown.Instance.isPurchasedSkin4 = true;
     }
     public void ColorChangeToGreen()
     {
+        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 5;
+        PlayerPrefs.SetInt("CSkin", 5);
+
         if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
         }
-        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 5 || progressBox.hahmoLVL2.activeSelf == true)
+        else if (progressBox.hahmoLVL2.activeSelf == false && progressBox.level >= 5 && progressBox.level < 10 || progressBox.hahmoLVL2.activeSelf == true)
         {
             rend = progressBox.hahmoLVL2.GetComponent<SpriteRenderer>();
         }
@@ -741,6 +1040,8 @@ public class WeightLiftScript : MonoBehaviour
         {
             rend = progressBox.hahmoLVL3.GetComponent<SpriteRenderer>();
         }
+
+
         if (FurrySunglassesT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1 && progressBox.level < 5)
         {
             rend = FurrySunglassesT1.GetComponent<SpriteRenderer>();
@@ -754,9 +1055,73 @@ public class WeightLiftScript : MonoBehaviour
             rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
         }
 
+        if (KruunuT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level < 5)
+        {
+            rend = KruunuT1.GetComponent<SpriteRenderer>();
+        }
+        else if (KruunuT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = KruunuT2.GetComponent<SpriteRenderer>();
+        }
+        else if (KruunuT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level >= 10)
+        {
+            rend = KruunuT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (SunglassesT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level < 5)
+        {
+            rend = SunglassesT1.GetComponent<SpriteRenderer>();
+        }
+        else if (SunglassesT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = SunglassesT2.GetComponent<SpriteRenderer>();
+        }
+        else if (SunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level >= 10)
+        {
+            rend = SunglassesT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (TreeniMyssyT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level < 5)
+        {
+            rend = TreeniMyssyT1.GetComponent<SpriteRenderer>();
+        }
+        else if (TreeniMyssyT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = TreeniMyssyT2.GetComponent<SpriteRenderer>();
+        }
+        else if (TreeniMyssyT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level >= 10)
+        {
+            rend = TreeniMyssyT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (ViiksetT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level < 5)
+        {
+            rend = ViiksetT1.GetComponent<SpriteRenderer>();
+        }
+        else if (ViiksetT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = ViiksetT2.GetComponent<SpriteRenderer>();
+        }
+        else if (ViiksetT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level >= 10)
+        {
+            rend = ViiksetT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (LippisT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level < 5)
+        {
+            rend = LippisT1.GetComponent<SpriteRenderer>();
+        }
+        else if (LippisT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = LippisT2.GetComponent<SpriteRenderer>();
+        }
+        else if (LippisT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level >= 10)
+        {
+            rend = LippisT3.GetComponent<SpriteRenderer>();
+        }
+
         rend.color = new Color32(138, 255, 152, 255);
-        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 5;
-        PlayerPrefs.SetInt("CSkin", 5);
+
 
         if (SkinCooldown.Instance.isPurchasedSkin5 == false && PlayerMoney.Instance.money >= 10)
         {
@@ -852,6 +1217,9 @@ public class WeightLiftScript : MonoBehaviour
 
     public void ColorChangeToRed()
     {
+        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 6;
+        PlayerPrefs.SetInt("CSkin", 6);
+
         if (progressBox.hahmoLVL1.activeSelf == false && progressBox.level < 5 || progressBox.hahmoLVL1.activeSelf == true)
         {
             rend = progressBox.hahmoLVL1.GetComponent<SpriteRenderer>();
@@ -879,10 +1247,74 @@ public class WeightLiftScript : MonoBehaviour
             rend = FurrySunglassesT3.GetComponent<SpriteRenderer>();
         }
 
+        if (KruunuT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level < 5)
+        {
+            rend = KruunuT1.GetComponent<SpriteRenderer>();
+        }
+        else if (KruunuT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = KruunuT2.GetComponent<SpriteRenderer>();
+        }
+        else if (KruunuT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2 && progressBox.level >= 10)
+        {
+            rend = KruunuT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (SunglassesT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level < 5)
+        {
+            rend = SunglassesT1.GetComponent<SpriteRenderer>();
+        }
+        else if (SunglassesT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = SunglassesT2.GetComponent<SpriteRenderer>();
+        }
+        else if (SunglassesT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3 && progressBox.level >= 10)
+        {
+            rend = SunglassesT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (TreeniMyssyT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level < 5)
+        {
+            rend = TreeniMyssyT1.GetComponent<SpriteRenderer>();
+        }
+        else if (TreeniMyssyT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = TreeniMyssyT2.GetComponent<SpriteRenderer>();
+        }
+        else if (TreeniMyssyT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4 && progressBox.level >= 10)
+        {
+            rend = TreeniMyssyT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (ViiksetT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level < 5)
+        {
+            rend = ViiksetT1.GetComponent<SpriteRenderer>();
+        }
+        else if (ViiksetT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = ViiksetT2.GetComponent<SpriteRenderer>();
+        }
+        else if (ViiksetT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5 && progressBox.level >= 10)
+        {
+            rend = ViiksetT3.GetComponent<SpriteRenderer>();
+        }
+
+        if (LippisT1.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level < 5)
+        {
+            rend = LippisT1.GetComponent<SpriteRenderer>();
+        }
+        else if (LippisT2.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level > 5 && progressBox.level < 10)
+        {
+            rend = LippisT2.GetComponent<SpriteRenderer>();
+        }
+        else if (LippisT3.activeSelf == false && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6 && progressBox.level >= 10)
+        {
+            rend = LippisT3.GetComponent<SpriteRenderer>();
+        }
+
 
         rend.color = new Color32(255, 161, 129, 255);
-        CurrentSkinCurrentCosmeticHolder.instance.currentSkin = 6;
-        PlayerPrefs.SetInt("CSkin", 6);
+
 
         if (SkinCooldown.Instance.isPurchasedSkin6 == false && PlayerMoney.Instance.money >= 10)
         {
