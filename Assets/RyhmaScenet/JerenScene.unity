@@ -555,6 +555,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -1483,6 +1484,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -2013,6 +2015,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -2327,6 +2330,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -2800,6 +2804,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -4602,6 +4607,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -4781,6 +4787,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -5728,6 +5735,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -6454,6 +6462,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -7235,6 +7244,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -7939,6 +7949,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -8383,6 +8394,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -8912,6 +8924,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1154946459}
+        m_MethodName: CheckOnShopExistIfPlayerHasColorOrSkinAndProgress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1079589337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9053,6 +9076,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -9512,6 +9536,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -9789,6 +9814,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -9913,6 +9939,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -15336,6 +15363,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -16707,7 +16735,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2071353769}
+      - m_Target: {fileID: 1154946459}
         m_MethodName: KruunuCosmetic
         m_Mode: 1
         m_Arguments:
@@ -17260,6 +17288,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -17822,7 +17851,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 260120620}
+      - m_Target: {fileID: 1154946459}
         m_MethodName: LippisCosmetic
         m_Mode: 1
         m_Arguments:
@@ -18092,6 +18121,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -18272,6 +18302,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}
@@ -19202,7 +19233,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 260120620}
+      - m_Target: {fileID: 1154946459}
         m_MethodName: ViiksetCosmetic
         m_Mode: 1
         m_Arguments:
@@ -19578,7 +19609,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2071353769}
+      - m_Target: {fileID: 1154946459}
         m_MethodName: TreeniMyssyCosmetic
         m_Mode: 1
         m_Arguments:
@@ -19979,6 +20010,7 @@ MonoBehaviour:
   isPurchasedSunglasses: 0
   isPurchasedTreeniMyssy: 0
   isPurchasedViikset: 0
+  isPurchasedWhite: 0
   FurrySunglassesButton: {fileID: 1865120711}
   KruunuButton: {fileID: 1529550843}
   SunglassesButton: {fileID: 414469619}

@@ -77,24 +77,60 @@ public class Progressbox : MonoBehaviour
 
     public void CheckSpriteProgress()
     {
-        if (level < 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 0)
-        {
-            hahmoLVL1.SetActive(true);
-        }
-        else if (level >= 5 && level < 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 0)
-        {
-            hahmoLVL2.SetActive(true);
-        }
-        else if (level >= 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 0)
-        {
-            hahmoLVL3.SetActive(true);
-        }
+
         if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
         {
             hahmoLVL1.SetActive(false);
             hahmoLVL2.SetActive(false);
             hahmoLVL3.SetActive(false);
             WeightLiftScript.instance.FurrySunglassesTest();
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL3.SetActive(false);
+            WeightLiftScript.instance.KruunuCosmeticTest();
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL3.SetActive(false);
+            WeightLiftScript.instance.SunglassesCosmeticTest();
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL3.SetActive(false);
+            WeightLiftScript.instance.TreeniMyssyCosmeticTest();
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL3.SetActive(false);
+            WeightLiftScript.instance.ViiksetCosmeticTest();
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL3.SetActive(false);
+            WeightLiftScript.instance.LippisCosmeticTest();
+        }
+        if (level < 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 7)
+        {
+            hahmoLVL1.SetActive(true);
+        }
+        else if (level >= 5 && level < 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 7)
+        {
+            hahmoLVL2.SetActive(true);
+        }
+        else if (level >= 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 7)
+        {
+            hahmoLVL3.SetActive(true);
         }
     }
 
