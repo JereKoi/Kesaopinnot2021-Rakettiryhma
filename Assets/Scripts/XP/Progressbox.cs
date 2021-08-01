@@ -47,11 +47,11 @@ public class Progressbox : MonoBehaviour
             {
                 TapToLiftText.SetActive(false);
             }
-            if (level == 5)
+            if (level >= 5 && level < 10)
             {
                 hahmoLVL2.SetActive(true);
             }
-            if (level < 3)
+            if (level < 5)
             {
                 hahmoLVL1.SetActive(true);
             }

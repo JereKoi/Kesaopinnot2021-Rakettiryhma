@@ -4075,7 +4075,10 @@ public class WeightLiftScript : MonoBehaviour
                 nosto16 = false;
                 idle = true;
             }
-            else if (clickCounter >= 16 && progressBox.hahmoLVL1.activeSelf || clickCounter >= 16 && progressBox.hahmoLVL2.activeSelf)
+            else if (clickCounter >= 16 && progressBox.hahmoLVL1.activeSelf || clickCounter >= 16 && progressBox.hahmoLVL2.activeSelf || clickCounter >= 16 && FurrySunglassesT1.activeSelf || clickCounter >= 16 && FurrySunglassesT2.activeSelf
+                || clickCounter >= 16 && KruunuT1.activeSelf || clickCounter >= 16 && KruunuT2.activeSelf || clickCounter >= 16 && SunglassesT1.activeSelf || clickCounter >= 16 && SunglassesT2.activeSelf || clickCounter >= 16 && 
+                TreeniMyssyT1.activeSelf || clickCounter >= 16 && TreeniMyssyT2.activeSelf || clickCounter >= 16 && ViiksetT1.activeSelf || clickCounter >= 16 && ViiksetT2.activeSelf || clickCounter >= 16 && LippisT1.activeSelf || 
+                clickCounter >= 16 && LippisT2.activeSelf)
             {
                 clickCounter = 0;
                 if (progressBox.level < 2)
