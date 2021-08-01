@@ -33,6 +33,7 @@ public class Progressbox : MonoBehaviour
 
     private void Start()
     {
+        CheckIfReachedEnd();
         Instance = this;
         if (PlayerPrefs.HasKey ("level"))
         {
