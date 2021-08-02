@@ -16,6 +16,7 @@ public class Progressbox : MonoBehaviour
     public GameObject TapToLiftText;
     public GameObject hahmoLVL1;
     public GameObject hahmoLVL2;
+    public GameObject hahmoLVL3;
     public GameObject reachEndBanner;
 
     public GameObject changeMindButton;
@@ -32,6 +33,7 @@ public class Progressbox : MonoBehaviour
 
     private void Start()
     {
+        CheckIfReachedEnd();
         Instance = this;
         if (PlayerPrefs.HasKey ("level"))
         {
@@ -45,13 +47,17 @@ public class Progressbox : MonoBehaviour
             {
                 TapToLiftText.SetActive(false);
             }
-            if (level >= 3)
+            if (level >= 5 && level < 10)
             {
                 hahmoLVL2.SetActive(true);
             }
-            else if (level < 3)
+            if (level < 5)
             {
                 hahmoLVL1.SetActive(true);
+            }
+            if (level >= 10)
+            {
+                hahmoLVL3.SetActive(true);
             }
         }
         else
@@ -62,27 +68,71 @@ public class Progressbox : MonoBehaviour
         }
     }
 
-    public void CheckSpriteProgress()
-    {
-        if (level < 3)
-        {
-            hahmoLVL2.SetActive(false);
-            hahmoLVL1.SetActive(true);
-        }
-        else if (level >= 3)
-        {
-            hahmoLVL1.SetActive(false);
-            hahmoLVL2.SetActive(true);
-        }
-    }
-
-
     private void OnEnable()
     {
         uiFillImage.color = color;
         level = 0;
         currentAmount = 0;
         uiFillImage.fillAmount = currentAmount;
+    }
+
+    public void CheckSpriteProgress()
+    {
+
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL3.SetActive(false);
+            WeightLiftScript.instance.FurrySunglassesTest();
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 2)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL3.SetActive(false);
+            WeightLiftScript.instance.KruunuCosmeticTest();
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 3)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL3.SetActive(false);
+            WeightLiftScript.instance.SunglassesCosmeticTest();
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 4)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL3.SetActive(false);
+            WeightLiftScript.instance.TreeniMyssyCosmeticTest();
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL3.SetActive(false);
+            WeightLiftScript.instance.ViiksetCosmeticTest();
+        }
+        if (CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+        {
+            hahmoLVL1.SetActive(false);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL3.SetActive(false);
+            WeightLiftScript.instance.LippisCosmeticTest();
+        }
+        if (level < 5 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 7)
+        {
+            hahmoLVL1.SetActive(true);
+        }
+        else if (level >= 5 && level < 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 7)
+        {
+            hahmoLVL2.SetActive(true);
+        }
+        else if (level >= 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 7)
+        {
+            hahmoLVL3.SetActive(true);
+        }
     }
 
     public void StartNewGameReset()
@@ -148,10 +198,14 @@ public class Progressbox : MonoBehaviour
         //ads.PlayInterstitialAd();
         PlayerPrefs.SetInt("level", level);
 
-        if (level >= 3)
+        if (level > 5 && level < 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 0)
         {
             hahmoLVL1.SetActive(false);
             hahmoLVL2.SetActive(true);
+        }
+        if (level > 5 && level < 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+        {
+            WeightLiftScript.instance.FurrySunglassesTest();
         }
         if (level == 4)
         {
@@ -160,6 +214,16 @@ public class Progressbox : MonoBehaviour
         if (level == 8)
         {
             ads.PlayInterstitialAd();
+        }
+        if (level >= 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 0)
+        {
+            hahmoLVL3.SetActive(true);
+            hahmoLVL2.SetActive(false);
+            hahmoLVL1.SetActive(false);
+        }
+        if (level >= 10 && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 1)
+        {
+            WeightLiftScript.instance.FurrySunglassesTest();
         }
         //TÄSSÄ KOHDASSA MÄÄRITELLÄÄN PELIN LOPPU, MUISTA START METHODIIN TEHDÄ IF LAUSE JOSSA CHECKATAAN ONKO >= 5 LEVU NIIN CHANGEMINDBUTTON.SETACTIVE(TRUE);
         else if (level == 15)

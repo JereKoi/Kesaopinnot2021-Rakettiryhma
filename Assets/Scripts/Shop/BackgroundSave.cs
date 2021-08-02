@@ -12,11 +12,6 @@ public class BackgroundSave : MonoBehaviour
     public GameObject BackgroundText2;
     public Button BackgroundButton2;
     public Button BackgroundButton3;
-    public Button BackSkinButton1;
-    public Button BackSkinButton2;
-    public Button BackSkinButton3;
-    public Button BackSkinButton4;
-    public Button BackSkinButton5;
 
 
     public bool isPurchasedBackground2;
@@ -147,6 +142,36 @@ public class BackgroundSave : MonoBehaviour
                     }
                 }
             }
+            if (PlayerMoney.Instance.money < 30)
+            {
+                if (WeightLiftScript.instance.isPurchasedFurrySunglasses == false)
+                {
+                    WeightLiftScript.instance.FurrySunglassesButton.interactable = false;
+                }
+                if (WeightLiftScript.instance.isPurchasedLippis == false)
+                {
+                    WeightLiftScript.instance.LippisButton.interactable = false;
+                }
+                if (WeightLiftScript.instance.isPurchasedSunglasses == false)
+                {
+                   WeightLiftScript.instance.SunglassesButton.interactable = false;
+                }
+                if (WeightLiftScript.instance.isPurchasedTreeniMyssy == false)
+                {
+                    WeightLiftScript.instance.TreeniMyssyButton.interactable = false;
+                }
+                if (WeightLiftScript.instance.isPurchasedViikset == false)
+                {
+                    WeightLiftScript.instance.ViiksetButton.interactable = false;
+                }
+            }
+            if (PlayerMoney.Instance.money < 100)
+            {
+                if (WeightLiftScript.instance.isPurchasedKruunu == false)
+                {
+                    WeightLiftScript.instance.KruunuButton.interactable = false;
+                }
+            }
         }
         if (isPurchasedBackground2 == true && currentBackground == 2)
         {
@@ -212,7 +237,7 @@ public class BackgroundSave : MonoBehaviour
             {
                 if (WeightLiftScript.instance.isPurchasedFurrySunglasses == false)
                 {
-                   WeightLiftScript.instance.FurrySunglassesButton.interactable = false;
+                    WeightLiftScript.instance.FurrySunglassesButton.interactable = false;
                 }
                 if (WeightLiftScript.instance.isPurchasedKruunu == false)
                 {
