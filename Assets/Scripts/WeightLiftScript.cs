@@ -3276,7 +3276,7 @@ public class WeightLiftScript : MonoBehaviour
                 CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 5;
                 PlayerPrefs.SetInt("CurrentCosmetic", 5);
 
-                if (isPurchasedTreeniMyssy == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
+                if (isPurchasedViikset == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 5)
                 {
                     if (progressBox.level < 5)
                     {
@@ -3550,7 +3550,7 @@ public class WeightLiftScript : MonoBehaviour
                     CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 6;
                     PlayerPrefs.SetInt("CurrentCosmetic", 6);
 
-                    if (isPurchasedTreeniMyssy == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+                    if (isPurchasedLippis == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
                     {
                         if (progressBox.level < 5)
                         {
@@ -3585,7 +3585,7 @@ public class WeightLiftScript : MonoBehaviour
                         CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic = 6;
                         PlayerPrefs.SetInt("CurrentCosmetic", 6);
                         isPurchasedLippis = true;
-                        PlayerPrefs.SetInt("isPurchasedLippis", isPurchasedViikset ? 1 : 0);
+                        PlayerPrefs.SetInt("isPurchasedLippis", isPurchasedLippis ? 1 : 0);
                         if (PlayerMoney.Instance.money < 10)
                         {
                             if (SkinCooldown.Instance.isPurchasedSkin1 == false)
@@ -3647,7 +3647,7 @@ public class WeightLiftScript : MonoBehaviour
                             }
                         }
                     }
-                    if (isPurchasedViikset == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
+                    if (isPurchasedLippis == true && CurrentSkinCurrentCosmeticHolder.instance.currentCosmetic == 6)
                     {
                         LippisShopText.SetActive(false);
                         LippisButton.interactable = true;
