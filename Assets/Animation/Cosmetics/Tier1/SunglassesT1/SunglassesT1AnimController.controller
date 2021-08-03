@@ -1283,91 +1283,91 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto0
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto1
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto2
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto3
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto4
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto5
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto6
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto7
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto8
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto9
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto10
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto11
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto12
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: nosto13
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -1654,51 +1654,6 @@ AnimatorStateMachine:
     m_Position: {x: 0, y: -290, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -597438463656436251}
-    m_Position: {x: 0, y: -360, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -3851780835995161814}
-    m_Position: {x: 0, y: 0, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -1774362995381534271}
-    m_Position: {x: 0, y: 80, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -2044745598520232331}
-    m_Position: {x: 0, y: -80, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -4567968925543712719}
-    m_Position: {x: 0, y: -150, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -9187055343743922187}
-    m_Position: {x: 0, y: -220, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 642374777929711406}
-    m_Position: {x: 240, y: -360, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -6166325654899015440}
-    m_Position: {x: 240, y: -290, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -6131299822352902230}
-    m_Position: {x: 240, y: -220, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 4904747017211062242}
-    m_Position: {x: 240, y: -150, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 6699873859504824216}
-    m_Position: {x: 240, y: -80, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 6160077462691539534}
-    m_Position: {x: 240, y: 0, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -7743298922613354638}
-    m_Position: {x: 240, y: 80, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 799093075544176340}
-    m_Position: {x: 240, y: 150, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -472979142398044158}
-    m_Position: {x: 0, y: -290, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 6303449660922604394}
     m_Position: {x: 0, y: -360, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
